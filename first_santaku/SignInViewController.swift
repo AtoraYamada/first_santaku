@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignInViewController: UIViewController, UITextFieldDelegate {
 
@@ -56,6 +57,25 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         signUpButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
         signUpButton.setTitle("SIGN UP", for: .normal)
     }
+    @IBAction func signInButton(_ sender: Any) {
+        signin()
+    }
+    
+    func signin() {
+        
+        guard let email = inputEmail.text else  { return }
+        guard let password = inputPassword.text else { return }
+        
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            if error == nil{
+                print("ログインできました")
+            }
+            else {
+                print("ログインできませんでした")
+            }
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

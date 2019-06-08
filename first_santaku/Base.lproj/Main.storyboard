@@ -119,6 +119,9 @@
                                 <rect key="frame" x="80" y="385.5" width="215" height="59"/>
                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="40"/>
                                 <state key="normal" title="SIGN IN"/>
+                                <connections>
+                                    <action selector="signInButton:" destination="KH4-nk-uk2" eventType="touchUpInside" id="mGD-wF-MvP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -275,6 +278,7 @@
         <image name="matrix-356024_640" width="640" height="452"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="oox-6U-JKZ"/>
         <segue reference="8XM-I4-uft"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -74,7 +74,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 print("登録できませんでした")
             }
          }
-    }
+     }
     
 
     /*
