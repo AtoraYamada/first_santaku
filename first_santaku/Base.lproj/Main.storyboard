@@ -81,6 +81,9 @@
                                 <rect key="frame" x="112" y="470" width="150" height="47"/>
                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="25"/>
                                 <state key="normal" title="SIGN UP"/>
+                                <connections>
+                                    <segue destination="8QF-c0-LGo" kind="presentation" id="oox-6U-JKZ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-MAIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJ4-IA-xUT">
                                 <rect key="frame" x="30" y="174.5" width="315" height="20"/>
@@ -180,6 +183,9 @@
                                 <rect key="frame" x="110" y="470" width="154" height="47"/>
                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="25"/>
                                 <state key="normal" title="SIGN IN"/>
+                                <connections>
+                                    <segue destination="KH4-nk-uk2" kind="presentation" id="8XM-I4-uft"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-MAIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7T-M0-MXy">
                                 <rect key="frame" x="30" y="174.5" width="315" height="20"/>
@@ -261,4 +267,8 @@
     <resources>
         <image name="matrix-356024_640" width="640" height="452"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="oox-6U-JKZ"/>
+        <segue reference="8XM-I4-uft"/>
+    </inferredMetricsTieBreakers>
 </document>
