@@ -53,6 +53,21 @@
             </objects>
             <point key="canvasLocation" x="-79.200000000000003" y="133.5832083958021"/>
         </scene>
+        <!--Sign In View Controller-->
+        <scene sceneID="Ygx-JW-7Z5">
+            <objects>
+                <viewController id="KH4-nk-uk2" customClass="SignInViewController" customModule="first_santaku" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ggr-Nk-K3m">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="tky-qy-O3g"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1J1-Tw-TdO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="644" y="134"/>
+        </scene>
     </scenes>
     <resources>
         <image name="matrix-356024_640" width="640" height="452"/>
