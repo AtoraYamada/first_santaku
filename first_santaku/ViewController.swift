@@ -12,13 +12,17 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var textTitle: UILabel!
     
+    @IBOutlet weak var enterButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         attributed()
-        textTitle.adjustsFontSizeToFitWidth = true
+        buttonatrributed()
+        
+        
     }
 
+    
     func attributed() {
         let style = NSMutableParagraphStyle()
         style.lineSpacing = 6
@@ -29,7 +33,14 @@ class ViewController: UIViewController {
         ]
         let text = NSAttributedString(string: "SANTAKU", attributes: textAttributes)
         textTitle.attributedText = text
+        textTitle.adjustsFontSizeToFitWidth = true
         
+    }
+    
+    func buttonatrributed(){
+        
+        enterButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
+        enterButton.setTitle("ENTER", for: .normal)
     }
 }
 
