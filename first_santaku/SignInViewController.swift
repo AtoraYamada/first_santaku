@@ -72,6 +72,11 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             }
             else {
                 print("ログインできませんでした")
+                let alert = UIAlertController(title: "Failed to Login", message: "check your email or password", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                
+                self.present(alert, animated: true, completion: nil)
             }
         }
     }
