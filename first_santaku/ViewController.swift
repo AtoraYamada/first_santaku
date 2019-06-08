@@ -18,8 +18,6 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         attributed()
         buttonatrributed()
-        
-        
     }
 
     
@@ -38,7 +36,6 @@ class ViewController: UIViewController {
     }
     
     func buttonatrributed(){
-        
         enterButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
         enterButton.setTitle("ENTER", for: .normal)
     }
