@@ -72,6 +72,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             }
             else {
                 print("登録できませんでした")
+                let alert = UIAlertController(title: "Failed to Sign Up", message: "check your email or password", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                
+                self.present(alert, animated: true, completion: nil)
             }
          }
      }
