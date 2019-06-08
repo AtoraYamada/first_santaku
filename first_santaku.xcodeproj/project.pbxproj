@@ -12,6 +12,7 @@
 		D253A19B22AB721A008D14EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D253A19922AB721A008D14EB /* Main.storyboard */; };
 		D253A19D22AB721F008D14EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D253A19C22AB721F008D14EB /* Assets.xcassets */; };
 		D253A1A022AB721F008D14EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D253A19E22AB721F008D14EB /* LaunchScreen.storyboard */; };
+		D2AAF6F222AB8F1C003F02AA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AAF6F122AB8F1C003F02AA /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		D253A19C22AB721F008D14EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D253A19F22AB721F008D14EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D253A1A122AB721F008D14EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2AAF6F122AB8F1C003F02AA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				D253A19522AB721A008D14EB /* AppDelegate.swift */,
 				D253A19722AB721A008D14EB /* ViewController.swift */,
 				D253A19922AB721A008D14EB /* Main.storyboard */,
+				D2AAF6F122AB8F1C003F02AA /* SignInViewController.swift */,
 				D253A19C22AB721F008D14EB /* Assets.xcassets */,
 				D253A19E22AB721F008D14EB /* LaunchScreen.storyboard */,
 				D253A1A122AB721F008D14EB /* Info.plist */,
@@ -137,6 +140,7 @@
 			files = (
 				D253A19822AB721A008D14EB /* ViewController.swift in Sources */,
 				D253A19622AB721A008D14EB /* AppDelegate.swift in Sources */,
+				D2AAF6F222AB8F1C003F02AA /* SignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
