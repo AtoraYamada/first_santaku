@@ -8,15 +8,45 @@
 
 import UIKit
 
-class SignInViewController: UIViewController {
+class SignInViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var signIn: UILabel!
+    @IBOutlet weak var email: UILabel!
+    @IBOutlet weak var password: UILabel!
+    @IBOutlet weak var inputEmail: UITextField!
+    @IBOutlet weak var inputPassword: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        attributed()
+        inputEmail.delegate = self
+        inputPassword.delegate = self
     }
     
+    func attributed() {
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 6
+        let textAttributes: [NSAttributedString.Key : Any] = [
+            .foregroundColor : UIColor.white,
+            .strokeColor : UIColor.green,
+            .strokeWidth : -3.0
+        ]
+        let text1 = NSAttributedString(string: "SIGN IN", attributes: textAttributes)
+        let text2 = NSAttributedString(string: "E-MAIL", attributes: textAttributes)
+        let text3 = NSAttributedString(string: "PASSWORD", attributes: textAttributes)
+        signIn.attributedText = text1
+        email.attributedText = text2
+        password.attributedText = text3
+    }
 
+    @IBAction func getEmail(_ sender: Any) {
+    }
+    @IBAction func getPassword(_ sender: Any) {
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        inputEmail.resignFirstResponder()
+        inputPassword.resignFirstResponder()
+    }
+    
     /*
     // MARK: - Navigation
 
