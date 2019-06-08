@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		D253A1A022AB721F008D14EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D253A19E22AB721F008D14EB /* LaunchScreen.storyboard */; };
 		D2AAF6F222AB8F1C003F02AA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AAF6F122AB8F1C003F02AA /* SignInViewController.swift */; };
 		D2AAF6F422ABA73A003F02AA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AAF6F322ABA73A003F02AA /* SignUpViewController.swift */; };
+		D2AAF6F622ABC156003F02AA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2AAF6F522ABC156003F02AA /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		D253A1A122AB721F008D14EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2AAF6F122AB8F1C003F02AA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		D2AAF6F322ABA73A003F02AA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		D2AAF6F522ABC156003F02AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E5F078C4604CCA8E13CC09C3 /* Pods-first_santaku.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-first_santaku.debug.xcconfig"; path = "Target Support Files/Pods-first_santaku/Pods-first_santaku.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -50,7 +52,6 @@
 				E5F078C4604CCA8E13CC09C3 /* Pods-first_santaku.debug.xcconfig */,
 				5CAA9805A9D18E9A48B18876 /* Pods-first_santaku.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -90,6 +91,7 @@
 				D2AAF6F122AB8F1C003F02AA /* SignInViewController.swift */,
 				D253A19C22AB721F008D14EB /* Assets.xcassets */,
 				D253A19E22AB721F008D14EB /* LaunchScreen.storyboard */,
+				D2AAF6F522ABC156003F02AA /* GoogleService-Info.plist */,
 				D253A1A122AB721F008D14EB /* Info.plist */,
 			);
 			path = first_santaku;
@@ -156,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D253A1A022AB721F008D14EB /* LaunchScreen.storyboard in Resources */,
+				D2AAF6F622ABC156003F02AA /* GoogleService-Info.plist in Resources */,
 				D253A19D22AB721F008D14EB /* Assets.xcassets in Resources */,
 				D253A19B22AB721A008D14EB /* Main.storyboard in Resources */,
 			);
