@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8QF-c0-LGo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -24,21 +24,27 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SANTAKU" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJr-IG-dqs">
                                 <rect key="frame" x="0.0" y="303.5" width="375" height="60"/>
-                                <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="60"/>
-                                <color key="textColor" red="0.61033422124054815" green="1" blue="0.51179817081572299" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="60"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXM-2Z-ZFr">
-                                <rect key="frame" x="120" y="372" width="134" height="91"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXM-2Z-ZFr">
+                                <rect key="frame" x="80" y="372" width="215" height="59"/>
                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="40"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="KH4-nk-uk2" kind="presentation" id="cvf-sC-wLt"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ZXM-2Z-ZFr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2tH-84-gtU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZXM-2Z-ZFr" secondAttribute="trailing" constant="80" id="BRl-6B-dtD"/>
+                            <constraint firstItem="ZXM-2Z-ZFr" firstAttribute="top" secondItem="CJr-IG-dqs" secondAttribute="bottom" constant="8.5" id="QV0-Az-5p5"/>
                             <constraint firstItem="CJr-IG-dqs" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="c8z-2M-RVu"/>
                             <constraint firstItem="CJr-IG-dqs" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="krK-hp-G9s"/>
+                            <constraint firstItem="ZXM-2Z-ZFr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="o3i-xT-I0c"/>
                             <constraint firstItem="CJr-IG-dqs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xDW-iE-gOi"/>
                             <constraint firstItem="CJr-IG-dqs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xz8-ks-nKF"/>
                         </constraints>
@@ -61,7 +67,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="matrix-356024_640" translatesAutoresizingMaskIntoConstraints="NO" id="njF-7D-oP6">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="matrix-356024_640" translatesAutoresizingMaskIntoConstraints="NO" id="njF-7D-oP6">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -71,10 +77,13 @@
                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymT-6u-6is">
-                                <rect key="frame" x="112" y="470" width="150" height="47"/>
-                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymT-6u-6is">
+                                <rect key="frame" x="80" y="469.5" width="215" height="41"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="25"/>
                                 <state key="normal" title="SIGN UP"/>
+                                <connections>
+                                    <segue destination="8QF-c0-LGo" kind="presentation" id="oox-6U-JKZ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-MAIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJ4-IA-xUT">
                                 <rect key="frame" x="30" y="174.5" width="315" height="20"/>
@@ -106,8 +115,8 @@
                                     <action selector="getEmail:" destination="KH4-nk-uk2" eventType="editingDidEndOnExit" id="IRf-OB-7Nz"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SRb-J5-U8s">
-                                <rect key="frame" x="112" y="385" width="150" height="59"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SRb-J5-U8s">
+                                <rect key="frame" x="80" y="385.5" width="215" height="59"/>
                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="40"/>
                                 <state key="normal" title="SIGN IN"/>
                             </button>
@@ -120,8 +129,10 @@
                             <constraint firstItem="rVw-E4-ZDR" firstAttribute="top" secondItem="ons-cD-7UF" secondAttribute="bottom" constant="8" id="EZ2-ND-FXL"/>
                             <constraint firstItem="tky-qy-O3g" firstAttribute="trailing" secondItem="n8T-qF-lOW" secondAttribute="trailing" constant="30" id="FTP-SK-cZJ"/>
                             <constraint firstItem="n8T-qF-lOW" firstAttribute="top" secondItem="tky-qy-O3g" secondAttribute="top" constant="54" id="Fad-pb-0WF"/>
+                            <constraint firstItem="ymT-6u-6is" firstAttribute="centerX" secondItem="ggr-Nk-K3m" secondAttribute="centerX" id="GDU-au-eHw"/>
                             <constraint firstItem="tky-qy-O3g" firstAttribute="trailing" secondItem="ons-cD-7UF" secondAttribute="trailing" constant="30" id="HKp-13-YB7"/>
                             <constraint firstItem="ymT-6u-6is" firstAttribute="leading" secondItem="tky-qy-O3g" secondAttribute="leading" constant="80" id="I07-0r-Yr7"/>
+                            <constraint firstItem="SRb-J5-U8s" firstAttribute="centerX" secondItem="ggr-Nk-K3m" secondAttribute="centerX" id="NM5-Bw-lVm"/>
                             <constraint firstItem="1w7-dE-W1G" firstAttribute="top" secondItem="XJ4-IA-xUT" secondAttribute="bottom" constant="8" id="O6Q-xT-GhB"/>
                             <constraint firstItem="tky-qy-O3g" firstAttribute="trailing" secondItem="1w7-dE-W1G" secondAttribute="trailing" constant="30" id="UPy-mM-xPL"/>
                             <constraint firstItem="ons-cD-7UF" firstAttribute="leading" secondItem="tky-qy-O3g" secondAttribute="leading" constant="30" id="WuW-Ts-juG"/>
@@ -160,7 +171,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="matrix-356024_640" translatesAutoresizingMaskIntoConstraints="NO" id="fpB-0u-FtV">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="matrix-356024_640" translatesAutoresizingMaskIntoConstraints="NO" id="fpB-0u-FtV">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -170,10 +181,13 @@
                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b27-bU-cGr">
-                                <rect key="frame" x="110" y="470" width="154" height="47"/>
-                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b27-bU-cGr">
+                                <rect key="frame" x="80" y="469.5" width="215" height="41"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="25"/>
                                 <state key="normal" title="SIGN IN"/>
+                                <connections>
+                                    <segue destination="KH4-nk-uk2" kind="presentation" id="8XM-I4-uft"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-MAIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7T-M0-MXy">
                                 <rect key="frame" x="30" y="174.5" width="315" height="20"/>
@@ -205,8 +219,8 @@
                                     <action selector="getEmail:" destination="8QF-c0-LGo" eventType="editingDidEndOnExit" id="YKe-BT-tP7"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zw2-r8-RqJ">
-                                <rect key="frame" x="110" y="382" width="154" height="59"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zw2-r8-RqJ">
+                                <rect key="frame" x="80" y="385.5" width="215" height="59"/>
                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="40"/>
                                 <state key="normal" title="SIGN UP"/>
                             </button>
@@ -217,6 +231,7 @@
                             <constraint firstItem="BPX-UZ-U3B" firstAttribute="top" secondItem="kfI-bt-P60" secondAttribute="bottom" constant="8" id="3ex-Nd-gzJ"/>
                             <constraint firstItem="b27-bU-cGr" firstAttribute="top" secondItem="Zw2-r8-RqJ" secondAttribute="bottom" constant="25" id="7Lx-BH-FsO"/>
                             <constraint firstItem="X7T-M0-MXy" firstAttribute="leading" secondItem="pAc-Oq-iId" secondAttribute="leading" constant="30" id="8L0-S6-ltc"/>
+                            <constraint firstItem="Zw2-r8-RqJ" firstAttribute="centerX" secondItem="D67-Tj-dqB" secondAttribute="centerX" id="8kS-2C-q9v"/>
                             <constraint firstItem="pAc-Oq-iId" firstAttribute="trailing" secondItem="Zw2-r8-RqJ" secondAttribute="trailing" constant="80" id="BRh-9x-wMx"/>
                             <constraint firstItem="HUC-f6-Nyt" firstAttribute="top" secondItem="pAc-Oq-iId" secondAttribute="top" constant="54" id="CYh-uo-PVY"/>
                             <constraint firstItem="pAc-Oq-iId" firstAttribute="trailing" secondItem="e1f-Xr-A47" secondAttribute="trailing" constant="30" id="IpQ-gc-qoh"/>
@@ -226,6 +241,7 @@
                             <constraint firstItem="pAc-Oq-iId" firstAttribute="trailing" secondItem="BPX-UZ-U3B" secondAttribute="trailing" constant="30" id="XlE-fn-DMr"/>
                             <constraint firstItem="pAc-Oq-iId" firstAttribute="trailing" secondItem="kfI-bt-P60" secondAttribute="trailing" constant="30" id="cfa-Hi-Gib"/>
                             <constraint firstItem="Zw2-r8-RqJ" firstAttribute="leading" secondItem="pAc-Oq-iId" secondAttribute="leading" constant="80" id="e28-C6-j8U"/>
+                            <constraint firstItem="b27-bU-cGr" firstAttribute="centerX" secondItem="D67-Tj-dqB" secondAttribute="centerX" id="eKk-Ih-PPV"/>
                             <constraint firstItem="Zw2-r8-RqJ" firstAttribute="top" secondItem="BPX-UZ-U3B" secondAttribute="bottom" constant="54" id="gYP-Cq-7tA"/>
                             <constraint firstItem="e1f-Xr-A47" firstAttribute="leading" secondItem="pAc-Oq-iId" secondAttribute="leading" constant="30" id="hSl-ZK-Izs"/>
                             <constraint firstItem="HUC-f6-Nyt" firstAttribute="leading" secondItem="pAc-Oq-iId" secondAttribute="leading" constant="30" id="jeg-35-IBD"/>
@@ -255,4 +271,7 @@
     <resources>
         <image name="matrix-356024_640" width="640" height="452"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="cvf-sC-wLt"/>
+    </inferredMetricsTieBreakers>
 </document>

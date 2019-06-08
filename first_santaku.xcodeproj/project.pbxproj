@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A95232B03406C47F135FDB74 /* Pods_first_santaku.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA6856880B7BACFA2A6CA34 /* Pods_first_santaku.framework */; };
 		D253A19622AB721A008D14EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D253A19522AB721A008D14EB /* AppDelegate.swift */; };
 		D253A19822AB721A008D14EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D253A19722AB721A008D14EB /* ViewController.swift */; };
 		D253A19B22AB721A008D14EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D253A19922AB721A008D14EB /* Main.storyboard */; };
@@ -14,9 +15,12 @@
 		D253A1A022AB721F008D14EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D253A19E22AB721F008D14EB /* LaunchScreen.storyboard */; };
 		D2AAF6F222AB8F1C003F02AA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AAF6F122AB8F1C003F02AA /* SignInViewController.swift */; };
 		D2AAF6F422ABA73A003F02AA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AAF6F322ABA73A003F02AA /* SignUpViewController.swift */; };
+		D2AAF6F622ABC156003F02AA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2AAF6F522ABC156003F02AA /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5CAA9805A9D18E9A48B18876 /* Pods-first_santaku.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-first_santaku.release.xcconfig"; path = "Target Support Files/Pods-first_santaku/Pods-first_santaku.release.xcconfig"; sourceTree = "<group>"; };
+		9CA6856880B7BACFA2A6CA34 /* Pods_first_santaku.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_first_santaku.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D253A19222AB721A008D14EB /* first_santaku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = first_santaku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D253A19522AB721A008D14EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D253A19722AB721A008D14EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +30,8 @@
 		D253A1A122AB721F008D14EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2AAF6F122AB8F1C003F02AA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		D2AAF6F322ABA73A003F02AA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		D2AAF6F522ABC156003F02AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E5F078C4604CCA8E13CC09C3 /* Pods-first_santaku.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-first_santaku.debug.xcconfig"; path = "Target Support Files/Pods-first_santaku/Pods-first_santaku.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A95232B03406C47F135FDB74 /* Pods_first_santaku.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C82EC3E492619606687B161 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E5F078C4604CCA8E13CC09C3 /* Pods-first_santaku.debug.xcconfig */,
+				5CAA9805A9D18E9A48B18876 /* Pods-first_santaku.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		542A70BB14C3F7716D269FF8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9CA6856880B7BACFA2A6CA34 /* Pods_first_santaku.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D253A18922AB7219008D14EB = {
 			isa = PBXGroup;
 			children = (
 				D253A19422AB721A008D14EB /* first_santaku */,
 				D253A19322AB721A008D14EB /* Products */,
+				4C82EC3E492619606687B161 /* Pods */,
+				542A70BB14C3F7716D269FF8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +91,7 @@
 				D2AAF6F122AB8F1C003F02AA /* SignInViewController.swift */,
 				D253A19C22AB721F008D14EB /* Assets.xcassets */,
 				D253A19E22AB721F008D14EB /* LaunchScreen.storyboard */,
+				D2AAF6F522ABC156003F02AA /* GoogleService-Info.plist */,
 				D253A1A122AB721F008D14EB /* Info.plist */,
 			);
 			path = first_santaku;
@@ -77,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D253A1A422AB721F008D14EB /* Build configuration list for PBXNativeTarget "first_santaku" */;
 			buildPhases = (
+				DADA88C13A5ECF008F0E18A2 /* [CP] Check Pods Manifest.lock */,
 				D253A18E22AB721A008D14EB /* Sources */,
 				D253A18F22AB721A008D14EB /* Frameworks */,
 				D253A19022AB721A008D14EB /* Resources */,
+				93DEC9A7AFE499BC674F97F0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,12 +158,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				D253A1A022AB721F008D14EB /* LaunchScreen.storyboard in Resources */,
+				D2AAF6F622ABC156003F02AA /* GoogleService-Info.plist in Resources */,
 				D253A19D22AB721F008D14EB /* Assets.xcassets in Resources */,
 				D253A19B22AB721A008D14EB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		93DEC9A7AFE499BC674F97F0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-first_santaku/Pods-first_santaku-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-first_santaku/Pods-first_santaku-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-first_santaku/Pods-first_santaku-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DADA88C13A5ECF008F0E18A2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-first_santaku-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D253A18E22AB721A008D14EB /* Sources */ = {
@@ -288,6 +360,7 @@
 		};
 		D253A1A522AB721F008D14EB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5F078C4604CCA8E13CC09C3 /* Pods-first_santaku.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -306,6 +379,7 @@
 		};
 		D253A1A622AB721F008D14EB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CAA9805A9D18E9A48B18876 /* Pods-first_santaku.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
