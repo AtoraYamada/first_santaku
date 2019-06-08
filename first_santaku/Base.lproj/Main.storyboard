@@ -18,19 +18,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="matrix-356024_640" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Viy-8A-aGH">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="matrix-356024_640" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Viy-8A-aGH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="679"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXM-2Z-ZFr">
+                                <rect key="frame" x="146" y="444" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SANTAKU" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJr-IG-dqs">
+                                <rect key="frame" x="0.0" y="303.5" width="375" height="60"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="60"/>
+                                <color key="textColor" red="0.61033422124054815" green="1" blue="0.51179817081572299" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Viy-8A-aGH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HCw-al-sjs"/>
-                            <constraint firstItem="Viy-8A-aGH" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="R9w-mD-Uxf"/>
-                            <constraint firstItem="Viy-8A-aGH" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="VwI-qg-poz"/>
-                            <constraint firstItem="Viy-8A-aGH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="WuA-dU-hfo"/>
+                            <constraint firstItem="CJr-IG-dqs" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="c8z-2M-RVu"/>
+                            <constraint firstItem="CJr-IG-dqs" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="krK-hp-G9s"/>
+                            <constraint firstItem="CJr-IG-dqs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xDW-iE-gOi"/>
+                            <constraint firstItem="CJr-IG-dqs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xz8-ks-nKF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="textTitle" destination="CJr-IG-dqs" id="omH-pS-EXv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

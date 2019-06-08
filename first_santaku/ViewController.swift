@@ -10,11 +10,26 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var textTitle: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        attributed()
+        textTitle.adjustsFontSizeToFitWidth = true
     }
 
-
+    func attributed() {
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 6
+        let textAttributes: [NSAttributedString.Key : Any] = [
+            .foregroundColor : UIColor.white,
+            .strokeColor : UIColor.green,
+            .strokeWidth : -3.0
+        ]
+        let text = NSAttributedString(string: "SANTAKU", attributes: textAttributes)
+        textTitle.attributedText = text
+        
+    }
 }
 
