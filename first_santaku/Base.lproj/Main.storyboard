@@ -67,7 +67,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="matrix-356024_640" translatesAutoresizingMaskIntoConstraints="NO" id="njF-7D-oP6">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="matrix-356024_640" translatesAutoresizingMaskIntoConstraints="NO" id="njF-7D-oP6">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -169,7 +169,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="matrix-356024_640" translatesAutoresizingMaskIntoConstraints="NO" id="fpB-0u-FtV">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="matrix-356024_640" translatesAutoresizingMaskIntoConstraints="NO" id="fpB-0u-FtV">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -268,7 +268,6 @@
         <image name="matrix-356024_640" width="640" height="452"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="oox-6U-JKZ"/>
         <segue reference="8XM-I4-uft"/>
     </inferredMetricsTieBreakers>
 </document>
