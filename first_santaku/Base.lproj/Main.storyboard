@@ -71,15 +71,10 @@
                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SRb-J5-U8s">
-                                <rect key="frame" x="160" y="376" width="54" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SRb-J5-U8s">
+                                <rect key="frame" x="30" y="389" width="315" height="59"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="40"/>
                                 <state key="normal" title="SIGN IN"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymT-6u-6is">
-                                <rect key="frame" x="157" y="427" width="60" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="SIGN UP"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-MAIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJ4-IA-xUT">
                                 <rect key="frame" x="30" y="176" width="315" height="21"/>
@@ -111,24 +106,35 @@
                                     <action selector="getEmail:" destination="KH4-nk-uk2" eventType="editingDidEndOnExit" id="IRf-OB-7Nz"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymT-6u-6is">
+                                <rect key="frame" x="30" y="473" width="315" height="59"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="40"/>
+                                <state key="normal" title="SIGN UP"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="tky-qy-O3g" firstAttribute="trailing" secondItem="XJ4-IA-xUT" secondAttribute="trailing" constant="30" id="7Jd-Fu-dag"/>
+                            <constraint firstItem="SRb-J5-U8s" firstAttribute="top" secondItem="rVw-E4-ZDR" secondAttribute="bottom" constant="54" id="Adu-pw-fFu"/>
                             <constraint firstItem="1w7-dE-W1G" firstAttribute="leading" secondItem="tky-qy-O3g" secondAttribute="leading" constant="30" id="EB3-9P-82o"/>
                             <constraint firstItem="rVw-E4-ZDR" firstAttribute="top" secondItem="ons-cD-7UF" secondAttribute="bottom" constant="8" id="EZ2-ND-FXL"/>
                             <constraint firstItem="tky-qy-O3g" firstAttribute="trailing" secondItem="n8T-qF-lOW" secondAttribute="trailing" constant="30" id="FTP-SK-cZJ"/>
                             <constraint firstItem="n8T-qF-lOW" firstAttribute="top" secondItem="tky-qy-O3g" secondAttribute="top" constant="54" id="Fad-pb-0WF"/>
                             <constraint firstItem="tky-qy-O3g" firstAttribute="trailing" secondItem="ons-cD-7UF" secondAttribute="trailing" constant="30" id="HKp-13-YB7"/>
+                            <constraint firstItem="ymT-6u-6is" firstAttribute="leading" secondItem="tky-qy-O3g" secondAttribute="leading" constant="30" id="I07-0r-Yr7"/>
                             <constraint firstItem="1w7-dE-W1G" firstAttribute="top" secondItem="XJ4-IA-xUT" secondAttribute="bottom" constant="8" id="O6Q-xT-GhB"/>
                             <constraint firstItem="tky-qy-O3g" firstAttribute="trailing" secondItem="1w7-dE-W1G" secondAttribute="trailing" constant="30" id="UPy-mM-xPL"/>
                             <constraint firstItem="ons-cD-7UF" firstAttribute="leading" secondItem="tky-qy-O3g" secondAttribute="leading" constant="30" id="WuW-Ts-juG"/>
                             <constraint firstItem="rVw-E4-ZDR" firstAttribute="leading" secondItem="tky-qy-O3g" secondAttribute="leading" constant="30" id="Z5n-oe-qLp"/>
                             <constraint firstItem="XJ4-IA-xUT" firstAttribute="leading" secondItem="tky-qy-O3g" secondAttribute="leading" constant="30" id="aw1-KZ-cI5"/>
                             <constraint firstItem="tky-qy-O3g" firstAttribute="trailing" secondItem="rVw-E4-ZDR" secondAttribute="trailing" constant="30" id="fvL-HJ-IiW"/>
+                            <constraint firstItem="tky-qy-O3g" firstAttribute="trailing" secondItem="ymT-6u-6is" secondAttribute="trailing" constant="30" id="gaT-Tv-7bf"/>
+                            <constraint firstItem="tky-qy-O3g" firstAttribute="trailing" secondItem="SRb-J5-U8s" secondAttribute="trailing" constant="30" id="hj4-H2-AxL"/>
                             <constraint firstItem="ons-cD-7UF" firstAttribute="top" secondItem="1w7-dE-W1G" secondAttribute="bottom" constant="41" id="lsy-hl-cM9"/>
                             <constraint firstItem="XJ4-IA-xUT" firstAttribute="top" secondItem="n8T-qF-lOW" secondAttribute="bottom" constant="54" id="mz6-oM-PI7"/>
+                            <constraint firstItem="ymT-6u-6is" firstAttribute="top" secondItem="SRb-J5-U8s" secondAttribute="bottom" constant="25" id="pB0-do-7Ii"/>
                             <constraint firstItem="n8T-qF-lOW" firstAttribute="leading" secondItem="tky-qy-O3g" secondAttribute="leading" constant="30" id="qdW-qO-JOQ"/>
+                            <constraint firstItem="SRb-J5-U8s" firstAttribute="leading" secondItem="tky-qy-O3g" secondAttribute="leading" constant="30" id="uFT-ci-NzR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tky-qy-O3g"/>
                     </view>
