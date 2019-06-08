@@ -15,11 +15,14 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var password: UILabel!
     @IBOutlet weak var inputEmail: UITextField!
     @IBOutlet weak var inputPassword: UITextField!
+    @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         attributed()
         inputEmail.delegate = self
         inputPassword.delegate = self
+        buttonatrributed()
     }
     
     func attributed() {
@@ -47,6 +50,12 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         inputPassword.resignFirstResponder()
     }
     
+    func buttonatrributed(){
+        signInButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
+        signInButton.setTitle("SIGN IN", for: .normal)
+        signUpButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
+        signUpButton.setTitle("SIGN UP", for: .normal)
+    }
     /*
     // MARK: - Navigation
 
