@@ -313,17 +313,17 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="xcP-s2-LDF" kind="relationship" relationship="viewControllers" id="qF1-9d-vgF"/>
+                        <segue destination="Jqh-mr-aIf" kind="relationship" relationship="viewControllers" id="qF1-9d-vgF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8tQ-aF-d1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1593" y="134"/>
         </scene>
-        <!--Item-->
+        <!--SANTAKU-->
         <scene sceneID="KeV-At-c2a">
             <objects>
-                <tableViewController id="xcP-s2-LDF" sceneMemberID="viewController">
+                <tableViewController id="xcP-s2-LDF" customClass="MainTableViewController" customModule="first_santaku" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LjZ-8V-mml">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -343,11 +343,30 @@
                             <outlet property="delegate" destination="xcP-s2-LDF" id="HFS-t0-oE3"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="rfp-aq-GVu"/>
+                    <navigationItem key="navigationItem" title="SANTAKU" id="D9n-KQ-kAW"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hav-yE-kQH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2430" y="130"/>
+            <point key="canvasLocation" x="3368.8000000000002" y="129.98500749625188"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="rHL-U7-a9x">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jqh-mr-aIf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="rfp-aq-GVu"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HsL-Bj-drc">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xcP-s2-LDF" kind="relationship" relationship="rootViewController" id="721-qM-FqF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ak9-kX-jwS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2429.5999999999999" y="129.98500749625188"/>
         </scene>
     </scenes>
     <resources>
