@@ -7,9 +7,15 @@
 //
 
 import UIKit
+import Firebase
 
 class MainTableViewController: UITableViewController {
-
+    var count = 0
+    let 問題リスト = [
+        ["Rubyでくクラス変数の定義方法は？", "@@hoge", "@hoge", "var hoge"],
+        ["TECH::EXPERTでは何を一番重要視している？", "アウトプット", "インプット", "昼食"],
+        ["Rubyで曜日を数値で取得できるメソッドは？", ".wday()", ".day()", ".week()"],
+        ]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,29 +24,46 @@ class MainTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+
+        let db = Firestore.firestore()
+        db.collection("questions").getDocuments(){(querySnapshot, err) in
+            
+                print(querySnapshot!.documents[0]["tablename"]!)
+                print(querySnapshot!.documents.count)
+            
+        }
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        let db = Firestore.firestore()
+        db.collection("questions").getDocuments(){(querySnapshot, err) in
+            self.count = querySnapshot!.documents.count
+        }
+        print(count)
+        return 1
+        
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = UITableViewCell()
+        let db = Firestore.firestore()
+        db.collection("questions").getDocuments(){(querySnapshot, err) in
+            if let selectedquestion = querySnapshot!.documents[indexPath.row]["tablename"]{
+                cell.textLabel?.text = selectedquestion as? String
+            }
+        }
+       
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

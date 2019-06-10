@@ -160,6 +160,7 @@
                         <outlet property="signIn" destination="n8T-qF-lOW" id="jgD-5B-Jlf"/>
                         <outlet property="signInButton" destination="SRb-J5-U8s" id="Dfj-nV-fM5"/>
                         <outlet property="signUpButton" destination="ymT-6u-6is" id="9YI-C7-yeK"/>
+                        <segue destination="vmO-nt-LPp" kind="show" identifier="signInToMain" id="qp8-yf-izO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1J1-Tw-TdO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -297,6 +298,7 @@
                         <outlet property="signInButton" destination="b27-bU-cGr" id="5qv-gT-yor"/>
                         <outlet property="signUp" destination="HUC-f6-Nyt" id="qhT-hg-qzj"/>
                         <outlet property="signUpButton" destination="Zw2-r8-RqJ" id="veJ-90-hdl"/>
+                        <segue destination="vmO-nt-LPp" kind="show" identifier="signUpTomain" id="qlc-07-Pbr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="joC-ZE-uuZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -355,7 +357,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jqh-mr-aIf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="rfp-aq-GVu"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HsL-Bj-drc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="HsL-Bj-drc">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -373,6 +375,7 @@
         <image name="matrix-356024_640" width="640" height="452"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="qp8-yf-izO"/>
         <segue reference="8XM-I4-uft"/>
     </inferredMetricsTieBreakers>
 </document>
