@@ -89,6 +89,10 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                             }
                         }
                     }
+                let db = Firestore.firestore()
+                db.collection("users").document(user!.uid).setData([
+                    "username": nickname
+                ])
             }
             else {
                 print("登録できませんでした")
