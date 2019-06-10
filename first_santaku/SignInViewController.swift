@@ -69,6 +69,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if error == nil{
                 print("ログインできました")
+                self.performSegue(withIdentifier: "signInToMain", sender: self)
             }
             else {
                 print("ログインできませんでした")
