@@ -16,6 +16,18 @@ class MainTableViewController: UITableViewController {
     var idList:[String] = []
 
     
+   
+    @IBAction func signOut(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            let storyboard = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "top")
+            self.present(storyboard, animated: true, completion: nil)
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
