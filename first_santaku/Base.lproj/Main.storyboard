@@ -298,17 +298,17 @@
                         <outlet property="signInButton" destination="b27-bU-cGr" id="5qv-gT-yor"/>
                         <outlet property="signUp" destination="HUC-f6-Nyt" id="qhT-hg-qzj"/>
                         <outlet property="signUpButton" destination="Zw2-r8-RqJ" id="veJ-90-hdl"/>
-                        <segue destination="vmO-nt-LPp" kind="show" identifier="signUpTomain" id="qlc-07-Pbr"/>
+                        <segue destination="vmO-nt-LPp" kind="show" identifier="signUpToMain" id="qlc-07-Pbr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="joC-ZE-uuZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="644" y="-564.46776611694156"/>
+            <point key="canvasLocation" x="644" y="-632"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="esy-Tp-XMf">
             <objects>
-                <tabBarController id="vmO-nt-LPp" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="main" id="vmO-nt-LPp" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ain-iG-3xA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -437,7 +437,6 @@
                                 <state key="normal" title="SIGN UP"/>
                                 <connections>
                                     <action selector="DoneButton:" destination="5Gm-MQ-FRQ" eventType="touchUpInside" id="23h-7z-Qbo"/>
-                                    <segue destination="xcP-s2-LDF" kind="show" identifier="doneToMain" id="PBj-7i-djO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -488,7 +487,6 @@
         <image name="matrix-356024_640" width="640" height="452"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="721-qM-FqF"/>
         <segue reference="qlc-07-Pbr"/>
         <segue reference="8XM-I4-uft"/>
     </inferredMetricsTieBreakers>
