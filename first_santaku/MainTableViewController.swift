@@ -134,6 +134,7 @@ extension MainTableViewController{
                 }
                 print(self.idList)
             }
+            self.tableView.reloadData()
         }
     }
 }
