@@ -352,6 +352,9 @@
                                 <action selector="signOut:" destination="xcP-s2-LDF" id="RQQ-Re-l3m"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="t6s-3N-TgA">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hav-yE-kQH" userLabel="First Responder" sceneMemberID="firstResponder"/>
