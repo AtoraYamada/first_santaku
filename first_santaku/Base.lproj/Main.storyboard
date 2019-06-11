@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="first_santaku" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="top" id="BYZ-38-t0r" customClass="ViewController" customModule="first_santaku" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -345,7 +345,14 @@
                             <outlet property="delegate" destination="xcP-s2-LDF" id="HFS-t0-oE3"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="SANTAKU" id="D9n-KQ-kAW"/>
+                    <navigationItem key="navigationItem" title="SANTAKU" id="D9n-KQ-kAW">
+                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="hZm-u5-toR">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="signOut:" destination="xcP-s2-LDF" id="RQQ-Re-l3m"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hav-yE-kQH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -376,6 +383,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="qp8-yf-izO"/>
-        <segue reference="8XM-I4-uft"/>
+        <segue reference="cvf-sC-wLt"/>
     </inferredMetricsTieBreakers>
 </document>
