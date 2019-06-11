@@ -298,17 +298,17 @@
                         <outlet property="signInButton" destination="b27-bU-cGr" id="5qv-gT-yor"/>
                         <outlet property="signUp" destination="HUC-f6-Nyt" id="qhT-hg-qzj"/>
                         <outlet property="signUpButton" destination="Zw2-r8-RqJ" id="veJ-90-hdl"/>
-                        <segue destination="vmO-nt-LPp" kind="show" identifier="signUpTomain" id="qlc-07-Pbr"/>
+                        <segue destination="vmO-nt-LPp" kind="show" identifier="signUpToMain" id="qlc-07-Pbr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="joC-ZE-uuZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="644" y="-564.46776611694156"/>
+            <point key="canvasLocation" x="644" y="-632"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="esy-Tp-XMf">
             <objects>
-                <tabBarController id="vmO-nt-LPp" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="main" id="vmO-nt-LPp" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ain-iG-3xA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -352,6 +352,12 @@
                                 <action selector="signOut:" destination="xcP-s2-LDF" id="RQQ-Re-l3m"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="EDIT" id="t6s-3N-TgA">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="5Gm-MQ-FRQ" kind="show" id="s72-S8-US7"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hav-yE-kQH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -377,12 +383,112 @@
             </objects>
             <point key="canvasLocation" x="2429.5999999999999" y="129.98500749625188"/>
         </scene>
+        <!--User Edit View Controller-->
+        <scene sceneID="oPt-ui-kc4">
+            <objects>
+                <viewController id="5Gm-MQ-FRQ" customClass="UserEditViewController" customModule="first_santaku" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PI2-Yg-VBp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="matrix-356024_640" translatesAutoresizingMaskIntoConstraints="NO" id="bs8-e5-lUC">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NICKNAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xdl-wU-HZK">
+                                <rect key="frame" x="30" y="181.5" width="315" height="20"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a nickname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RS4-87-aNb">
+                                <rect key="frame" x="30" y="209.5" width="315" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="getNickname:" destination="5Gm-MQ-FRQ" eventType="editingDidEndOnExit" id="zal-Tv-okP"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIGN UP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwj-pU-9ED">
+                                <rect key="frame" x="30" y="118" width="315" height="47"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="40"/>
+                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-MAIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zuF-eU-Cso">
+                                <rect key="frame" x="30" y="257" width="315" height="20"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter an email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t01-WF-5bJ">
+                                <rect key="frame" x="30" y="285" width="315" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="getEmail:" destination="5Gm-MQ-FRQ" eventType="editingDidEndOnExit" id="ZsX-3o-3m9"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cci-Yf-W7j">
+                                <rect key="frame" x="80" y="394" width="215" height="59"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="40"/>
+                                <state key="normal" title="SIGN UP"/>
+                                <connections>
+                                    <action selector="DoneButton:" destination="5Gm-MQ-FRQ" eventType="touchUpInside" id="23h-7z-Qbo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="t01-WF-5bJ" firstAttribute="leading" secondItem="3Fp-PH-X0y" secondAttribute="leading" constant="30" id="6UW-VF-TjQ"/>
+                            <constraint firstItem="Xdl-wU-HZK" firstAttribute="centerX" secondItem="PI2-Yg-VBp" secondAttribute="centerX" id="7Dr-7M-ebg"/>
+                            <constraint firstItem="Xdl-wU-HZK" firstAttribute="leading" secondItem="3Fp-PH-X0y" secondAttribute="leading" constant="30" id="AHk-Ra-KIV"/>
+                            <constraint firstItem="cci-Yf-W7j" firstAttribute="top" secondItem="t01-WF-5bJ" secondAttribute="bottom" constant="79" id="AkF-u7-T0d"/>
+                            <constraint firstItem="t01-WF-5bJ" firstAttribute="centerX" secondItem="PI2-Yg-VBp" secondAttribute="centerX" id="CAR-Ob-kwZ"/>
+                            <constraint firstItem="RS4-87-aNb" firstAttribute="top" secondItem="Xdl-wU-HZK" secondAttribute="bottom" constant="8" id="CUE-Ar-A3X"/>
+                            <constraint firstItem="zuF-eU-Cso" firstAttribute="leading" secondItem="3Fp-PH-X0y" secondAttribute="leading" constant="30" id="EhY-k0-E8w"/>
+                            <constraint firstItem="RS4-87-aNb" firstAttribute="leading" secondItem="3Fp-PH-X0y" secondAttribute="leading" constant="30" id="TYI-Hw-XrN"/>
+                            <constraint firstItem="Xdl-wU-HZK" firstAttribute="top" secondItem="fwj-pU-9ED" secondAttribute="bottom" constant="16.5" id="Tjo-sg-spS"/>
+                            <constraint firstItem="zuF-eU-Cso" firstAttribute="centerX" secondItem="PI2-Yg-VBp" secondAttribute="centerX" id="VfF-Yb-x3e"/>
+                            <constraint firstItem="cci-Yf-W7j" firstAttribute="centerX" secondItem="PI2-Yg-VBp" secondAttribute="centerX" id="Vfe-3U-MpO"/>
+                            <constraint firstItem="3Fp-PH-X0y" firstAttribute="trailing" secondItem="zuF-eU-Cso" secondAttribute="trailing" constant="30" id="Yp1-Bd-6wd"/>
+                            <constraint firstItem="3Fp-PH-X0y" firstAttribute="trailing" secondItem="t01-WF-5bJ" secondAttribute="trailing" constant="30" id="elR-ms-mt7"/>
+                            <constraint firstItem="3Fp-PH-X0y" firstAttribute="trailing" secondItem="RS4-87-aNb" secondAttribute="trailing" constant="30" id="foI-i9-6Fx"/>
+                            <constraint firstItem="zuF-eU-Cso" firstAttribute="top" secondItem="RS4-87-aNb" secondAttribute="bottom" constant="17.5" id="mHe-le-ZuD"/>
+                            <constraint firstItem="RS4-87-aNb" firstAttribute="centerX" secondItem="PI2-Yg-VBp" secondAttribute="centerX" id="pDp-nT-Dez"/>
+                            <constraint firstItem="fwj-pU-9ED" firstAttribute="leading" secondItem="3Fp-PH-X0y" secondAttribute="leading" constant="30" id="pdJ-KI-Dhi"/>
+                            <constraint firstItem="RS4-87-aNb" firstAttribute="top" secondItem="Xdl-wU-HZK" secondAttribute="bottom" constant="8" id="q5J-mK-OFf"/>
+                            <constraint firstItem="3Fp-PH-X0y" firstAttribute="trailing" secondItem="Xdl-wU-HZK" secondAttribute="trailing" constant="30" id="rAO-Cz-VwJ"/>
+                            <constraint firstItem="3Fp-PH-X0y" firstAttribute="trailing" secondItem="cci-Yf-W7j" secondAttribute="trailing" constant="80" id="sAW-vy-hoq"/>
+                            <constraint firstItem="cci-Yf-W7j" firstAttribute="leading" secondItem="3Fp-PH-X0y" secondAttribute="leading" constant="80" id="vCa-5I-4wD"/>
+                            <constraint firstItem="3Fp-PH-X0y" firstAttribute="trailing" secondItem="fwj-pU-9ED" secondAttribute="trailing" constant="30" id="wq4-QA-c1P"/>
+                            <constraint firstItem="fwj-pU-9ED" firstAttribute="top" secondItem="3Fp-PH-X0y" secondAttribute="top" constant="54" id="yKC-ts-WSx"/>
+                            <constraint firstItem="t01-WF-5bJ" firstAttribute="top" secondItem="zuF-eU-Cso" secondAttribute="bottom" constant="8" id="yim-Ry-2Ya"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3Fp-PH-X0y"/>
+                    </view>
+                    <connections>
+                        <outlet property="email" destination="zuF-eU-Cso" id="mQa-9m-nFk"/>
+                        <outlet property="inputEmail" destination="t01-WF-5bJ" id="Oi1-oY-Pnp"/>
+                        <outlet property="inputNickname" destination="RS4-87-aNb" id="fl0-rG-fds"/>
+                        <outlet property="nickname" destination="Xdl-wU-HZK" id="8tz-SK-Pgy"/>
+                        <outlet property="signUp" destination="fwj-pU-9ED" id="VUS-kU-aIa"/>
+                        <outlet property="signUpButton" destination="cci-Yf-W7j" id="BYK-4V-gnI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1lB-Xn-APi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3369" y="-593"/>
+        </scene>
     </scenes>
     <resources>
         <image name="matrix-356024_640" width="640" height="452"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qp8-yf-izO"/>
-        <segue reference="cvf-sC-wLt"/>
+        <segue reference="qlc-07-Pbr"/>
+        <segue reference="8XM-I4-uft"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
 </document>

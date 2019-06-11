@@ -10,7 +10,6 @@ import UIKit
 import Firebase
 
 class MainTableViewController: UITableViewController {
-    var count = 0
     var db : Firestore!
     var todoList:[String] = []
     var idList:[String] = []
@@ -31,13 +30,15 @@ class MainTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         db = Firestore.firestore()
-    }
-
-    // MARK: - Table view data source
-
-    override func viewWillAppear(_ animated: Bool){
         readData()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    }
+    // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return idList.count

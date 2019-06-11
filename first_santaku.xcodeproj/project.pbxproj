@@ -16,6 +16,7 @@
 		D2AAF6F222AB8F1C003F02AA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AAF6F122AB8F1C003F02AA /* SignInViewController.swift */; };
 		D2AAF6F422ABA73A003F02AA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AAF6F322ABA73A003F02AA /* SignUpViewController.swift */; };
 		D2AAF6F622ABC156003F02AA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2AAF6F522ABC156003F02AA /* GoogleService-Info.plist */; };
+		D2B307F322AF677100DBB4DA /* UserEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B307F222AF677000DBB4DA /* UserEditViewController.swift */; };
 		D2D5EF3622AE4D5B00F48A9F /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D5EF3522AE4D5B00F48A9F /* MainTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		D2AAF6F122AB8F1C003F02AA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		D2AAF6F322ABA73A003F02AA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		D2AAF6F522ABC156003F02AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D2B307F222AF677000DBB4DA /* UserEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditViewController.swift; sourceTree = "<group>"; };
 		D2D5EF3522AE4D5B00F48A9F /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		E5F078C4604CCA8E13CC09C3 /* Pods-first_santaku.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-first_santaku.debug.xcconfig"; path = "Target Support Files/Pods-first_santaku/Pods-first_santaku.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +91,7 @@
 				D253A19522AB721A008D14EB /* AppDelegate.swift */,
 				D253A19722AB721A008D14EB /* ViewController.swift */,
 				D253A19922AB721A008D14EB /* Main.storyboard */,
+				D2B307F222AF677000DBB4DA /* UserEditViewController.swift */,
 				D2D5EF3522AE4D5B00F48A9F /* MainTableViewController.swift */,
 				D2AAF6F322ABA73A003F02AA /* SignUpViewController.swift */,
 				D2AAF6F122AB8F1C003F02AA /* SignInViewController.swift */,
@@ -219,6 +222,7 @@
 				D253A19822AB721A008D14EB /* ViewController.swift in Sources */,
 				D253A19622AB721A008D14EB /* AppDelegate.swift in Sources */,
 				D2AAF6F422ABA73A003F02AA /* SignUpViewController.swift in Sources */,
+				D2B307F322AF677100DBB4DA /* UserEditViewController.swift in Sources */,
 				D2D5EF3622AE4D5B00F48A9F /* MainTableViewController.swift in Sources */,
 				D2AAF6F222AB8F1C003F02AA /* SignInViewController.swift in Sources */,
 			);
