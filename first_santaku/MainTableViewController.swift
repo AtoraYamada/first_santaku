@@ -31,13 +31,14 @@ class MainTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         db = Firestore.firestore()
+        readData()
     }
 
     // MARK: - Table view data source
 
-    override func viewWillAppear(_ animated: Bool){
-        readData()
-    }
+//    override func viewWillAppear(_ animated: Bool){
+//        readData()
+//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return idList.count
