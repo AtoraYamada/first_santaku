@@ -96,12 +96,13 @@ class UserEditViewController: UIViewController, UITextFieldDelegate {
                     
                 }
         }
-                let db = Firestore.firestore()
+        let db = Firestore.firestore()
         db.collection("users").document(user!.uid).setData([
                     "username": nickname
                     ])
-                self.performSegue(withIdentifier: "doneToMain", sender: self)
-            }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "main")
+        self.present(storyboard, animated: true, completion: nil)
+    }
     
     
     /*
