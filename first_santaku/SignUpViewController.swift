@@ -93,6 +93,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 db.collection("users").document(user!.uid).setData([
                     "username": nickname
                 ])
+                self.performSegue(withIdentifier: "signUpToMain", sender: self)
             }
             else {
                 print("登録できませんでした")

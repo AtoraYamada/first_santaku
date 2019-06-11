@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="first_santaku" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="top" id="BYZ-38-t0r" customClass="ViewController" customModule="first_santaku" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -160,6 +160,7 @@
                         <outlet property="signIn" destination="n8T-qF-lOW" id="jgD-5B-Jlf"/>
                         <outlet property="signInButton" destination="SRb-J5-U8s" id="Dfj-nV-fM5"/>
                         <outlet property="signUpButton" destination="ymT-6u-6is" id="9YI-C7-yeK"/>
+                        <segue destination="vmO-nt-LPp" kind="show" identifier="signInToMain" id="qp8-yf-izO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1J1-Tw-TdO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -297,17 +298,91 @@
                         <outlet property="signInButton" destination="b27-bU-cGr" id="5qv-gT-yor"/>
                         <outlet property="signUp" destination="HUC-f6-Nyt" id="qhT-hg-qzj"/>
                         <outlet property="signUpButton" destination="Zw2-r8-RqJ" id="veJ-90-hdl"/>
+                        <segue destination="vmO-nt-LPp" kind="show" identifier="signUpTomain" id="qlc-07-Pbr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="joC-ZE-uuZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="644" y="-564.46776611694156"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="esy-Tp-XMf">
+            <objects>
+                <tabBarController id="vmO-nt-LPp" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ain-iG-3xA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Jqh-mr-aIf" kind="relationship" relationship="viewControllers" id="qF1-9d-vgF"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8tQ-aF-d1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1593" y="134"/>
+        </scene>
+        <!--SANTAKU-->
+        <scene sceneID="KeV-At-c2a">
+            <objects>
+                <tableViewController id="xcP-s2-LDF" customClass="MainTableViewController" customModule="first_santaku" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LjZ-8V-mml">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="7hb-yx-IgK">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7hb-yx-IgK" id="hhx-Iw-4HM">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="xcP-s2-LDF" id="wy8-1A-1La"/>
+                            <outlet property="delegate" destination="xcP-s2-LDF" id="HFS-t0-oE3"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="SANTAKU" id="D9n-KQ-kAW">
+                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="hZm-u5-toR">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="signOut:" destination="xcP-s2-LDF" id="RQQ-Re-l3m"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hav-yE-kQH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3368.8000000000002" y="129.98500749625188"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="rHL-U7-a9x">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jqh-mr-aIf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="rfp-aq-GVu"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="HsL-Bj-drc">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xcP-s2-LDF" kind="relationship" relationship="rootViewController" id="721-qM-FqF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ak9-kX-jwS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2429.5999999999999" y="129.98500749625188"/>
+        </scene>
     </scenes>
     <resources>
         <image name="matrix-356024_640" width="640" height="452"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8XM-I4-uft"/>
+        <segue reference="qp8-yf-izO"/>
+        <segue reference="cvf-sC-wLt"/>
     </inferredMetricsTieBreakers>
 </document>
