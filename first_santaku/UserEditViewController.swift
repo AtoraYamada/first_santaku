@@ -50,8 +50,6 @@ class UserEditViewController: UIViewController, UITextFieldDelegate {
     }
     @IBAction func getEmail(_ sender: Any) {
     }
-    @IBAction func getPassword(_ sender: Any) {
-    }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         inputNickname.resignFirstResponder()
         inputEmail.resignFirstResponder()
@@ -62,44 +60,48 @@ class UserEditViewController: UIViewController, UITextFieldDelegate {
         signUpButton.setTitle("DONE", for: .normal)
     }
     
-    @IBAction func signUpButton(_ sender: Any) {
-//        signup()
+    @IBAction func DoneButton(_ sender: Any) {
+        done()
     }
-//    func signup() {
-//
-//        guard let nickname = inputNickname.text else { return }
-//        guard let email = inputEmail.text else  { return }
-//
-//        Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
-//            if error == nil{
-//                print("登録完了")
-//                let user = Auth.auth().currentUser
-//                if let user = user {
-//                    let changeRequest = user.createProfileChangeRequest()
-//                    changeRequest.displayName = nickname
-//                    changeRequest.commitChanges { error in
-//                        if let error = error {
-//                            print(error)
-//                            return
-//                        }
-//                    }
-//                }
-//                let db = Firestore.firestore()
-//                db.collection("users").document(user!.uid).setData([
-//                    "username": nickname
-//                    ])
-//                self.performSegue(withIdentifier: "signUpToMain", sender: self)
-//            }
-//            else {
-//                print("登録できませんでした")
-//                let alert = UIAlertController(title: "Failed to Sign Up", message: "check your nickname, email or password", preferredStyle: .alert)
-//
-//                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//
-//                self.present(alert, animated: true, completion: nil)
-//            }
-//        }
-//    }
+    func done() {
+
+        guard let nickname = inputNickname.text else { return }
+        guard let email = inputEmail.text else  { return }
+        let user = Auth.auth().currentUser
+        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+        changeRequest?.displayName = nickname
+        changeRequest?.commitChanges { error in
+                    if let error = error {
+                        print(error)
+                        print("登録できませんでした")
+                        let alert = UIAlertController(title: "Failed to Sign Up", message: "check your nickname, email or password", preferredStyle: .alert)
+                        
+                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                        
+                        self.present(alert, animated: true, completion: nil)
+                        return
+                        
+                    }
+        }
+        Auth.auth().currentUser?.updateEmail(to: email) { (error) in
+                if let error = error {
+                    print(error)
+                    print("登録できませんでした")
+                    let alert = UIAlertController(title: "Failed to Sign Up", message: "check your nickname, email or password", preferredStyle: .alert)
+                    
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    
+                    self.present(alert, animated: true, completion: nil)
+                    return
+                    
+                }
+        }
+                let db = Firestore.firestore()
+        db.collection("users").document(user!.uid).setData([
+                    "username": nickname
+                    ])
+                self.performSegue(withIdentifier: "doneToMain", sender: self)
+            }
     
     
     /*
