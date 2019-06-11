@@ -11,11 +11,11 @@ import Firebase
 
 class MainTableViewController: UITableViewController {
     var count = 0
-    let 問題リスト = [
-        ["Rubyでくクラス変数の定義方法は？", "@@hoge", "@hoge", "var hoge"],
-        ["TECH::EXPERTでは何を一番重要視している？", "アウトプット", "インプット", "昼食"],
-        ["Rubyで曜日を数値で取得できるメソッドは？", ".wday()", ".day()", ".week()"],
-        ]
+    var db : Firestore!
+    var todoList:[String] = []
+    var idList:[String] = []
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,14 +24,8 @@ class MainTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-
-        let db = Firestore.firestore()
-        db.collection("questions").getDocuments(){(querySnapshot, err) in
-            
-                print(querySnapshot!.documents[0]["tablename"]!)
-                print(querySnapshot!.documents.count)
-            
-        }
+        db = Firestore.firestore()
+//        readData()
     }
 
     // MARK: - Table view data source
@@ -41,15 +35,19 @@ class MainTableViewController: UITableViewController {
 //        return 0
 //    }
 
+    override func viewWillAppear(_ animated: Bool){
+        readData()
+    }
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         // #warning Incomplete implementation, return the number of rows
-        let db = Firestore.firestore()
-        db.collection("questions").getDocuments(){(querySnapshot, err) in
-            self.count = querySnapshot!.documents.count
-        }
-        print(count)
-        return 1
+//        let db = Firestore.firestore()
+//        db.collection("questions").getDocuments(){(querySnapshot, err) in
+//            self.count = querySnapshot!.documents.count
+//        }
+//        print(count)
+        return idList.count
         
     }
 
@@ -110,4 +108,20 @@ class MainTableViewController: UITableViewController {
     }
     */
 
+}
+
+extension MainTableViewController{
+    func readData(){
+        db.collection("questions").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    self.idList.append(document.documentID)
+                    self.todoList.append(document.data()["tablename"] as! String)
+                }
+                print(self.idList)
+            }
+        }
+    }
 }
