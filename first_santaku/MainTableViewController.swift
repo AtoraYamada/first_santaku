@@ -54,6 +54,13 @@ class MainTableViewController: UITableViewController {
        
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        db.collection("questions").getDocuments(){(querySnapshot, err) in
+            let selectedquestion = querySnapshot!.documents[indexPath.row]
+            self.performSegue(withIdentifier: "moveToQuestion", sender: selectedquestion)
+        }
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
