@@ -504,7 +504,7 @@
                                     <constraint firstAttribute="height" constant="200" id="1nB-Il-dP5"/>
                                     <constraint firstAttribute="width" constant="343" id="dNt-Ki-bid"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -513,7 +513,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="pyX-JJ-uCm"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="25"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
@@ -526,7 +526,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="zgV-6e-hac"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="25"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="解答チェック:" destination="F77-T1-xqJ" eventType="touchUpInside" id="LTQ-dY-lC0"/>
@@ -538,7 +538,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Yjf-PR-21k"/>
                                     <constraint firstAttribute="height" constant="40" id="zNk-ep-oej"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="25"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="解答チェック:" destination="F77-T1-xqJ" eventType="touchUpInside" id="F1N-Xe-sww"/>

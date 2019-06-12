@@ -29,6 +29,7 @@ class PlayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         db = Firestore.firestore()
+        残り時間ビュー.transform = CGAffineTransform(scaleX: 1.0, y: 3.0)
         readQ()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             print(self.questions)
