@@ -55,6 +55,8 @@ class MainTableViewController: UITableViewController {
                 cell.textLabel?.text = selectedquestion as? String
             }
         }
+        cell.textLabel?.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        cell.textLabel!.font = UIFont(name: "Kefa", size: 22)
         cell.backgroundColor = UIColor.clear
         cell.contentView.backgroundColor = UIColor.clear
         return cell
