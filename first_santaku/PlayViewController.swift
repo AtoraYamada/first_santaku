@@ -10,7 +10,9 @@ import UIKit
 import Firebase
 
 class PlayViewController: UIViewController {
-    var selectedQ: Firestore? = nil
+    var db : Firestore!
+    var selectedQ: Int!
+    var questions = [Array<Any>]()
     @IBOutlet weak var 問題ラベル: UILabel!
     @IBOutlet weak var 残り時間ビュー: UIProgressView!
     @IBOutlet var 解答ボタン: [UIButton]!
@@ -26,7 +28,21 @@ class PlayViewController: UIViewController {
     var タイマー : Timer?
     override func viewDidLoad() {
         super.viewDidLoad()
+        db = Firestore.firestore()
+        readQ()
+        print(questions)
         出題()
+    }
+    func readQ(){
+        db.collection("questions").getDocuments(){(querySnapshot, err) in
+            let a = querySnapshot!.documents[self.selectedQ].documentID
+            self.db.collection("questions").document("\(a)").collection("details").getDocuments(){(querySnapshot, err)in
+                    for document in querySnapshot!.documents {
+                        self.questions.append(document.data()["detail"]! as! Array)
+                }
+                print(self.questions)
+            }
+        }
     }
     func 出題() {
         if 問題番号 >= 問題リスト.count {
