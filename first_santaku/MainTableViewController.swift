@@ -96,15 +96,13 @@ class MainTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let playViewController = segue.destination as? PlayViewController{
+                if let selectedquestion = sender as? Firestore{
+                    playViewController.selectedQ = selectedquestion
+                }
+            }
     }
-    */
 
 }
 
@@ -118,7 +116,6 @@ extension MainTableViewController{
                     self.idList.append(document.documentID)
                     self.todoList.append(document.data()["tablename"] as! String)
                 }
-                print(self.idList)
             }
             self.tableView.reloadData()
         }
