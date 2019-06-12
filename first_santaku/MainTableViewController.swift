@@ -29,6 +29,10 @@ class MainTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let image = UIImage(named: "matrix-356024_640")
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
+        imageView.image = image
+        self.tableView.backgroundView = imageView
         db = Firestore.firestore()
         readData()
     }
@@ -51,13 +55,12 @@ class MainTableViewController: UITableViewController {
                 cell.textLabel?.text = selectedquestion as? String
             }
         }
-       
+        cell.backgroundColor = UIColor.clear
+        cell.contentView.backgroundColor = UIColor.clear
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-//        db.collection("questions").getDocuments(){(querySnapshot, err) in
-//            let selectedquestion = querySnapshot!.documents[indexPath.row]
             let selectedquestion = indexPath.row
             self.performSegue(withIdentifier: "moveToQuestion", sender: selectedquestion)
 //        }
