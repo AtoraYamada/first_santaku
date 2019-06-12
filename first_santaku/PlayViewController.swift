@@ -30,6 +30,11 @@ class PlayViewController: UIViewController {
         super.viewDidLoad()
         db = Firestore.firestore()
         readQ()
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         print(questions)
         出題()
     }
@@ -40,9 +45,9 @@ class PlayViewController: UIViewController {
                     for document in querySnapshot!.documents {
                         self.questions.append(document.data()["detail"]! as! Array)
                 }
-                print(self.questions)
             }
         }
+        
     }
     func 出題() {
         if 問題番号 >= 問題リスト.count {
