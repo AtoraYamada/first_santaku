@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import Firebase
 
 class PlayViewController: UIViewController {
-
+    var selectedQ: Firestore? = nil
     @IBOutlet weak var 問題ラベル: UILabel!
     @IBOutlet weak var 残り時間ビュー: UIProgressView!
     @IBOutlet var 解答ボタン: [UIButton]!
