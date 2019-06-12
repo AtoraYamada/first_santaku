@@ -496,14 +496,15 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6BK-KY-WIk">
                                 <rect key="frame" x="16" y="64" width="343" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="YOp-8z-xAC"/>
+                                    <constraint firstAttribute="height" constant="200" id="1nB-Il-dP5"/>
+                                    <constraint firstAttribute="width" constant="343" id="dNt-Ki-bid"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A44-ls-iB1">
-                                <rect key="frame" x="16" y="201" width="343" height="40"/>
+                                <rect key="frame" x="16" y="338" width="343" height="40"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="pyX-JJ-uCm"/>
@@ -515,7 +516,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sn4-4l-SuM">
-                                <rect key="frame" x="16" y="249" width="343" height="36"/>
+                                <rect key="frame" x="16" y="386" width="343" height="36"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="zgV-6e-hac"/>
@@ -527,7 +528,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7x-8D-Tc2">
-                                <rect key="frame" x="16" y="293" width="343" height="40"/>
+                                <rect key="frame" x="16" y="430" width="343" height="40"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Yjf-PR-21k"/>
@@ -540,7 +541,7 @@
                                 </connections>
                             </button>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="m9D-ZX-RWO">
-                                <rect key="frame" x="16" y="163" width="343" height="2"/>
+                                <rect key="frame" x="16" y="289" width="343" height="2"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="cr1-qd-gb4"/>
                                 </constraints>
@@ -552,16 +553,16 @@
                             <constraint firstItem="A44-ls-iB1" firstAttribute="leading" secondItem="xnO-6a-5QA" secondAttribute="leading" constant="16" id="Aa0-oZ-cUe"/>
                             <constraint firstItem="j7x-8D-Tc2" firstAttribute="leading" secondItem="xnO-6a-5QA" secondAttribute="leading" constant="16" id="CAt-oy-0v4"/>
                             <constraint firstItem="m9D-ZX-RWO" firstAttribute="leading" secondItem="QeN-yT-gYf" secondAttribute="leading" constant="16" id="Kjm-xy-ngm"/>
+                            <constraint firstItem="6BK-KY-WIk" firstAttribute="leading" secondItem="xnO-6a-5QA" secondAttribute="leading" constant="16" id="M6q-aP-H8f"/>
                             <constraint firstItem="sn4-4l-SuM" firstAttribute="leading" secondItem="xnO-6a-5QA" secondAttribute="leading" constant="16" id="McA-HI-79B"/>
-                            <constraint firstItem="xnO-6a-5QA" firstAttribute="trailing" secondItem="6BK-KY-WIk" secondAttribute="trailing" constant="16" id="NTa-4l-MHn"/>
-                            <constraint firstItem="6BK-KY-WIk" firstAttribute="top" secondItem="xnO-6a-5QA" secondAttribute="top" id="U00-AX-2Pz"/>
                             <constraint firstItem="xnO-6a-5QA" firstAttribute="trailing" secondItem="A44-ls-iB1" secondAttribute="trailing" constant="16" id="V2L-bg-2wH"/>
-                            <constraint firstItem="6BK-KY-WIk" firstAttribute="leading" secondItem="xnO-6a-5QA" secondAttribute="leading" constant="16" id="WdS-EU-qh2"/>
                             <constraint firstItem="j7x-8D-Tc2" firstAttribute="top" secondItem="sn4-4l-SuM" secondAttribute="bottom" constant="8" id="Wiz-gQ-gJd"/>
                             <constraint firstItem="xnO-6a-5QA" firstAttribute="trailing" secondItem="sn4-4l-SuM" secondAttribute="trailing" constant="16" id="cRB-0F-SKF"/>
+                            <constraint firstItem="6BK-KY-WIk" firstAttribute="top" secondItem="xnO-6a-5QA" secondAttribute="top" id="dOj-bZ-nzD"/>
                             <constraint firstItem="xnO-6a-5QA" firstAttribute="trailing" secondItem="j7x-8D-Tc2" secondAttribute="trailing" constant="16" id="i8K-qm-rEr"/>
-                            <constraint firstItem="A44-ls-iB1" firstAttribute="top" secondItem="m9D-ZX-RWO" secondAttribute="bottom" constant="36" id="nsr-H3-Zyx"/>
-                            <constraint firstItem="xnO-6a-5QA" firstAttribute="bottom" secondItem="j7x-8D-Tc2" secondAttribute="bottom" constant="285" id="u1u-6S-f0t"/>
+                            <constraint firstItem="A44-ls-iB1" firstAttribute="top" secondItem="m9D-ZX-RWO" secondAttribute="bottom" constant="47" id="nsr-H3-Zyx"/>
+                            <constraint firstItem="xnO-6a-5QA" firstAttribute="trailing" secondItem="6BK-KY-WIk" secondAttribute="trailing" constant="16" id="sf2-vK-qqB"/>
+                            <constraint firstItem="xnO-6a-5QA" firstAttribute="bottom" secondItem="j7x-8D-Tc2" secondAttribute="bottom" constant="148" id="u1u-6S-f0t"/>
                             <constraint firstAttribute="trailing" secondItem="m9D-ZX-RWO" secondAttribute="trailing" constant="16" id="yYA-Y9-46m"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xnO-6a-5QA"/>
