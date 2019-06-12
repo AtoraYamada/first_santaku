@@ -338,6 +338,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="F77-T1-xqJ" kind="show" identifier="moveToQuestion" id="H1x-f5-wff"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -491,7 +494,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6BK-KY-WIk">
-                                <rect key="frame" x="16" y="20" width="343" height="200"/>
+                                <rect key="frame" x="16" y="64" width="343" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="YOp-8z-xAC"/>
                                 </constraints>
@@ -500,7 +503,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A44-ls-iB1">
-                                <rect key="frame" x="16" y="250" width="343" height="40"/>
+                                <rect key="frame" x="16" y="201" width="343" height="40"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="pyX-JJ-uCm"/>
@@ -512,7 +515,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sn4-4l-SuM">
-                                <rect key="frame" x="16" y="298" width="343" height="36"/>
+                                <rect key="frame" x="16" y="249" width="343" height="36"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="zgV-6e-hac"/>
@@ -524,7 +527,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7x-8D-Tc2">
-                                <rect key="frame" x="16" y="342" width="343" height="40"/>
+                                <rect key="frame" x="16" y="293" width="343" height="40"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Yjf-PR-21k"/>
@@ -537,7 +540,7 @@
                                 </connections>
                             </button>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="m9D-ZX-RWO">
-                                <rect key="frame" x="16" y="212" width="343" height="2"/>
+                                <rect key="frame" x="16" y="163" width="343" height="2"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="cr1-qd-gb4"/>
                                 </constraints>
