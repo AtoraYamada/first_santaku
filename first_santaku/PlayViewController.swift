@@ -55,7 +55,8 @@ class PlayViewController: UIViewController {
         if 問題番号 >= questions.count {
             let alert = UIAlertController(title: "終了", message: "\(正解数)問正解!", preferredStyle: .alert)
             let action = UIAlertAction(title: "OK", style: .default) { (_) in
-                self.dismiss(animated: true, completion: nil)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "main")
+                self.present(storyboard, animated: true, completion: nil)
             }
             alert.addAction(action)
             present(alert, animated: true, completion: nil)
