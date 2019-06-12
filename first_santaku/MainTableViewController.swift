@@ -46,7 +46,6 @@ class MainTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        let db = Firestore.firestore()
         db.collection("questions").getDocuments(){(querySnapshot, err) in
             if let selectedquestion = querySnapshot!.documents[indexPath.row]["tablename"]{
                 cell.textLabel?.text = selectedquestion as? String
@@ -55,7 +54,6 @@ class MainTableViewController: UITableViewController {
        
         return cell
     }
-
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
