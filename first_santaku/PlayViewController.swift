@@ -12,7 +12,7 @@ import Firebase
 class PlayViewController: UIViewController {
     var db : Firestore!
     var selectedQ: Int!
-    var questions = [Array<Any>]()
+    var questions = [Array<String>]()
     @IBOutlet weak var 問題ラベル: UILabel!
     @IBOutlet weak var 残り時間ビュー: UIProgressView!
     @IBOutlet var 解答ボタン: [UIButton]!
@@ -30,27 +30,29 @@ class PlayViewController: UIViewController {
         super.viewDidLoad()
         db = Firestore.firestore()
         readQ()
-        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            print(self.questions)
+            self.出題()
+        }
+
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        print(questions)
-        出題()
     }
     func readQ(){
         db.collection("questions").getDocuments(){(querySnapshot, err) in
             let a = querySnapshot!.documents[self.selectedQ].documentID
             self.db.collection("questions").document("\(a)").collection("details").getDocuments(){(querySnapshot, err)in
                     for document in querySnapshot!.documents {
-                        self.questions.append(document.data()["detail"]! as! Array)
+                        self.questions.append(document.data()["detail"]! as! Array<String>)
                 }
             }
         }
         
     }
     func 出題() {
-        if 問題番号 >= 問題リスト.count {
+        if 問題番号 >= questions.count {
             let alert = UIAlertController(title: "終了", message: "\(正解数)問正解!", preferredStyle: .alert)
             let action = UIAlertAction(title: "OK", style: .default) { (_) in
                 self.dismiss(animated: true, completion: nil)
@@ -59,7 +61,7 @@ class PlayViewController: UIViewController {
             present(alert, animated: true, completion: nil)
             return
         }
-        let 問題データ = 問題リスト[問題番号]
+        let 問題データ = questions[問題番号]
         問題ラベル.text = 問題データ[0]
         let 番号 = 番号リスト()
         for i in 0...2 {
@@ -94,7 +96,7 @@ class PlayViewController: UIViewController {
     @IBAction func 解答チェック(_ sender: UIButton) {
         タイマー!.invalidate()
         let 解答 = sender.currentTitle
-        let 問題データ = 問題リスト[問題番号]
+        let 問題データ = questions[問題番号]
         let 解答番号 = 問題データ.index(of: 解答!)
         let alert = UIAlertController(title: "\(問題番号+1)問目", message: "", preferredStyle: .alert)
         if 解答番号 == 1 {
