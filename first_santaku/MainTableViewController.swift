@@ -56,10 +56,11 @@ class MainTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        db.collection("questions").getDocuments(){(querySnapshot, err) in
-            let selectedquestion = querySnapshot!.documents[indexPath.row]
+//        db.collection("questions").getDocuments(){(querySnapshot, err) in
+//            let selectedquestion = querySnapshot!.documents[indexPath.row]
+            let selectedquestion = indexPath.row
             self.performSegue(withIdentifier: "moveToQuestion", sender: selectedquestion)
-        }
+//        }
     }
     /*
     // Override to support conditional editing of the table view.
@@ -98,7 +99,7 @@ class MainTableViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let playViewController = segue.destination as? PlayViewController{
-                if let selectedquestion = sender as? Firestore{
+                if let selectedquestion = sender as? Int{
                     playViewController.selectedQ = selectedquestion
                 }
             }
