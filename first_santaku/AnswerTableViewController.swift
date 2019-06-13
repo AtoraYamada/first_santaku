@@ -29,6 +29,11 @@ class AnswerTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
          let cell = tableView.dequeueReusableCell(withIdentifier: "answerCell", for: indexPath) as! AnswerTableViewCell
+        let question = questions[indexPath.row]
+        cell.問題文?.text = question[0]
+        cell.userAnswer?.text = question[answers[indexPath.row]]
+        cell.correctAnswer?.text = question[1]
+        cell.解説?.text = question[4]
         return cell
     }
     
