@@ -27,7 +27,11 @@ class CreateFirstViewController: UIViewController {
     }
     */
     @IBAction func button(_ sender: CheckBox) {
-        print(sender.isChecked)
+        if !sender.isChecked == true {
+            print("a")
+        }else{
+            print("b")
+        }
 
     }
     
