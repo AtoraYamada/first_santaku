@@ -416,7 +416,9 @@
                             <outlet property="delegate" destination="5rr-H2-BuE" id="Vgg-g8-vyT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="MY PAGE" id="gI2-yE-Tpb"/>
+                    <navigationItem key="navigationItem" title="MY PAGE" id="gI2-yE-Tpb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="H7g-ZO-zct"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UoI-py-wGU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
