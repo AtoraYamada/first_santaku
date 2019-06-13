@@ -23,6 +23,7 @@
 		D2F732B322B1DBE3009BE8D0 /* AnswerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2F732B122B1DBE3009BE8D0 /* AnswerTableViewCell.xib */; };
 		D2F732B522B1DCFC009BE8D0 /* AnswerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F732B422B1DCFC009BE8D0 /* AnswerTableViewController.swift */; };
 		D2F732B722B22E2B009BE8D0 /* MyPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F732B622B22E2B009BE8D0 /* MyPageTableViewController.swift */; };
+		D2F732B922B244A3009BE8D0 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F732B822B244A3009BE8D0 /* CheckBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		D2F732B122B1DBE3009BE8D0 /* AnswerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerTableViewCell.xib; sourceTree = "<group>"; };
 		D2F732B422B1DCFC009BE8D0 /* AnswerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTableViewController.swift; sourceTree = "<group>"; };
 		D2F732B622B22E2B009BE8D0 /* MyPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTableViewController.swift; sourceTree = "<group>"; };
+		D2F732B822B244A3009BE8D0 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		E5F078C4604CCA8E13CC09C3 /* Pods-first_santaku.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-first_santaku.debug.xcconfig"; path = "Target Support Files/Pods-first_santaku/Pods-first_santaku.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 				D253A19522AB721A008D14EB /* AppDelegate.swift */,
 				D253A19722AB721A008D14EB /* ViewController.swift */,
 				D253A19922AB721A008D14EB /* Main.storyboard */,
+				D2F732B822B244A3009BE8D0 /* CheckBox.swift */,
 				D2F732B422B1DCFC009BE8D0 /* AnswerTableViewController.swift */,
 				D28C998422B08949004321B6 /* PlayViewController.swift */,
 				D2B307F222AF677000DBB4DA /* UserEditViewController.swift */,
@@ -238,6 +241,7 @@
 				D2F732B722B22E2B009BE8D0 /* MyPageTableViewController.swift in Sources */,
 				D253A19822AB721A008D14EB /* ViewController.swift in Sources */,
 				D253A19622AB721A008D14EB /* AppDelegate.swift in Sources */,
+				D2F732B922B244A3009BE8D0 /* CheckBox.swift in Sources */,
 				D2AAF6F422ABA73A003F02AA /* SignUpViewController.swift in Sources */,
 				D2B307F322AF677100DBB4DA /* UserEditViewController.swift in Sources */,
 				D2D5EF3622AE4D5B00F48A9F /* MainTableViewController.swift in Sources */,
