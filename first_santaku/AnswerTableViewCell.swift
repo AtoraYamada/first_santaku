@@ -10,6 +10,10 @@ import UIKit
 
 class AnswerTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var 問題文: UILabel!
+    @IBOutlet weak var userAnswer: UILabel!
+    @IBOutlet weak var correctAnswer: UILabel!
+    @IBOutlet weak var 解説: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

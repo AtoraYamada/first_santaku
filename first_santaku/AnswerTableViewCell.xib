@@ -127,6 +127,12 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="correctAnswer" destination="yo7-Ac-aXL" id="yqf-Sy-o3G"/>
+                <outlet property="userAnswer" destination="wzF-ev-ubZ" id="cW3-tL-5nN"/>
+                <outlet property="問題文" destination="C8e-DY-3Cp" id="wI3-3f-UUW"/>
+                <outlet property="解説" destination="8Qm-42-phL" id="F30-my-dcl"/>
+            </connections>
             <point key="canvasLocation" x="52.799999999999997" y="88.605697151424295"/>
         </tableViewCell>
     </objects>
