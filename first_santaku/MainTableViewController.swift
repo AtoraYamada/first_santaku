@@ -29,6 +29,10 @@ class MainTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let image = UIImage(named: "matrix-356024_640")
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
+        imageView.image = image
+        self.tableView.backgroundView = imageView
         db = Firestore.firestore()
         readData()
     }
@@ -46,16 +50,23 @@ class MainTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        let db = Firestore.firestore()
         db.collection("questions").getDocuments(){(querySnapshot, err) in
             if let selectedquestion = querySnapshot!.documents[indexPath.row]["tablename"]{
                 cell.textLabel?.text = selectedquestion as? String
             }
         }
-       
+        cell.textLabel?.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        cell.textLabel!.font = UIFont(name: "Kefa", size: 22)
+        cell.backgroundColor = UIColor.clear
+        cell.contentView.backgroundColor = UIColor.clear
         return cell
     }
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+            let selectedquestion = indexPath.row
+            self.performSegue(withIdentifier: "moveToQuestion", sender: selectedquestion)
+//        }
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -91,15 +102,13 @@ class MainTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let playViewController = segue.destination as? PlayViewController{
+                if let selectedquestion = sender as? Int{
+                    playViewController.selectedQ = selectedquestion
+                }
+            }
     }
-    */
 
 }
 
@@ -113,7 +122,6 @@ extension MainTableViewController{
                     self.idList.append(document.documentID)
                     self.todoList.append(document.data()["tablename"] as! String)
                 }
-                print(self.idList)
             }
             self.tableView.reloadData()
         }
