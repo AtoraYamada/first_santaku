@@ -10,11 +10,13 @@ import UIKit
 
 class AnswerTableViewController: UITableViewController {
     var questions = [Array<String>]()
+    var answers = Array<Int>()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "AnswerTableViewCell", bundle: nil),forCellReuseIdentifier:"answerCell")
         tableView.estimatedRowHeight = 309
         tableView.rowHeight = UITableView.automaticDimension
+        print(answers)
         }
 
     // MARK: - Table view data source

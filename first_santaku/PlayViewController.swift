@@ -13,6 +13,7 @@ class PlayViewController: UIViewController {
     var db : Firestore!
     var selectedQ: Int!
     var questions = [Array<String>]()
+    var answers = Array<Int>()
     @IBOutlet weak var 問題ラベル: UILabel!
     @IBOutlet weak var 残り時間ビュー: UIProgressView!
     @IBOutlet var 解答ボタン: [UIButton]!
@@ -57,6 +58,7 @@ class PlayViewController: UIViewController {
             let action = UIAlertAction(title: "OK", style: .default) { (_) in
                 let storyboard = self.storyboard?.instantiateViewController(withIdentifier: "answer") as! AnswerTableViewController
                 storyboard.questions = self.questions
+                storyboard.answers = self.answers
                 self.present(storyboard, animated: true, completion: nil)
             }
             alert.addAction(action)
@@ -100,6 +102,7 @@ class PlayViewController: UIViewController {
         let 解答 = sender.currentTitle
         let 問題データ = questions[問題番号]
         let 解答番号 = 問題データ.index(of: 解答!)
+        self.answers.append(解答番号!)
         let alert = UIAlertController(title: "\(問題番号+1)問目", message: "", preferredStyle: .alert)
         if 解答番号 == 1 {
             正解数 += 1
