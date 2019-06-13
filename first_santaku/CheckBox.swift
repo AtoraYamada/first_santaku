@@ -10,8 +10,8 @@ import UIKit
 
 class CheckBox: UIButton {
 
-    let checkedImage = UIImage(named: "check.png")! as UIImage
-    let uncheckedImage = UIImage(named: "nocheck.png")! as UIImage
+    let checkedImage = UIImage(named: "check")! as UIImage
+    let uncheckedImage = UIImage(named: "nocheck")! as UIImage
     
     // Bool property
     var isChecked: Bool = false {
@@ -30,11 +30,8 @@ class CheckBox: UIButton {
     }
     
     @objc func buttonClicked(sender: UIButton) {
-        
+        if sender == self {
+            isChecked = !isChecked
+        }
     }
-    
-    func setChecked(_ check : Bool){
-        isChecked = check
-    }
-
 }
