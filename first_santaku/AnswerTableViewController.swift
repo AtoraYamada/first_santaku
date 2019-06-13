@@ -16,7 +16,6 @@ class AnswerTableViewController: UITableViewController {
         tableView.register(UINib(nibName: "AnswerTableViewCell", bundle: nil),forCellReuseIdentifier:"answerCell")
         tableView.estimatedRowHeight = 309
         tableView.rowHeight = UITableView.automaticDimension
-        print(answers)
         }
 
     // MARK: - Table view data source
