@@ -55,7 +55,8 @@ class PlayViewController: UIViewController {
         if 問題番号 >= questions.count {
             let alert = UIAlertController(title: "終了", message: "\(正解数)問正解!", preferredStyle: .alert)
             let action = UIAlertAction(title: "OK", style: .default) { (_) in
-                let storyboard = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "answer")
+                let storyboard = self.storyboard?.instantiateViewController(withIdentifier: "answer") as! AnswerTableViewController
+                storyboard.questions = self.questions
                 self.present(storyboard, animated: true, completion: nil)
             }
             alert.addAction(action)
@@ -122,5 +123,6 @@ class PlayViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    
 
 }
