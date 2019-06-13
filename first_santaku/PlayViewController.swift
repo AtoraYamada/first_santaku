@@ -13,6 +13,7 @@ class PlayViewController: UIViewController {
     var db : Firestore!
     var selectedQ: Int!
     var questions = [Array<String>]()
+    var answers = Array<Int>()
     @IBOutlet weak var 問題ラベル: UILabel!
     @IBOutlet weak var 残り時間ビュー: UIProgressView!
     @IBOutlet var 解答ボタン: [UIButton]!
@@ -32,7 +33,6 @@ class PlayViewController: UIViewController {
         残り時間ビュー.transform = CGAffineTransform(scaleX: 1.0, y: 3.0)
         readQ()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            print(self.questions)
             self.出題()
         }
 
@@ -56,7 +56,9 @@ class PlayViewController: UIViewController {
         if 問題番号 >= questions.count {
             let alert = UIAlertController(title: "終了", message: "\(正解数)問正解!", preferredStyle: .alert)
             let action = UIAlertAction(title: "OK", style: .default) { (_) in
-                let storyboard = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "main")
+                let storyboard = self.storyboard?.instantiateViewController(withIdentifier: "answer") as! AnswerTableViewController
+                storyboard.questions = self.questions
+                storyboard.answers = self.answers
                 self.present(storyboard, animated: true, completion: nil)
             }
             alert.addAction(action)
@@ -100,6 +102,7 @@ class PlayViewController: UIViewController {
         let 解答 = sender.currentTitle
         let 問題データ = questions[問題番号]
         let 解答番号 = 問題データ.index(of: 解答!)
+        self.answers.append(解答番号!)
         let alert = UIAlertController(title: "\(問題番号+1)問目", message: "", preferredStyle: .alert)
         if 解答番号 == 1 {
             正解数 += 1
@@ -123,5 +126,6 @@ class PlayViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    
 
 }
