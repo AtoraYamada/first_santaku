@@ -7,40 +7,36 @@
 //
 
 import UIKit
+import Firebase
 
 class MyPageTableViewController: UITableViewController {
-
+    var db : Firestore!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        let image = UIImage(named: "matrix-356024_640")
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
+        imageView.image = image
+        self.tableView.backgroundView = imageView
+        db = Firestore.firestore()
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 0
     }
 
-    /*
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = UITableViewCell()
+        cell.textLabel?.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        cell.textLabel!.font = UIFont(name: "Kefa", size: 22)
+        cell.backgroundColor = UIColor.clear
+        cell.contentView.backgroundColor = UIColor.clear
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.
