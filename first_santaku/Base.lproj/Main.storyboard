@@ -372,11 +372,11 @@
             </objects>
             <point key="canvasLocation" x="3368.8000000000002" y="129.98500749625188"/>
         </scene>
-        <!--Item-->
+        <!--MY PAGE-->
         <scene sceneID="rHL-U7-a9x">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jqh-mr-aIf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="rfp-aq-GVu"/>
+                    <tabBarItem key="tabBarItem" title="MY PAGE" image="icons8-windows-metro-26" id="rfp-aq-GVu"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="HsL-Bj-drc">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -660,11 +660,11 @@
             </objects>
             <point key="canvasLocation" x="5364" y="858.62068965517244"/>
         </scene>
-        <!--Item-->
+        <!--HOME-->
         <scene sceneID="RYa-zC-GC5">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zkg-6s-IpH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="cQe-b1-qZa"/>
+                    <tabBarItem key="tabBarItem" title="HOME" image="icons8-ホーム-26" id="cQe-b1-qZa"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="GbQ-QM-B1Z">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -682,6 +682,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icons8-windows-metro-26" width="26" height="26"/>
+        <image name="icons8-ホーム-26" width="26" height="26"/>
         <image name="matrix-356024_640" width="640" height="452"/>
     </resources>
     <inferredMetricsTieBreakers>
