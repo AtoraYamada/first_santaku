@@ -10,10 +10,6 @@ import UIKit
 
 class AnswerTableViewController: UITableViewController {
 
-    @IBAction func backToMain(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "main")
-        self.present(storyboard, animated: true, completion: nil)
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "AnswerTableViewCell", bundle: nil),forCellReuseIdentifier:"answerCell")
