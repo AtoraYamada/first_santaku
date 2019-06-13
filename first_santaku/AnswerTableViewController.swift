@@ -13,6 +13,8 @@ class AnswerTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "AnswerTableViewCell", bundle: nil),forCellReuseIdentifier:"answerCell")
+        tableView.estimatedRowHeight = 309
+        tableView.rowHeight = UITableView.automaticDimension
     }
 
     // MARK: - Table view data source
