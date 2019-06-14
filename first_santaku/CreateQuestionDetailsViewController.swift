@@ -11,6 +11,9 @@ import Firebase
 
 class CreateQuestionDetailsViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     var db : Firestore!
+    var userId = ""
+    var documentId = ""
+    var flag:Int = 0
 
     @IBOutlet weak var inputQuestion: UITextView!
     @IBOutlet weak var inputCorrect: UITextField!
@@ -64,4 +67,6 @@ class CreateQuestionDetailsViewController: UIViewController, UITextFieldDelegate
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func nextButton(_ sender: Any) {
+    }
 }

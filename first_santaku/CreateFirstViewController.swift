@@ -43,6 +43,10 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
                     self.documentId = ref!.documentID
                     self.flag = 1
                     print("Document added with ID: \(ref!.documentID)")
+                    let storyboard = self.storyboard?.instantiateViewController(withIdentifier: "createquestion") as! CreateQuestionDetailsViewController
+                    storyboard.userId = self.userId
+                    storyboard.documentId = self.documentId
+                    self.present(storyboard, animated: true, completion: nil)
                 }
             }
         }else{

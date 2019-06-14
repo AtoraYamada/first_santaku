@@ -510,7 +510,7 @@
                                 <connections>
                                     <action selector="nextButton:" destination="u18-Wv-XVl" eventType="touchUpInside" id="Hnk-MJ-VFU"/>
                                     <action selector="toSecondButton:" destination="u18-Wv-XVl" eventType="touchUpInside" id="RPC-k1-H6T"/>
-                                    <segue destination="O7m-kl-TDE" kind="show" id="lvN-om-kD8"/>
+                                    <segue destination="O7m-kl-TDE" kind="show" identifier="createdetails" id="lvN-om-kD8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHW-2q-AXD" customClass="CheckBox" customModule="first_santaku" customModuleProvider="target">
@@ -792,6 +792,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="nextButton:" destination="O7m-kl-TDE" eventType="touchUpInside" id="CnO-yE-Q1p"/>
                                     <segue destination="O7m-kl-TDE" kind="show" id="W92-Wb-bXS"/>
                                 </connections>
                             </button>
