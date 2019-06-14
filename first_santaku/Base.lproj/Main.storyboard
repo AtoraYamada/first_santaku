@@ -508,6 +508,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="nextButton:" destination="u18-Wv-XVl" eventType="touchUpInside" id="Hnk-MJ-VFU"/>
                                     <action selector="toSecondButton:" destination="u18-Wv-XVl" eventType="touchUpInside" id="RPC-k1-H6T"/>
                                     <segue destination="O7m-kl-TDE" kind="show" id="lvN-om-kD8"/>
                                 </connections>
@@ -1138,7 +1139,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="yse-XH-Zta"/>
         <segue reference="qlc-07-Pbr"/>
-        <segue reference="cvf-sC-wLt"/>
+        <segue reference="8XM-I4-uft"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
 </document>

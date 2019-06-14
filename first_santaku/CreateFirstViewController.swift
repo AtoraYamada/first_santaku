@@ -10,10 +10,14 @@ import UIKit
 import Firebase
 
 class CreateFirstViewController: UIViewController, UITextFieldDelegate {
+    var userId = ""
+    var documentId = ""
+    var flag:Int!
     var db : Firestore!
     @IBOutlet weak var inputTitle: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        userId = Auth.auth().currentUser!.uid
         db = Firestore.firestore()
         inputTitle.delegate = self
     }
@@ -23,6 +27,25 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
         inputTitle.resignFirstResponder()
     }
     @IBAction func toSecondButton(_ sender: Any) {
+    }
+    @IBAction func nextButton(_ sender: Any) {
+        guard let title = inputTitle.text else { return }
+        guard tags != [] else  { return }
+        var ref: DocumentReference? = nil
+        ref = db.collection("users").document("\(userId)").collection("userquestions").addDocument(data: [
+            "tablename": title,
+            "tags": tags,
+            ]){ err in
+                if let err = err {
+                    print("Error adding document: \(err)")
+                } else {
+                    self.documentId = ref!.documentID
+                    self.flag = 1
+                    print("Document added with ID: \(ref!.documentID)")
+                    print(self.documentId)
+                    print(self.flag)
+                }
+        }
     }
     /*
     // MARK: - Navigation
@@ -37,10 +60,8 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
     @IBAction func htmlButton(_ sender: CheckBox) {
         if !sender.isChecked == true {
             tags.append("HTML")
-            print(tags)
         }else{
             tags.remove(value: "HTML")
-            print(tags)
         }
 
     }
@@ -48,56 +69,44 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
     @IBAction func cssButton(_ sender: CheckBox) {
         if !sender.isChecked == true {
             tags.append("CSS")
-            print(tags)
         }else{
             tags.remove(value: "CSS")
-            print(tags)
         }
         
     }
     @IBAction func rubyButton(_ sender: CheckBox) {
         if !sender.isChecked == true {
             tags.append("Ruby")
-            print(tags)
         }else{
             tags.remove(value: "Ruby")
-            print(tags)
         }
     }
     @IBAction func railsButton(_ sender: CheckBox) {
         if !sender.isChecked == true {
             tags.append("Rails")
-            print(tags)
         }else{
             tags.remove(value: "Rails")
-            print(tags)
         }
     }
     @IBAction func jsButton(_ sender: CheckBox) {
         if !sender.isChecked == true {
             tags.append("JavaScript")
-            print(tags)
         }else{
             tags.remove(value: "JavaScript")
-            print(tags)
         }
     }
     @IBAction func jqueryButton(_ sender: CheckBox) {
         if !sender.isChecked == true {
             tags.append("jQuery")
-            print(tags)
         }else{
             tags.remove(value: "jQuery")
-            print(tags)
         }
     }
     @IBAction func othersButton(_ sender: CheckBox) {
         if !sender.isChecked == true {
             tags.append("Others")
-            print(tags)
         }else{
             tags.remove(value: "Others")
-            print(tags)
         }
     }
 }
