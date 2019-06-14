@@ -867,7 +867,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pbl-9e-6pu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4180" y="1671.8140929535234"/>
+            <point key="canvasLocation" x="4302" y="1672"/>
         </scene>
         <!--User Edit View Controller-->
         <scene sceneID="oPt-ui-kc4">
@@ -1138,7 +1138,7 @@
         <image name="nocheck" width="42" height="42"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MOY-Q1-DKw"/>
+        <segue reference="qlc-07-Pbr"/>
         <segue reference="8XM-I4-uft"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

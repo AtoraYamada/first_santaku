@@ -13,7 +13,6 @@ class CreateQuestionDetailsViewController: UIViewController, UITextFieldDelegate
     var db : Firestore!
     var userId = ""
     var documentId = ""
-    var flag:Int = 0
     var detail = Array<String>()
     var detailId = ""
 
@@ -24,6 +23,7 @@ class CreateQuestionDetailsViewController: UIViewController, UITextFieldDelegate
     @IBOutlet weak var inputAnswer: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.hidesBackButton = true
         db = Firestore.firestore()
         inputQuestion.delegate = self
         inputCorrect.delegate = self
@@ -78,35 +78,20 @@ class CreateQuestionDetailsViewController: UIViewController, UITextFieldDelegate
          guard let answer = inputAnswer.text else { return }
         detail += [question, correct, uncorrect1, uncorrect2, answer]
         var ref: DocumentReference? = nil
-        if flag == 0{
-            ref = db.collection("users").document("\(userId)").collection("userquestions").document("\(documentId)").collection("details").addDocument(data: [
-                "detail": detail,
-                ]){ err in
-                    if let err = err {
-                        print("Error adding document: \(err)")
-                    } else {
-                        self.detailId = ref!.documentID
-                        self.flag = 1
-                        print("Document added with ID: \(ref!.documentID)")
+        ref = db.collection("users").document("\(userId)").collection("userquestions").document("\(documentId)").collection("details").addDocument(data: [
+            "detail": detail,
+            ]){ err in
+                if let err = err {
+                    print("Error adding document: \(err)")
+                } else {
+                    self.detailId = ref!.documentID
+                    print("Document added with ID: \(ref!.documentID)")
 //                        let storyboard = self.storyboard?.instantiateViewController(withIdentifier: "createquestion") as! CreateQuestionDetailsViewController
 //                        storyboard.userId = self.userId
 //                        storyboard.detailId = self.documentId
 //                        self.present(storyboard, animated: true, completion: nil)
-                    }
+                }
             }
-        }else{
-            let ref = db.collection("users").document("\(userId)").collection("userquestions").document("\(documentId)").collection("details").document("\(detailId)")
-            ref.updateData([
-                "detail": detail,
-                ]){ err in
-                    if let err = err {
-                        print("Error updating document: \(err)")
-                    } else {
-                        print("Document successfully updated")
-                    }
-            }
-            
-        }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let createQuestionDetailsViewController = segue.destination as? CreateQuestionDetailsViewController{
