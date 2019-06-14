@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u18-Wv-XVl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -435,9 +435,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UK-6g-ue1" customClass="CheckBox" customModule="first_santaku" customModuleProvider="target">
-                                <rect key="frame" x="16" y="265" width="28" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UK-6g-ue1" customClass="CheckBox" customModule="first_santaku" customModuleProvider="target">
+                                <rect key="frame" x="16" y="274" width="28" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="28" id="DyR-l4-wMR"/>
+                                    <constraint firstAttribute="height" constant="28" id="oTe-dP-F7t"/>
+                                </constraints>
                                 <state key="normal" image="nocheck">
                                     <color key="titleShadowColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -445,9 +448,12 @@
                                     <action selector="htmlButton:" destination="u18-Wv-XVl" eventType="touchUpInside" id="cVo-nq-q0G"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E7y-SE-xGG" customClass="CheckBox" customModule="first_santaku" customModuleProvider="target">
-                                <rect key="frame" x="16" y="312" width="28" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E7y-SE-xGG" customClass="CheckBox" customModule="first_santaku" customModuleProvider="target">
+                                <rect key="frame" x="16" y="320" width="28" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="28" id="5VL-rd-Rgs"/>
+                                    <constraint firstAttribute="height" constant="28" id="tNq-9K-PhD"/>
+                                </constraints>
                                 <state key="normal" image="nocheck">
                                     <color key="titleShadowColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -455,38 +461,50 @@
                                     <action selector="railsButton:" destination="u18-Wv-XVl" eventType="touchUpInside" id="NgO-YR-4dZ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="問題タイトル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EC0-iT-Oyk">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="問題タイトル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EC0-iT-Oyk">
                                 <rect key="frame" x="16" y="128" width="343" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="7Fz-9q-4PK"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qHx-Vp-t8z">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qHx-Vp-t8z">
                                 <rect key="frame" x="16" y="163" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="lg0-06-Ooe"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="タグ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pii-II-0fk">
-                                <rect key="frame" x="16" y="236" width="41" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タグ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pii-II-0fk">
+                                <rect key="frame" x="16" y="236" width="343" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="eRM-8f-6KE"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GeT-DW-77D">
-                                <rect key="frame" x="108" y="467" width="160" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GeT-DW-77D">
+                                <rect key="frame" x="108" y="467" width="159" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="lnA-bZ-PTX"/>
+                                    <constraint firstAttribute="width" constant="159" id="sg5-7q-bNh"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="30"/>
                                 <state key="normal" title="NEXT">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHW-2q-AXD" customClass="CheckBox" customModule="first_santaku" customModuleProvider="target">
-                                <rect key="frame" x="129" y="265" width="28" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHW-2q-AXD" customClass="CheckBox" customModule="first_santaku" customModuleProvider="target">
+                                <rect key="frame" x="129" y="274" width="28" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="28" id="Fwa-uq-WbI"/>
+                                    <constraint firstAttribute="height" constant="28" id="T6u-RQ-ane"/>
+                                </constraints>
                                 <state key="normal" image="nocheck">
                                     <color key="titleShadowColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -494,9 +512,12 @@
                                     <action selector="cssButton:" destination="u18-Wv-XVl" eventType="touchUpInside" id="ifb-Rd-bsP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBh-ca-zBe" customClass="CheckBox" customModule="first_santaku" customModuleProvider="target">
-                                <rect key="frame" x="128" y="312" width="28" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBh-ca-zBe" customClass="CheckBox" customModule="first_santaku" customModuleProvider="target">
+                                <rect key="frame" x="128" y="320" width="28" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="28" id="z14-7p-hbK"/>
+                                    <constraint firstAttribute="height" constant="28" id="zqc-0m-R3Z"/>
+                                </constraints>
                                 <state key="normal" image="nocheck">
                                     <color key="titleShadowColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -504,23 +525,24 @@
                                     <action selector="jsButton:" destination="u18-Wv-XVl" eventType="touchUpInside" id="OVL-NE-rvN"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HTML" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fm5-vV-jiP">
-                                <rect key="frame" x="52" y="267" width="55" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HTML" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fm5-vV-jiP">
+                                <rect key="frame" x="52" y="275" width="55" height="24"/>
                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CSS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szy-jb-q0C">
-                                <rect key="frame" x="165" y="266" width="35" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CSS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szy-jb-q0C">
+                                <rect key="frame" x="165" y="275" width="35" height="24"/>
                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEe-7u-YHZ" customClass="CheckBox" customModule="first_santaku" customModuleProvider="target">
-                                <rect key="frame" x="258" y="266" width="28" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEe-7u-YHZ" customClass="CheckBox" customModule="first_santaku" customModuleProvider="target">
+                                <rect key="frame" x="258" y="274" width="28" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="5bK-zT-sbO"/>
+                                    <constraint firstAttribute="width" constant="28" id="kqJ-zd-6Q7"/>
+                                </constraints>
                                 <state key="normal" image="nocheck">
                                     <color key="titleShadowColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -528,30 +550,24 @@
                                     <action selector="rubyButton:" destination="u18-Wv-XVl" eventType="touchUpInside" id="Qbt-xc-9Kz"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ruby" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4GN-cT-tAo">
-                                <rect key="frame" x="294" y="267" width="45" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ruby" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4GN-cT-tAo">
+                                <rect key="frame" x="294" y="275" width="45" height="24"/>
                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="JavaScript" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="La5-ee-NLM">
-                                <rect key="frame" x="164" y="315" width="92" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JavaScript" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="La5-ee-NLM">
+                                <rect key="frame" x="164" y="321" width="92" height="24"/>
                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rails" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ui5-hb-2H3">
-                                <rect key="frame" x="52" y="315" width="45" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S63-QR-xVm" customClass="CheckBox" customModule="first_santaku" customModuleProvider="target">
-                                <rect key="frame" x="258" y="311" width="28" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S63-QR-xVm" customClass="CheckBox" customModule="first_santaku" customModuleProvider="target">
+                                <rect key="frame" x="258" y="320" width="28" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="4FB-pd-g2V"/>
+                                    <constraint firstAttribute="width" constant="28" id="fJC-ru-i85"/>
+                                </constraints>
                                 <state key="normal" image="nocheck">
                                     <color key="titleShadowColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -559,16 +575,18 @@
                                     <action selector="jqueryButton:" destination="u18-Wv-XVl" eventType="touchUpInside" id="77p-ZJ-32Y"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="jQuery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWq-pk-IPH">
-                                <rect key="frame" x="294" y="312" width="60" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="jQuery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWq-pk-IPH">
+                                <rect key="frame" x="294" y="321" width="60" height="24"/>
                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3bW-nb-gI7" customClass="CheckBox" customModule="first_santaku" customModuleProvider="target">
-                                <rect key="frame" x="16" y="358" width="28" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3bW-nb-gI7" customClass="CheckBox" customModule="first_santaku" customModuleProvider="target">
+                                <rect key="frame" x="16" y="366" width="28" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="1g0-vJ-lhL"/>
+                                    <constraint firstAttribute="width" constant="28" id="avi-pj-gMB"/>
+                                </constraints>
                                 <state key="normal" image="nocheck">
                                     <color key="titleShadowColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -576,15 +594,85 @@
                                     <action selector="othersButton:" destination="u18-Wv-XVl" eventType="touchUpInside" id="6Uo-mp-LfZ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Others" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3Y-K9-gKG">
-                                <rect key="frame" x="52" y="359" width="61" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Others" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3Y-K9-gKG">
+                                <rect key="frame" x="52" y="368" width="61" height="24"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rails" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ui5-hb-2H3">
+                                <rect key="frame" x="52" y="321" width="45" height="24"/>
                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="E7y-SE-xGG" firstAttribute="top" secondItem="3UK-6g-ue1" secondAttribute="bottom" constant="18" id="2L7-xC-xcg"/>
+                            <constraint firstItem="S63-QR-xVm" firstAttribute="top" secondItem="fEe-7u-YHZ" secondAttribute="bottom" constant="18" id="310-Fr-haY"/>
+                            <constraint firstItem="3UK-6g-ue1" firstAttribute="top" secondItem="Pii-II-0fk" secondAttribute="bottom" constant="14" id="3Ee-bD-JXv"/>
+                            <constraint firstItem="VBh-ca-zBe" firstAttribute="leading" secondItem="ui5-hb-2H3" secondAttribute="trailing" constant="31" id="3sI-dO-Ktj"/>
+                            <constraint firstItem="VBh-ca-zBe" firstAttribute="leading" secondItem="ui5-hb-2H3" secondAttribute="trailing" constant="31" id="58S-aZ-u3R"/>
+                            <constraint firstItem="Pii-II-0fk" firstAttribute="leading" secondItem="vHi-gq-4VW" secondAttribute="leading" constant="16" id="6ge-Vt-1Ic"/>
+                            <constraint firstItem="S63-QR-xVm" firstAttribute="leading" secondItem="La5-ee-NLM" secondAttribute="trailing" constant="2" id="8UI-Yo-L8V"/>
+                            <constraint firstItem="GeT-DW-77D" firstAttribute="top" secondItem="T3Y-K9-gKG" secondAttribute="bottom" constant="75" id="8x1-ee-9fw"/>
+                            <constraint firstItem="vHi-gq-4VW" firstAttribute="trailing" secondItem="qHx-Vp-t8z" secondAttribute="trailing" constant="16" id="BXG-yc-iac"/>
+                            <constraint firstItem="3bW-nb-gI7" firstAttribute="top" secondItem="E7y-SE-xGG" secondAttribute="bottom" constant="18" id="Bho-JB-x6b"/>
+                            <constraint firstItem="GeT-DW-77D" firstAttribute="leading" secondItem="vHi-gq-4VW" secondAttribute="leading" constant="108" id="Bpc-Vg-avi"/>
+                            <constraint firstItem="E7y-SE-xGG" firstAttribute="top" secondItem="3UK-6g-ue1" secondAttribute="bottom" constant="18" id="Edf-yI-kcB"/>
+                            <constraint firstItem="qHx-Vp-t8z" firstAttribute="leading" secondItem="vHi-gq-4VW" secondAttribute="leading" constant="16" id="FAv-6b-ovI"/>
+                            <constraint firstItem="GeT-DW-77D" firstAttribute="leading" secondItem="vHi-gq-4VW" secondAttribute="leading" constant="108" id="HMw-ZH-fwv"/>
+                            <constraint firstItem="La5-ee-NLM" firstAttribute="top" secondItem="szy-jb-q0C" secondAttribute="bottom" constant="22" id="I67-63-iXB"/>
+                            <constraint firstItem="3bW-nb-gI7" firstAttribute="leading" secondItem="vHi-gq-4VW" secondAttribute="leading" constant="16" id="L2V-l3-Dac"/>
+                            <constraint firstItem="vHi-gq-4VW" firstAttribute="trailing" secondItem="4GN-cT-tAo" secondAttribute="trailing" constant="36" id="Neu-FP-OUU"/>
+                            <constraint firstItem="T3Y-K9-gKG" firstAttribute="top" secondItem="ui5-hb-2H3" secondAttribute="bottom" constant="23" id="O9f-vD-KIm"/>
+                            <constraint firstItem="ui5-hb-2H3" firstAttribute="leading" secondItem="E7y-SE-xGG" secondAttribute="trailing" constant="8" id="OzU-3e-t0h"/>
+                            <constraint firstItem="rWq-pk-IPH" firstAttribute="leading" secondItem="S63-QR-xVm" secondAttribute="trailing" constant="8" id="PR4-FO-zaV"/>
+                            <constraint firstItem="3UK-6g-ue1" firstAttribute="leading" secondItem="vHi-gq-4VW" secondAttribute="leading" constant="16" id="QL7-sh-7C7"/>
+                            <constraint firstItem="rWq-pk-IPH" firstAttribute="top" secondItem="4GN-cT-tAo" secondAttribute="bottom" constant="22" id="QTQ-9S-dR5"/>
+                            <constraint firstItem="WHW-2q-AXD" firstAttribute="top" secondItem="Pii-II-0fk" secondAttribute="bottom" constant="14" id="RKb-c5-apb"/>
+                            <constraint firstItem="4GN-cT-tAo" firstAttribute="top" secondItem="Pii-II-0fk" secondAttribute="bottom" constant="15" id="Ru3-AU-avr"/>
+                            <constraint firstItem="fEe-7u-YHZ" firstAttribute="leading" secondItem="szy-jb-q0C" secondAttribute="trailing" constant="58" id="SM2-x7-ZsS"/>
+                            <constraint firstItem="4GN-cT-tAo" firstAttribute="leading" secondItem="fEe-7u-YHZ" secondAttribute="trailing" constant="8" id="Sqj-vs-Osv"/>
+                            <constraint firstItem="La5-ee-NLM" firstAttribute="leading" secondItem="VBh-ca-zBe" secondAttribute="trailing" constant="8" id="UFp-64-gAG"/>
+                            <constraint firstItem="szy-jb-q0C" firstAttribute="leading" secondItem="WHW-2q-AXD" secondAttribute="trailing" constant="8" id="V59-Xe-gfC"/>
+                            <constraint firstItem="ui5-hb-2H3" firstAttribute="top" secondItem="fm5-vV-jiP" secondAttribute="bottom" constant="22" id="VhR-WE-qbK"/>
+                            <constraint firstItem="La5-ee-NLM" firstAttribute="top" secondItem="szy-jb-q0C" secondAttribute="bottom" constant="22" id="Wmt-Kl-R7U"/>
+                            <constraint firstItem="EC0-iT-Oyk" firstAttribute="centerX" secondItem="kAJ-ix-5U1" secondAttribute="centerX" id="XU0-AI-Sea"/>
+                            <constraint firstItem="S63-QR-xVm" firstAttribute="leading" secondItem="La5-ee-NLM" secondAttribute="trailing" constant="2" id="b9C-Jq-WND"/>
+                            <constraint firstItem="fEe-7u-YHZ" firstAttribute="top" secondItem="Pii-II-0fk" secondAttribute="bottom" constant="14" id="byC-G8-4JY"/>
+                            <constraint firstItem="szy-jb-q0C" firstAttribute="top" secondItem="Pii-II-0fk" secondAttribute="bottom" constant="15" id="cnd-6D-SKG"/>
+                            <constraint firstItem="GeT-DW-77D" firstAttribute="centerX" secondItem="Pii-II-0fk" secondAttribute="centerX" id="cpU-TP-ezM"/>
+                            <constraint firstItem="WHW-2q-AXD" firstAttribute="leading" secondItem="fm5-vV-jiP" secondAttribute="trailing" constant="22" id="cyk-gK-gjI"/>
+                            <constraint firstItem="ui5-hb-2H3" firstAttribute="leading" secondItem="E7y-SE-xGG" secondAttribute="trailing" constant="8" id="dth-q1-SQt"/>
+                            <constraint firstItem="qHx-Vp-t8z" firstAttribute="top" secondItem="EC0-iT-Oyk" secondAttribute="bottom" constant="14" id="eeY-Br-kzE"/>
+                            <constraint firstItem="WHW-2q-AXD" firstAttribute="leading" secondItem="fm5-vV-jiP" secondAttribute="trailing" constant="22" id="gtd-7t-XyW"/>
+                            <constraint firstItem="rWq-pk-IPH" firstAttribute="top" secondItem="4GN-cT-tAo" secondAttribute="bottom" constant="22" id="gyN-Hc-Lxb"/>
+                            <constraint firstItem="VBh-ca-zBe" firstAttribute="top" secondItem="WHW-2q-AXD" secondAttribute="bottom" constant="18" id="hjH-9F-XAS"/>
+                            <constraint firstItem="GeT-DW-77D" firstAttribute="top" secondItem="T3Y-K9-gKG" secondAttribute="bottom" constant="75" id="i5R-Xz-Cja"/>
+                            <constraint firstItem="szy-jb-q0C" firstAttribute="leading" secondItem="WHW-2q-AXD" secondAttribute="trailing" constant="8" id="kEv-OS-p8Q"/>
+                            <constraint firstItem="vHi-gq-4VW" firstAttribute="trailing" secondItem="rWq-pk-IPH" secondAttribute="trailing" constant="21" id="kXy-vp-DJP"/>
+                            <constraint firstItem="fm5-vV-jiP" firstAttribute="leading" secondItem="3UK-6g-ue1" secondAttribute="trailing" constant="8" id="lQn-nT-XnG"/>
+                            <constraint firstItem="EC0-iT-Oyk" firstAttribute="top" secondItem="vHi-gq-4VW" secondAttribute="top" constant="64" id="mnb-Fc-iuL"/>
+                            <constraint firstItem="vHi-gq-4VW" firstAttribute="trailing" secondItem="GeT-DW-77D" secondAttribute="trailing" constant="108" id="obs-Jk-a1A"/>
+                            <constraint firstItem="vHi-gq-4VW" firstAttribute="trailing" secondItem="EC0-iT-Oyk" secondAttribute="trailing" constant="16" id="odx-jp-QA4"/>
+                            <constraint firstItem="vHi-gq-4VW" firstAttribute="bottom" secondItem="3bW-nb-gI7" secondAttribute="bottom" constant="224" id="qRh-FN-ulm"/>
+                            <constraint firstItem="VBh-ca-zBe" firstAttribute="top" secondItem="WHW-2q-AXD" secondAttribute="bottom" constant="18" id="reY-rm-cBj"/>
+                            <constraint firstItem="4GN-cT-tAo" firstAttribute="leading" secondItem="fEe-7u-YHZ" secondAttribute="trailing" constant="8" id="s5m-fb-kZM"/>
+                            <constraint firstItem="E7y-SE-xGG" firstAttribute="leading" secondItem="vHi-gq-4VW" secondAttribute="leading" constant="16" id="sAa-P9-t5V"/>
+                            <constraint firstItem="GeT-DW-77D" firstAttribute="centerX" secondItem="kAJ-ix-5U1" secondAttribute="centerX" id="t6A-01-FhK"/>
+                            <constraint firstItem="ui5-hb-2H3" firstAttribute="top" secondItem="fm5-vV-jiP" secondAttribute="bottom" constant="22" id="tiO-N2-rvU"/>
+                            <constraint firstItem="fm5-vV-jiP" firstAttribute="top" secondItem="Pii-II-0fk" secondAttribute="bottom" constant="15" id="trI-2S-89r"/>
+                            <constraint firstItem="T3Y-K9-gKG" firstAttribute="leading" secondItem="3bW-nb-gI7" secondAttribute="trailing" constant="8" id="u12-Nc-wFk"/>
+                            <constraint firstItem="rWq-pk-IPH" firstAttribute="leading" secondItem="S63-QR-xVm" secondAttribute="trailing" constant="8" id="wD0-EA-3tk"/>
+                            <constraint firstItem="vHi-gq-4VW" firstAttribute="trailing" secondItem="Pii-II-0fk" secondAttribute="trailing" constant="16" id="wIe-Om-Tru"/>
+                            <constraint firstItem="fm5-vV-jiP" firstAttribute="leading" secondItem="3UK-6g-ue1" secondAttribute="trailing" constant="8" id="wVd-jS-bV6"/>
+                            <constraint firstItem="EC0-iT-Oyk" firstAttribute="leading" secondItem="vHi-gq-4VW" secondAttribute="leading" constant="16" id="xzQ-h3-YUN"/>
+                            <constraint firstItem="La5-ee-NLM" firstAttribute="leading" secondItem="VBh-ca-zBe" secondAttribute="trailing" constant="8" id="yIO-2e-KjU"/>
+                            <constraint firstItem="S63-QR-xVm" firstAttribute="top" secondItem="fEe-7u-YHZ" secondAttribute="bottom" constant="18" id="ymg-bN-ahc"/>
+                            <constraint firstItem="3bW-nb-gI7" firstAttribute="top" secondItem="E7y-SE-xGG" secondAttribute="bottom" constant="18" id="zDo-ZV-vex"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vHi-gq-4VW"/>
                     </view>
                 </viewController>
