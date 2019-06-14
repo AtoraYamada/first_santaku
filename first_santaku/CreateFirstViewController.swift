@@ -12,7 +12,7 @@ import Firebase
 class CreateFirstViewController: UIViewController, UITextFieldDelegate {
     var userId = ""
     var documentId = ""
-    var flag:Int!
+    var flag:Int = 0
     var db : Firestore!
     @IBOutlet weak var inputTitle: UITextField!
     override func viewDidLoad() {
@@ -32,6 +32,7 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
         guard let title = inputTitle.text else { return }
         guard tags != [] else  { return }
         var ref: DocumentReference? = nil
+        if flag == 0{
         ref = db.collection("users").document("\(userId)").collection("userquestions").addDocument(data: [
             "tablename": title,
             "tags": tags,
@@ -42,9 +43,20 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
                     self.documentId = ref!.documentID
                     self.flag = 1
                     print("Document added with ID: \(ref!.documentID)")
-                    print(self.documentId)
-                    print(self.flag)
                 }
+            }
+        }else{
+            let ref = db.collection("users").document("\(userId)").collection("userquestions").document("\(self.documentId)")
+            ref.updateData([
+            "tablename": title,
+            "tags": tags,
+            ]){ err in
+                if let err = err {
+                    print("Error updating document: \(err)")
+                } else {
+                    print("Document successfully updated")
+                }
+            }
         }
     }
     /*
