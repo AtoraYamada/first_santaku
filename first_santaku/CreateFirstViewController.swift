@@ -7,13 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 class CreateFirstViewController: UIViewController {
-
+    var db : Firestore!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        db = Firestore.firestore()
     }
     
 
