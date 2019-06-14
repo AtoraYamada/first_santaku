@@ -43,10 +43,11 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
                     self.documentId = ref!.documentID
                     self.flag = 1
                     print("Document added with ID: \(ref!.documentID)")
-                    let storyboard = self.storyboard?.instantiateViewController(withIdentifier: "createquestion") as! CreateQuestionDetailsViewController
-                    storyboard.userId = self.userId
-                    storyboard.documentId = self.documentId
-                    self.present(storyboard, animated: true, completion: nil)
+                    self.performSegue(withIdentifier: "createdetails", sender: self.documentId)
+//                    let storyboard = self.storyboard?.instantiateViewController(withIdentifier: "createquestion") as! CreateQuestionDetailsViewController
+//                    storyboard.userId = self.userId
+//                    storyboard.documentId = self.documentId
+//                    self.present(storyboard, animated: true, completion: nil)
                 }
             }
         }else{
@@ -59,8 +60,14 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
                     print("Error updating document: \(err)")
                 } else {
                     print("Document successfully updated")
+                    self.performSegue(withIdentifier: "createdetails", sender: self.documentId)
                 }
             }
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let createQuestionDetailsViewController = segue.destination as? CreateQuestionDetailsViewController{
+            createQuestionDetailsViewController.userId = self.userId
         }
     }
     /*

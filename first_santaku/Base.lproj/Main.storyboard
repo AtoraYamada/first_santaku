@@ -510,7 +510,6 @@
                                 <connections>
                                     <action selector="nextButton:" destination="u18-Wv-XVl" eventType="touchUpInside" id="Hnk-MJ-VFU"/>
                                     <action selector="toSecondButton:" destination="u18-Wv-XVl" eventType="touchUpInside" id="RPC-k1-H6T"/>
-                                    <segue destination="O7m-kl-TDE" kind="show" identifier="createdetails" id="lvN-om-kD8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHW-2q-AXD" customClass="CheckBox" customModule="first_santaku" customModuleProvider="target">
@@ -691,6 +690,7 @@
                     </view>
                     <connections>
                         <outlet property="inputTitle" destination="qHx-Vp-t8z" id="ikE-MP-271"/>
+                        <segue destination="O7m-kl-TDE" kind="show" identifier="createdetails" id="kSV-Li-a16"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mu5-IW-lQP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -993,7 +993,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A44-ls-iB1">
-                                <rect key="frame" x="16" y="387" width="343" height="40"/>
+                                <rect key="frame" x="16" y="338" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="pyX-JJ-uCm"/>
                                 </constraints>
@@ -1006,7 +1006,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sn4-4l-SuM">
-                                <rect key="frame" x="16" y="435" width="343" height="36"/>
+                                <rect key="frame" x="16" y="386" width="343" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="zgV-6e-hac"/>
                                 </constraints>
@@ -1017,7 +1017,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7x-8D-Tc2">
-                                <rect key="frame" x="16" y="479" width="343" height="40"/>
+                                <rect key="frame" x="16" y="430" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Yjf-PR-21k"/>
                                     <constraint firstAttribute="height" constant="40" id="zNk-ep-oej"/>
@@ -1029,7 +1029,7 @@
                                 </connections>
                             </button>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="m9D-ZX-RWO">
-                                <rect key="frame" x="16" y="338" width="343" height="2"/>
+                                <rect key="frame" x="16" y="289" width="343" height="2"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="cr1-qd-gb4"/>
                                 </constraints>
@@ -1084,7 +1084,7 @@
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <connections>
                                         <action selector="backToMain:" destination="Aho-gr-PMF" id="Wyy-lK-Tjs"/>
-                                        <segue destination="Jqh-mr-aIf" kind="show" id="yse-XH-Zta"/>
+                                        <segue destination="vmO-nt-LPp" kind="show" id="MOY-Q1-DKw"/>
                                     </connections>
                                 </barButtonItem>
                             </items>
@@ -1138,8 +1138,7 @@
         <image name="nocheck" width="42" height="42"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yse-XH-Zta"/>
-        <segue reference="qlc-07-Pbr"/>
+        <segue reference="MOY-Q1-DKw"/>
         <segue reference="8XM-I4-uft"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
