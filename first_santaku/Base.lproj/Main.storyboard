@@ -699,12 +699,12 @@
         <!--Create Question Details View Controller-->
         <scene sceneID="yYx-B6-ysP">
             <objects>
-                <viewController id="O7m-kl-TDE" customClass="CreateQuestionDetailsViewController" customModule="first_santaku" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="createquestion" id="O7m-kl-TDE" customClass="CreateQuestionDetailsViewController" customModule="first_santaku" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rIT-a2-pLU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="L" translatesAutoresizingMaskIntoConstraints="NO" id="NFE-Kb-smu">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NFE-Kb-smu">
                                 <rect key="frame" x="16" y="96" width="343" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -790,8 +790,11 @@
                                 <state key="normal" title="NEXT">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="O7m-kl-TDE" kind="show" id="W92-Wb-bXS"/>
+                                </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="L" translatesAutoresizingMaskIntoConstraints="NO" id="Cg9-z9-p7j">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cg9-z9-p7j">
                                 <rect key="frame" x="16" y="292" width="343" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -988,7 +991,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A44-ls-iB1">
-                                <rect key="frame" x="16" y="338" width="343" height="40"/>
+                                <rect key="frame" x="16" y="387" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="pyX-JJ-uCm"/>
                                 </constraints>
@@ -1001,7 +1004,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sn4-4l-SuM">
-                                <rect key="frame" x="16" y="386" width="343" height="36"/>
+                                <rect key="frame" x="16" y="435" width="343" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="zgV-6e-hac"/>
                                 </constraints>
@@ -1012,7 +1015,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7x-8D-Tc2">
-                                <rect key="frame" x="16" y="430" width="343" height="40"/>
+                                <rect key="frame" x="16" y="479" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Yjf-PR-21k"/>
                                     <constraint firstAttribute="height" constant="40" id="zNk-ep-oej"/>
@@ -1024,7 +1027,7 @@
                                 </connections>
                             </button>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="m9D-ZX-RWO">
-                                <rect key="frame" x="16" y="289" width="343" height="2"/>
+                                <rect key="frame" x="16" y="338" width="343" height="2"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="cr1-qd-gb4"/>
                                 </constraints>
@@ -1133,7 +1136,7 @@
         <image name="nocheck" width="42" height="42"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qF1-9d-vgF"/>
+        <segue reference="yse-XH-Zta"/>
         <segue reference="qlc-07-Pbr"/>
         <segue reference="cvf-sC-wLt"/>
     </inferredMetricsTieBreakers>
