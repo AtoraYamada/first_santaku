@@ -23,6 +23,8 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         inputTitle.resignFirstResponder()
     }
+    @IBAction func toSecondButton(_ sender: Any) {
+    }
     /*
     // MARK: - Navigation
 
