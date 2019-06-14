@@ -485,7 +485,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <connections>
-                                    <action selector="getTitle:" destination="u18-Wv-XVl" eventType="editingDidEnd" id="Yk5-dj-ntP"/>
+                                    <action selector="getTitle:" destination="u18-Wv-XVl" eventType="editingDidEndOnExit" id="wGN-X6-ZOI"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タグ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pii-II-0fk">
@@ -727,6 +727,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="getCorrect:" destination="O7m-kl-TDE" eventType="editingDidEndOnExit" id="iNe-yD-t4s"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="問題文" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xma-zF-6bh">
                                 <rect key="frame" x="16" y="74" width="343" height="24"/>
@@ -746,6 +749,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="getUncorrect1:" destination="O7m-kl-TDE" eventType="editingDidEndOnExit" id="BhV-4W-zKc"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="誤答1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Sz-DK-3aO">
                                 <rect key="frame" x="16" y="248" width="343" height="21"/>
@@ -762,6 +768,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="getUncorrect2:" destination="O7m-kl-TDE" eventType="editingDidEndOnExit" id="OzQ-gl-guq"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="誤答2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ycb-De-5eA">
                                 <rect key="frame" x="16" y="315" width="343" height="21"/>
@@ -840,6 +849,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ls9-KF-0uc"/>
                     </view>
+                    <connections>
+                        <outlet property="inputAnswer" destination="Cg9-z9-p7j" id="FuY-WI-0eQ"/>
+                        <outlet property="inputCorrect" destination="KsY-5B-SIC" id="ik4-G2-K7c"/>
+                        <outlet property="inputQuestion" destination="NFE-Kb-smu" id="60r-yR-yEX"/>
+                        <outlet property="inputUncorrect1" destination="OBi-Z4-eeK" id="FYO-eD-haC"/>
+                        <outlet property="inputUncorrect2" destination="XwC-DR-qBu" id="5MY-F2-yvb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pbl-9e-6pu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

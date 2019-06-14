@@ -17,7 +17,6 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
         db = Firestore.firestore()
         inputTitle.delegate = self
     }
-    
     @IBAction func getTitle(_ sender: Any) {
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
