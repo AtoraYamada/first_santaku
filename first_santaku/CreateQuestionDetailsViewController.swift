@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import Firebase
 
 class CreateQuestionDetailsViewController: UIViewController {
+    var db : Firestore!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        db = Firestore.firestore()
 
         // Do any additional setup after loading the view.
     }
