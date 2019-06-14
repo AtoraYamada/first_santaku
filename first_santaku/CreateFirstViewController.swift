@@ -68,6 +68,7 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let createQuestionDetailsViewController = segue.destination as? CreateQuestionDetailsViewController{
             createQuestionDetailsViewController.userId = self.userId
+            createQuestionDetailsViewController.documentId = self.documentId
         }
     }
     /*
