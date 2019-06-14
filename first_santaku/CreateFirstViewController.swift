@@ -26,13 +26,79 @@ class CreateFirstViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    @IBAction func button(_ sender: CheckBox) {
+    var tags = Array<String>()
+    @IBAction func htmlButton(_ sender: CheckBox) {
         if !sender.isChecked == true {
-            print("a")
+            tags.append("HTML")
+            print(tags)
         }else{
-            print("b")
+            tags.remove(value: "HTML")
+            print(tags)
         }
 
     }
     
+    @IBAction func cssButton(_ sender: CheckBox) {
+        if !sender.isChecked == true {
+            tags.append("CSS")
+            print(tags)
+        }else{
+            tags.remove(value: "CSS")
+            print(tags)
+        }
+        
+    }
+    @IBAction func rubyButton(_ sender: CheckBox) {
+        if !sender.isChecked == true {
+            tags.append("Ruby")
+            print(tags)
+        }else{
+            tags.remove(value: "Ruby")
+            print(tags)
+        }
+    }
+    @IBAction func railsButton(_ sender: CheckBox) {
+        if !sender.isChecked == true {
+            tags.append("Rails")
+            print(tags)
+        }else{
+            tags.remove(value: "Rails")
+            print(tags)
+        }
+    }
+    @IBAction func jsButton(_ sender: CheckBox) {
+        if !sender.isChecked == true {
+            tags.append("JavaScript")
+            print(tags)
+        }else{
+            tags.remove(value: "JavaScript")
+            print(tags)
+        }
+    }
+    @IBAction func jqueryButton(_ sender: CheckBox) {
+        if !sender.isChecked == true {
+            tags.append("jQuery")
+            print(tags)
+        }else{
+            tags.remove(value: "jQuery")
+            print(tags)
+        }
+    }
+    @IBAction func othersButton(_ sender: CheckBox) {
+        if !sender.isChecked == true {
+            tags.append("Others")
+            print(tags)
+        }else{
+            tags.remove(value: "Others")
+            print(tags)
+        }
+    }
+}
+
+extension Array where Element: Equatable {
+    mutating func remove(value: Element) {
+        if let i = self.index(of: value) {
+            self.remove(at: i)
+        }
+    }
 }
