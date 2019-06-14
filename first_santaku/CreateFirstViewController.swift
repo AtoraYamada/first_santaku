@@ -34,6 +34,7 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
         ref = db.collection("users").document("\(userId)").collection("userquestions").addDocument(data: [
             "tablename": title,
             "tags": tags,
+            "createdAt": FieldValue.serverTimestamp(),
             ]){ err in
                 if let err = err {
                     print("Error adding document: \(err)")

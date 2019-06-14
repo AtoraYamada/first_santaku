@@ -80,6 +80,7 @@ class CreateQuestionDetailsViewController: UIViewController, UITextFieldDelegate
         var ref: DocumentReference? = nil
         ref = db.collection("users").document("\(userId)").collection("userquestions").document("\(documentId)").collection("details").addDocument(data: [
             "detail": detail,
+            "createdAt": FieldValue.serverTimestamp(),
             ]){ err in
                 if let err = err {
                     print("Error adding document: \(err)")
