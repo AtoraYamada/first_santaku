@@ -9,14 +9,20 @@
 import UIKit
 import Firebase
 
-class CreateFirstViewController: UIViewController {
+class CreateFirstViewController: UIViewController, UITextFieldDelegate {
     var db : Firestore!
+    @IBOutlet weak var inputTitle: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         db = Firestore.firestore()
+        inputTitle.delegate = self
     }
     
-
+    @IBAction func getTitle(_ sender: Any) {
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        inputTitle.resignFirstResponder()
+    }
     /*
     // MARK: - Navigation
 

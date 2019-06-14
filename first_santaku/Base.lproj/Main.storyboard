@@ -478,6 +478,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="getTitle:" destination="u18-Wv-XVl" eventType="editingDidEnd" id="Yk5-dj-ntP"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タグ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pii-II-0fk">
                                 <rect key="frame" x="16" y="236" width="343" height="24"/>
@@ -675,6 +678,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vHi-gq-4VW"/>
                     </view>
+                    <connections>
+                        <outlet property="inputTitle" destination="qHx-Vp-t8z" id="ikE-MP-271"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mu5-IW-lQP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -948,8 +954,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="qF1-9d-vgF"/>
-        <segue reference="qp8-yf-izO"/>
-        <segue reference="cvf-sC-wLt"/>
+        <segue reference="qlc-07-Pbr"/>
+        <segue reference="8XM-I4-uft"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
 </document>
