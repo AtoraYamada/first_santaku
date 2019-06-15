@@ -12,8 +12,7 @@ import Firebase
 class MainTableViewController: UITableViewController {
     var db : Firestore!
     var idList:[String] = []
-
-    
+    var questionList:[String] = []
    
     @IBAction func signOut(_ sender: Any) {
         let firebaseAuth = Auth.auth()
@@ -49,11 +48,8 @@ class MainTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        db.collection("questions").getDocuments(){(querySnapshot, err) in
-            if let selectedquestion = querySnapshot!.documents[indexPath.row]["tablename"]{
-                cell.textLabel?.text = selectedquestion as? String
-            }
-        }
+        let selectedquestion = questionList[indexPath.row]
+        cell.textLabel?.text = selectedquestion
         cell.textLabel?.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         cell.textLabel!.font = UIFont(name: "Kefa", size: 22)
         cell.backgroundColor = UIColor.clear
@@ -119,6 +115,7 @@ extension MainTableViewController{
             } else {
                 for document in querySnapshot!.documents {
                     self.idList.append(document.documentID)
+                    self.questionList.append(document.data()["tablename"] as! String)
                 }
             }
             self.tableView.reloadData()
