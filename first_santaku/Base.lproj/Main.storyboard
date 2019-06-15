@@ -413,6 +413,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="F77-T1-xqJ" kind="show" identifier="moveToMyQuestion" id="rX5-9h-RjV"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1141,7 +1144,8 @@
         <image name="nocheck" width="42" height="42"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qp8-yf-izO"/>
+        <segue reference="H1x-f5-wff"/>
+        <segue reference="MOY-Q1-DKw"/>
         <segue reference="cvf-sC-wLt"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

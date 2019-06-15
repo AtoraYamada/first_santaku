@@ -60,7 +60,6 @@ class MainTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
             let selectedquestion = indexPath.row
             self.performSegue(withIdentifier: "moveToQuestion", sender: selectedquestion)
-//        }
     }
     /*
     // Override to support conditional editing of the table view.
@@ -101,6 +100,7 @@ class MainTableViewController: UITableViewController {
         if let playViewController = segue.destination as? PlayViewController{
                 if let selectedquestion = sender as? Int{
                     playViewController.selectedQ = selectedquestion
+                    playViewController.flag = 1
                 }
             }
     }

@@ -56,7 +56,10 @@ class MyPageTableViewController: UITableViewController {
         return cell
     }
 
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        let selectedquestion = indexPath.row
+        self.performSegue(withIdentifier: "moveToMyQuestion", sender: selectedquestion)
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -101,6 +104,14 @@ class MyPageTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let playViewController = segue.destination as? PlayViewController{
+            if let selectedquestion = sender as? Int{
+                playViewController.selectedQ = selectedquestion
+                playViewController.flag = 2
+            }
+        }
+    }
 
 }
 extension MyPageTableViewController{

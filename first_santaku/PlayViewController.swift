@@ -11,9 +11,11 @@ import Firebase
 
 class PlayViewController: UIViewController {
     var db : Firestore!
+    var flag: Int!
     var selectedQ: Int!
     var questions = [Array<String>]()
     var answers = Array<Int>()
+    let user = Auth.auth().currentUser
     @IBOutlet weak var 問題ラベル: UILabel!
     @IBOutlet weak var 残り時間ビュー: UIProgressView!
     @IBOutlet var 解答ボタン: [UIButton]!
@@ -37,15 +39,25 @@ class PlayViewController: UIViewController {
         
     }
     func readQ(){
-        db.collection("questions").getDocuments(){(querySnapshot, err) in
-            let a = querySnapshot!.documents[self.selectedQ].documentID
-            self.db.collection("questions").document("\(a)").collection("details").getDocuments(){(querySnapshot, err)in
+        if flag == 1{
+            db.collection("questions").getDocuments(){(querySnapshot, err) in
+                let a = querySnapshot!.documents[self.selectedQ].documentID
+                self.db.collection("questions").document("\(a)").collection("details").getDocuments(){(querySnapshot, err)in
+                        for document in querySnapshot!.documents {
+                            self.questions.append(document.data()["detail"]! as! Array<String>)
+                    }
+                }
+            }
+        }else if flag == 2{
+            db.collection("users").document("\(self.user!.uid)").collection("userquestions").getDocuments(){(querySnapshot, err) in
+                let a = querySnapshot!.documents[self.selectedQ].documentID
+                self.db.collection("users").document("\(self.user!.uid)").collection("userquestions").document("\(a)").collection("details").getDocuments(){(querySnapshot, err)in
                     for document in querySnapshot!.documents {
                         self.questions.append(document.data()["detail"]! as! Array<String>)
+                    }
                 }
             }
         }
-        
     }
     func 出題() {
         if 問題番号 >= questions.count {
