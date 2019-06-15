@@ -11,18 +11,15 @@ import Firebase
 
 class PlayViewController: UIViewController {
     var db : Firestore!
+    var flag: Int!
     var selectedQ: Int!
     var questions = [Array<String>]()
     var answers = Array<Int>()
+    let user = Auth.auth().currentUser
     @IBOutlet weak var 問題ラベル: UILabel!
     @IBOutlet weak var 残り時間ビュー: UIProgressView!
     @IBOutlet var 解答ボタン: [UIButton]!
     
-    let 問題リスト = [
-        ["Rubyでくクラス変数の定義方法は？", "@@hoge", "@hoge", "var hoge"],
-        ["TECH::EXPERTでは何を一番重要視している？", "アウトプット", "インプット", "昼食"],
-        ["Rubyで曜日を数値で取得できるメソッドは？", ".wday()", ".day()", ".week()"],
-        ]
     var 問題番号 = 0
     var 残り時間 = 10
     var 正解数 = 0
@@ -42,15 +39,25 @@ class PlayViewController: UIViewController {
         
     }
     func readQ(){
-        db.collection("questions").getDocuments(){(querySnapshot, err) in
-            let a = querySnapshot!.documents[self.selectedQ].documentID
-            self.db.collection("questions").document("\(a)").collection("details").getDocuments(){(querySnapshot, err)in
+        if flag == 1{
+            db.collection("questions").getDocuments(){(querySnapshot, err) in
+                let a = querySnapshot!.documents[self.selectedQ].documentID
+                self.db.collection("questions").document("\(a)").collection("details").getDocuments(){(querySnapshot, err)in
+                        for document in querySnapshot!.documents {
+                            self.questions.append(document.data()["detail"]! as! Array<String>)
+                    }
+                }
+            }
+        }else if flag == 2{
+            db.collection("users").document("\(self.user!.uid)").collection("userquestions").getDocuments(){(querySnapshot, err) in
+                let a = querySnapshot!.documents[self.selectedQ].documentID
+                self.db.collection("users").document("\(self.user!.uid)").collection("userquestions").document("\(a)").collection("details").getDocuments(){(querySnapshot, err)in
                     for document in querySnapshot!.documents {
                         self.questions.append(document.data()["detail"]! as! Array<String>)
+                    }
                 }
             }
         }
-        
     }
     func 出題() {
         if 問題番号 >= questions.count {
@@ -117,15 +124,4 @@ class PlayViewController: UIViewController {
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
-
 }

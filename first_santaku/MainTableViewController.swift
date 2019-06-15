@@ -11,10 +11,8 @@ import Firebase
 
 class MainTableViewController: UITableViewController {
     var db : Firestore!
-    var todoList:[String] = []
     var idList:[String] = []
-
-    
+    var questionList:[String] = []
    
     @IBAction func signOut(_ sender: Any) {
         let firebaseAuth = Auth.auth()
@@ -50,11 +48,8 @@ class MainTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        db.collection("questions").getDocuments(){(querySnapshot, err) in
-            if let selectedquestion = querySnapshot!.documents[indexPath.row]["tablename"]{
-                cell.textLabel?.text = selectedquestion as? String
-            }
-        }
+        let selectedquestion = questionList[indexPath.row]
+        cell.textLabel?.text = selectedquestion
         cell.textLabel?.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         cell.textLabel!.font = UIFont(name: "Kefa", size: 22)
         cell.backgroundColor = UIColor.clear
@@ -65,7 +60,6 @@ class MainTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
             let selectedquestion = indexPath.row
             self.performSegue(withIdentifier: "moveToQuestion", sender: selectedquestion)
-//        }
     }
     /*
     // Override to support conditional editing of the table view.
@@ -106,6 +100,7 @@ class MainTableViewController: UITableViewController {
         if let playViewController = segue.destination as? PlayViewController{
                 if let selectedquestion = sender as? Int{
                     playViewController.selectedQ = selectedquestion
+                    playViewController.flag = 1
                 }
             }
     }
@@ -120,7 +115,7 @@ extension MainTableViewController{
             } else {
                 for document in querySnapshot!.documents {
                     self.idList.append(document.documentID)
-                    self.todoList.append(document.data()["tablename"] as! String)
+                    self.questionList.append(document.data()["tablename"] as! String)
                 }
             }
             self.tableView.reloadData()

@@ -22,7 +22,7 @@ class AnswerTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2
+        return questions.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -30,9 +30,11 @@ class AnswerTableViewController: UITableViewController {
          let cell = tableView.dequeueReusableCell(withIdentifier: "answerCell", for: indexPath) as! AnswerTableViewCell
         let question = questions[indexPath.row]
         cell.問題文?.text = question[0]
+        cell.問題文.sizeToFit()
         cell.userAnswer?.text = question[answers[indexPath.row]]
         cell.correctAnswer?.text = question[1]
         cell.解説?.text = question[4]
+        cell.解説.sizeToFit()
         return cell
     }
     
