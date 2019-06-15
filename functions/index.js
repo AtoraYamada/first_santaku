@@ -7,30 +7,23 @@ const functions = require('firebase-functions');
 //  response.send("Hello from Firebase!");
 // });
 const admin = require('firebase-admin');
-// admin.initializeApp(functions.config().firebase)
-admin.initializeApp();
-// var db = admin.firestore();
+admin.initializeApp(functions.config().firebase)
 
-// exports.userquestions = functions.firestore.document('users/{userId}/userquestions/{documentId}').onCreate((snap, context) => {
-//   const newValue = snap.data();
-//   const tablename = newValue.tablename;
-//   const tags = newValue.tags;
-//   const createdAt = newValue.createdAt
-//   var data = {
-//     tablename: tablename,
-//     tags: tags,
-//     createdAt: createdAt
-//   }
-//   db.doc('userquestions/{documentId}').set(data);
+var db = admin.firestore();
 
-// });
+exports.userquestions = functions.region('asia-northeast1').firestore.document('users/{userId}/userquestions/{documentId}').onCreate((snap, context) => {
+  const newValue = snap.data();
+  const tablename = newValue.tablename;
+  const tags = newValue.tags;
+  const createdAt = newValue.createdAt
+  const documentId = snap.id;
+  const userId = context.params.userId;
+  var data = {
+    tablename: tablename,
+    tags: tags,
+    createdAt: createdAt
+  }
+  data.userRef = db.collection('users').doc(userId);
+  db.collection('userquestions').doc(documentId).set(data);
 
-exports.addMessage = functions.region('asia-northeast1').https.onRequest(async (req, res) => {
-  // Grab the text parameter.
-  const original = req.query.text;
-  // Push the new message into the Realtime Database using the Firebase Admin SDK.
-  const snapshot = await admin.database().ref('/messages').push({original: original});
-  // Redirect with 303 SEE OTHER to the URL of the pushed object in the Firebase console.
-  res.redirect(303, snapshot.ref.toString());
 });
-
