@@ -63,24 +63,33 @@ class CreateQuestionDetailsViewController: UIViewController, UITextFieldDelegate
     
     @IBAction func nextButton(_ sender: Any) {
         detail = []
-        guard let question = inputQuestion.text else { return }
-         guard let correct = inputCorrect.text else { return }
-         guard let uncorrect1 = inputUncorrect1.text else { return }
-         guard let uncorrect2 = inputUncorrect2.text else { return }
-         guard let answer = inputAnswer.text else { return }
-        detail += [question, correct, uncorrect1, uncorrect2, answer]
-        var ref: DocumentReference? = nil
-        ref = db.collection("users").document("\(userId)").collection("userquestions").document("\(documentId)").collection("details").addDocument(data: [
-            "detail": detail,
-            "createdAt": FieldValue.serverTimestamp(),
-            ]){ err in
-                if let err = err {
-                    print("Error adding document: \(err)")
-                } else {
-                    self.detailId = ref!.documentID
-                    print("Document added with ID: \(ref!.documentID)")
-                }
+        let question = inputQuestion.text
+        let correct = inputCorrect.text
+        let uncorrect1 = inputUncorrect1.text
+        let uncorrect2 = inputUncorrect2.text
+        let answer = inputAnswer.text
+        if question != "" && correct != "" && uncorrect1 != "" && uncorrect2 != "" && answer != ""{
+            detail += [question!, correct!, uncorrect1!, uncorrect2!, answer!]
+            var ref: DocumentReference? = nil
+            ref = db.collection("users").document("\(userId)").collection("userquestions").document("\(documentId)").collection("details").addDocument(data: [
+                "detail": detail,
+                "createdAt": FieldValue.serverTimestamp(),
+                ]){ err in
+                    if let err = err {
+                        print("Error adding document: \(err)")
+                    } else {
+                        self.detailId = ref!.documentID
+                        print("Document added with ID: \(ref!.documentID)")
+                    }
             }
+        } else {
+            let alert = UIAlertController(title: "Failed to Create", message: "Fill in All Entry Point", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            
+            present(alert, animated: true, completion: nil)
+        }
+        
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let createQuestionDetailsViewController = segue.destination as? CreateQuestionDetailsViewController{
