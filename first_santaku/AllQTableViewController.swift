@@ -7,30 +7,43 @@
 //
 
 import UIKit
+import Firebase
 
 class AllQTableViewController: UITableViewController {
-
+    var questionList:[String] = []
+    var tagList = [Array<String>]()
+    var idList:[String] = []
+    var db : Firestore!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        let image = UIImage(named: "matrix-356024_640")
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
+        imageView.image = image
+        self.tableView.backgroundView = imageView
+        tableView.register(UINib(nibName: "AllQTableViewCell", bundle: nil),forCellReuseIdentifier:"allCell")
+        tableView.estimatedRowHeight = 91
+        tableView.rowHeight = UITableView.automaticDimension
+        db = Firestore.firestore()
     }
 
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 1
     }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "allCell", for: indexPath) as! AllQTableViewCell
+        cell.allTitle.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        cell.allTitle.font = UIFont(name: "Kefa", size: 22)
+        cell.allTags.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        cell.allTags.font = UIFont(name: "Kefa", size: 15)
+        cell.allName.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        cell.allName.font = UIFont(name: "Kefa", size: 15)
+        cell.backgroundColor = UIColor.clear
+        cell.contentView.backgroundColor = UIColor.clear
+        return cell
+    }
+
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

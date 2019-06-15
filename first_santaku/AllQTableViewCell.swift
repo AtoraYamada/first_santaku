@@ -10,6 +10,9 @@ import UIKit
 
 class AllQTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var allTitle: UILabel!
+    @IBOutlet weak var allTags: UILabel!
+    @IBOutlet weak var allName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
