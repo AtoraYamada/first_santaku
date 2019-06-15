@@ -17,6 +17,9 @@ class MyPageTableViewController: UITableViewController {
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
         imageView.image = image
         self.tableView.backgroundView = imageView
+        tableView.register(UINib(nibName: "MyPageTableViewCell", bundle: nil),forCellReuseIdentifier:"mypageCell")
+        tableView.estimatedRowHeight = 86
+        tableView.rowHeight = UITableView.automaticDimension
         db = Firestore.firestore()
     }
 
