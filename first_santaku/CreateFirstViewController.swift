@@ -42,10 +42,6 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
                     self.documentId = ref!.documentID
                     print("Document added with ID: \(ref!.documentID)")
                     self.performSegue(withIdentifier: "createdetails", sender: self.documentId)
-//                    let storyboard = self.storyboard?.instantiateViewController(withIdentifier: "createquestion") as! CreateQuestionDetailsViewController
-//                    storyboard.userId = self.userId
-//                    storyboard.documentId = self.documentId
-//                    self.present(storyboard, animated: true, completion: nil)
                 }
             }
     }
@@ -55,15 +51,7 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
             createQuestionDetailsViewController.documentId = self.documentId
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
     var tags = Array<String>()
     @IBAction func htmlButton(_ sender: CheckBox) {
         if !sender.isChecked == true {

@@ -60,15 +60,7 @@ class CreateQuestionDetailsViewController: UIViewController, UITextFieldDelegate
     }
     @IBAction func getUncorrect2(_ sender: Any) {
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
     @IBAction func nextButton(_ sender: Any) {
         detail = []
         guard let question = inputQuestion.text else { return }
@@ -87,10 +79,6 @@ class CreateQuestionDetailsViewController: UIViewController, UITextFieldDelegate
                 } else {
                     self.detailId = ref!.documentID
                     print("Document added with ID: \(ref!.documentID)")
-//                        let storyboard = self.storyboard?.instantiateViewController(withIdentifier: "createquestion") as! CreateQuestionDetailsViewController
-//                        storyboard.userId = self.userId
-//                        storyboard.detailId = self.documentId
-//                        self.present(storyboard, animated: true, completion: nil)
                 }
             }
     }
