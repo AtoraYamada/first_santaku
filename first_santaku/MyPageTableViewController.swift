@@ -10,6 +10,9 @@ import UIKit
 import Firebase
 
 class MyPageTableViewController: UITableViewController {
+    var todoList:[String] = []
+    var idList:[String] = []
+    let user = Auth.auth().currentUser
     var db : Firestore!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,20 +24,29 @@ class MyPageTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 86
         tableView.rowHeight = UITableView.automaticDimension
         db = Firestore.firestore()
+        readData()
     }
-
-    // MARK: - Table view data source
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return idList.count
     }
-
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        cell.textLabel!.font = UIFont(name: "Kefa", size: 22)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "mypageCell", for: indexPath) as! MyPageTableViewCell
+        db.collection("users").document("\(self.user!.uid)").collection("userquestions").getDocuments(){(querySnapshot, err) in
+            if let selectedquestion = querySnapshot!.documents[indexPath.row]["tablename"]{
+                cell.mypageTitle.text = selectedquestion as? String
+            }
+        }
+        cell.mypageTitle.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        cell.mypageTitle.font = UIFont(name: "Kefa", size: 22)
+        cell.mypageTags.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        cell.mypageTags.font = UIFont(name: "Kefa", size: 15)
         cell.backgroundColor = UIColor.clear
         cell.contentView.backgroundColor = UIColor.clear
         return cell
@@ -86,4 +98,19 @@ class MyPageTableViewController: UITableViewController {
     }
     */
 
+}
+extension MyPageTableViewController{
+    func readData(){
+        db.collection("users").document("\(self.user!.uid)").collection("userquestions").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    self.idList.append(document.documentID)
+                    self.todoList.append(document.data()["tablename"] as! String)
+                }
+            }
+            self.tableView.reloadData()
+        }
+    }
 }
