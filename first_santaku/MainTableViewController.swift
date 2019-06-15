@@ -11,7 +11,6 @@ import Firebase
 
 class MainTableViewController: UITableViewController {
     var db : Firestore!
-    var todoList:[String] = []
     var idList:[String] = []
 
     
@@ -120,7 +119,6 @@ extension MainTableViewController{
             } else {
                 for document in querySnapshot!.documents {
                     self.idList.append(document.documentID)
-                    self.todoList.append(document.data()["tablename"] as! String)
                 }
             }
             self.tableView.reloadData()

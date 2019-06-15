@@ -10,7 +10,8 @@ import UIKit
 import Firebase
 
 class MyPageTableViewController: UITableViewController {
-    var todoList:[String] = []
+    var questionList:[String] = []
+    var tagList = [Array<String>]()
     var idList:[String] = []
     let user = Auth.auth().currentUser
     var db : Firestore!
@@ -37,12 +38,15 @@ class MyPageTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var newTags:[String] = []
         let cell = tableView.dequeueReusableCell(withIdentifier: "mypageCell", for: indexPath) as! MyPageTableViewCell
-        db.collection("users").document("\(self.user!.uid)").collection("userquestions").getDocuments(){(querySnapshot, err) in
-            if let selectedquestion = querySnapshot!.documents[indexPath.row]["tablename"]{
-                cell.mypageTitle.text = selectedquestion as? String
-            }
+        let selectedquestion = self.questionList[indexPath.row]
+        cell.mypageTitle.text = selectedquestion
+        let selectedtags = self.tagList[indexPath.row]
+        for tag in selectedtags{
+            newTags.append("#\(tag)")
         }
+        cell.mypageTags.text = newTags.joined(separator: " ")
         cell.mypageTitle.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         cell.mypageTitle.font = UIFont(name: "Kefa", size: 22)
         cell.mypageTags.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -107,7 +111,8 @@ extension MyPageTableViewController{
             } else {
                 for document in querySnapshot!.documents {
                     self.idList.append(document.documentID)
-                    self.todoList.append(document.data()["tablename"] as! String)
+                    self.questionList.append(document.data()["tablename"] as! String)
+                    self.tagList.append(document.data()["tags"] as! Array<String>)
                 }
             }
             self.tableView.reloadData()
