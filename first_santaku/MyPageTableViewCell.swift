@@ -10,6 +10,8 @@ import UIKit
 
 class MyPageTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var mypageTitle: UILabel!
+    @IBOutlet weak var mypageTags: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

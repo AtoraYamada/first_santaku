@@ -46,6 +46,10 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="mypageTags" destination="3Xx-3E-gdh" id="XXr-x8-GMZ"/>
+                <outlet property="mypageTitle" destination="r4a-g4-fHz" id="9eY-jW-TUl"/>
+            </connections>
             <point key="canvasLocation" x="137.59999999999999" y="164.6176911544228"/>
         </tableViewCell>
     </objects>
