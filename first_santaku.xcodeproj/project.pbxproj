@@ -20,6 +20,7 @@
 		D2AAF6F422ABA73A003F02AA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AAF6F322ABA73A003F02AA /* SignUpViewController.swift */; };
 		D2AAF6F622ABC156003F02AA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2AAF6F522ABC156003F02AA /* GoogleService-Info.plist */; };
 		D2B307F322AF677100DBB4DA /* UserEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B307F222AF677000DBB4DA /* UserEditViewController.swift */; };
+		D2CF849F22B4DA7100CA7217 /* first_santaku.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = D2CF849E22B4DA7100CA7217 /* first_santaku.xcworkspace */; };
 		D2D5EF3622AE4D5B00F48A9F /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D5EF3522AE4D5B00F48A9F /* MainTableViewController.swift */; };
 		D2F732B222B1DBE3009BE8D0 /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F732B022B1DBE3009BE8D0 /* AnswerTableViewCell.swift */; };
 		D2F732B322B1DBE3009BE8D0 /* AnswerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2F732B122B1DBE3009BE8D0 /* AnswerTableViewCell.xib */; };
@@ -45,6 +46,7 @@
 		D2AAF6F322ABA73A003F02AA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		D2AAF6F522ABC156003F02AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D2B307F222AF677000DBB4DA /* UserEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditViewController.swift; sourceTree = "<group>"; };
+		D2CF849E22B4DA7100CA7217 /* first_santaku.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = first_santaku.xcworkspace; sourceTree = SOURCE_ROOT; };
 		D2D5EF3522AE4D5B00F48A9F /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		D2F732B022B1DBE3009BE8D0 /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
 		D2F732B122B1DBE3009BE8D0 /* AnswerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerTableViewCell.xib; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 		D253A19422AB721A008D14EB /* first_santaku */ = {
 			isa = PBXGroup;
 			children = (
+				D2CF849E22B4DA7100CA7217 /* first_santaku.xcworkspace */,
 				D2A013CE22B3422F000BFFEF /* CreateQuestionDetailsViewController.swift */,
 				D2F732B622B22E2B009BE8D0 /* MyPageTableViewController.swift */,
 				D2F732B022B1DBE3009BE8D0 /* AnswerTableViewCell.swift */,
@@ -190,6 +193,7 @@
 				D253A1A022AB721F008D14EB /* LaunchScreen.storyboard in Resources */,
 				D2AAF6F622ABC156003F02AA /* GoogleService-Info.plist in Resources */,
 				D2F732B322B1DBE3009BE8D0 /* AnswerTableViewCell.xib in Resources */,
+				D2CF849F22B4DA7100CA7217 /* first_santaku.xcworkspace in Resources */,
 				D253A19D22AB721F008D14EB /* Assets.xcassets in Resources */,
 				D253A19B22AB721A008D14EB /* Main.storyboard in Resources */,
 			);
