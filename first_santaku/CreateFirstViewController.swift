@@ -28,11 +28,11 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
     @IBAction func toSecondButton(_ sender: Any) {
     }
     @IBAction func nextButton(_ sender: Any) {
-        guard let title = inputTitle.text else { return }
-        guard tags != [] else  { return }
+        let title = inputTitle.text
         var ref: DocumentReference? = nil
+        if title != "" && tags != [] {
         ref = db.collection("users").document("\(userId)").collection("userquestions").addDocument(data: [
-            "tablename": title,
+            "tablename": title!,
             "tags": tags,
             "createdAt": FieldValue.serverTimestamp(),
             ]){ err in
@@ -44,6 +44,13 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
                     self.performSegue(withIdentifier: "createdetails", sender: self.documentId)
                 }
             }
+        } else {
+            let alert = UIAlertController(title: "Failed to Create", message: "Fill in both Title and Tags", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            
+            present(alert, animated: true, completion: nil)
+        }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let createQuestionDetailsViewController = segue.destination as? CreateQuestionDetailsViewController{
