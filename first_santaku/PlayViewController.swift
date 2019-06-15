@@ -18,11 +18,6 @@ class PlayViewController: UIViewController {
     @IBOutlet weak var 残り時間ビュー: UIProgressView!
     @IBOutlet var 解答ボタン: [UIButton]!
     
-    let 問題リスト = [
-        ["Rubyでくクラス変数の定義方法は？", "@@hoge", "@hoge", "var hoge"],
-        ["TECH::EXPERTでは何を一番重要視している？", "アウトプット", "インプット", "昼食"],
-        ["Rubyで曜日を数値で取得できるメソッドは？", ".wday()", ".day()", ".week()"],
-        ]
     var 問題番号 = 0
     var 残り時間 = 10
     var 正解数 = 0
@@ -117,15 +112,4 @@ class PlayViewController: UIViewController {
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
-
 }
