@@ -83,13 +83,44 @@ class CreateQuestionDetailsViewController: UIViewController, UITextFieldDelegate
                     }
             }
         } else {
-            let alert = UIAlertController(title: "Failed to Create", message: "Fill in All Entry Point", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Failed to Create", message: "Fill in All Entry Points", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             
             present(alert, animated: true, completion: nil)
         }
         
+    }
+    @IBAction func doneButton(_ sender: Any) {
+        detail = []
+        let question = inputQuestion.text
+        let correct = inputCorrect.text
+        let uncorrect1 = inputUncorrect1.text
+        let uncorrect2 = inputUncorrect2.text
+        let answer = inputAnswer.text
+        if question != "" && correct != "" && uncorrect1 != "" && uncorrect2 != "" && answer != ""{
+            detail += [question!, correct!, uncorrect1!, uncorrect2!, answer!]
+            var ref: DocumentReference? = nil
+            ref = db.collection("users").document("\(userId)").collection("userquestions").document("\(documentId)").collection("details").addDocument(data: [
+                "detail": detail,
+                "createdAt": FieldValue.serverTimestamp(),
+                ]){ err in
+                    if let err = err {
+                        print("Error adding document: \(err)")
+                    } else {
+                        self.detailId = ref!.documentID
+                        print("Document added with ID: \(ref!.documentID)")
+                        let storyboard = self.storyboard?.instantiateViewController(withIdentifier: "main") as! UITabBarController
+                        self.present(storyboard, animated: true, completion: nil)
+                    }
+            }
+        } else {
+            let alert = UIAlertController(title: "Failed to Create", message: "Fill in All Entry Points", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            
+            present(alert, animated: true, completion: nil)
+        }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let createQuestionDetailsViewController = segue.destination as? CreateQuestionDetailsViewController{
