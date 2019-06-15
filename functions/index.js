@@ -15,7 +15,7 @@ exports.userquestions = functions.region('asia-northeast1').firestore.document('
   const newValue = snap.data();
   const tablename = newValue.tablename;
   const tags = newValue.tags;
-  const createdAt = newValue.createdAt
+  const createdAt = newValue.createdAt;
   const documentId = snap.id;
   const userId = context.params.userId;
   var data = {
@@ -25,5 +25,19 @@ exports.userquestions = functions.region('asia-northeast1').firestore.document('
   }
   data.userRef = db.collection('users').doc(userId);
   db.collection('userquestions').doc(documentId).set(data);
+
+});
+
+exports.createdetails = functions.region('asia-northeast1').firestore.document('users/{userId}/userquestions/{documentId}/details/{detailId}').onCreate((snap, context) => {
+  const newValue = snap.data();
+  const detail = newValue.detail;
+  const createdAt = newValue.createdAt;
+  const detailId = snap.id;
+  const documentId = context.params.documentId;
+  var data = {
+    detail: detail,
+    createdAt: createdAt
+  }
+  db.collection('userquestions').doc(documentId).collection('details').doc(detailId).set(data);
 
 });
