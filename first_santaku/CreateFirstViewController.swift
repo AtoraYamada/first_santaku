@@ -16,6 +16,7 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
     var documentId = ""
     var tablename = ""
     var detailIds = Array<String>()
+    var questions = [Array<String>]()
     var db : Firestore!
     @IBOutlet weak var inputTitle: UITextField!
     override func viewDidLoad() {
@@ -92,6 +93,14 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
                         }
                     }
                 }
+                db.collection("users").document("\(self.userId)").collection("userquestions").order(by: "createdAt", descending: true).getDocuments(){(querySnapshot, err) in
+                    let a = querySnapshot!.documents[self.selectedQ].documentID
+                    self.db.collection("users").document("\(self.userId)").collection("userquestions").document("\(a)").collection("details").order(by: "createdAt").getDocuments(){(querySnapshot, err)in
+                        for document in querySnapshot!.documents {
+                            self.questions.append(document.data()["detail"]! as! Array<String>)
+                        }
+                    }
+                }
                let ref = db.collection("users").document("\(userId)").collection("userquestions").document("\(documentId)")
                 ref.updateData([
                     "tablename": title!,
@@ -101,7 +110,8 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
                         if let err = err {
                             print("Error updating document: \(err)")
                         } else {
-                            self.performSegue(withIdentifier: "createdetails", sender: self.documentId)
+                            print("success update")
+                            self.performSegue(withIdentifier: "createdetails", sender: self.detailIds)
                         }
                 }
             } else {
@@ -121,9 +131,14 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
             }
         } else {
             if let createQuestionDetailsViewController = segue.destination as? CreateQuestionDetailsViewController{
+                print(self.detailIds)
+                print(self.questions)
                 createQuestionDetailsViewController.userId = self.userId
                 createQuestionDetailsViewController.documentId = self.documentId
                 createQuestionDetailsViewController.detailIds = self.detailIds
+                createQuestionDetailsViewController.flag = 1
+                createQuestionDetailsViewController.counter = 0
+                createQuestionDetailsViewController.questions = self.questions
             }
         }
     }

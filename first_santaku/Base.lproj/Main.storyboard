@@ -877,6 +877,7 @@
                         <outlet property="inputQuestion" destination="NFE-Kb-smu" id="60r-yR-yEX"/>
                         <outlet property="inputUncorrect1" destination="OBi-Z4-eeK" id="FYO-eD-haC"/>
                         <outlet property="inputUncorrect2" destination="XwC-DR-qBu" id="5MY-F2-yvb"/>
+                        <outlet property="nextButton" destination="pN1-j7-w8V" id="ntk-ct-wms"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pbl-9e-6pu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1209,7 +1210,7 @@
         <image name="本棚アイコン" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rX5-9h-RjV"/>
+        <segue reference="Kzo-K4-Tmy"/>
         <segue reference="MOY-Q1-DKw"/>
         <segue reference="8XM-I4-uft"/>
     </inferredMetricsTieBreakers>
