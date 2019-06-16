@@ -41,3 +41,8 @@ exports.createdetails = functions.region('asia-northeast1').firestore.document('
   db.collection('userquestions').doc(documentId).collection('details').doc(detailId).set(data);
 
 });
+
+exports.deletequestion = functions.region('asia-northeast1').firestore.document('users/{userId}/userquestions/{documentId}').onDelete((snap, context) => {
+  const documentId = context.params.documentId;
+  db.collection('userquestions').doc(documentId).delete();
+});

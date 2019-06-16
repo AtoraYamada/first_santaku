@@ -62,14 +62,59 @@ class MyPageTableViewController: UITableViewController {
         let selectedquestion = indexPath.row
         self.performSegue(withIdentifier: "moveToMyQuestion", sender: selectedquestion)
     }
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
+    {
         return true
     }
-    */
-
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let editAction = UIContextualAction(style: .normal,
+                                            title: "Edit",
+                                            handler: {(action: UIContextualAction, view: UIView, completion: (Bool) -> Void) in
+                                                print("Edit")
+                                                // 処理を実行完了した場合はtrue
+                                                completion(true)
+        })
+        editAction.backgroundColor = #colorLiteral(red: 0.02193383314, green: 0.03609436378, blue: 0.01393978298, alpha: 1)
+        
+        let deleteAction = UIContextualAction(style: .destructive,
+                                              title: "Delete",
+                                              handler: { (action: UIContextualAction, view: UIView, completion: (Bool) -> Void) in
+                                                print("Delete")
+                                                let alert = UIAlertController(title: "Delete the selected Question", message: "Really Want to Delete ?", preferredStyle: .alert)
+                                                let ok: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
+                                                    (action: UIAlertAction!) -> Void in
+                                                    print("ok")
+                                                    let id = self.idList[indexPath.row]
+                                                    print(id)
+                                                    self.db.collection("users").document("\(self.user!.uid)").collection("userquestions").document("\(id)").delete(){ err in
+                                                        if let err = err {
+                                                            print("Error removing document: \(err)")
+                                                        } else {
+                                                            print("Document successfully removed!")
+                                                            self.readData()
+                                                        }
+                                                    }
+                                                })
+                                                let cancel: UIAlertAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler:{
+                                                    (action: UIAlertAction!) -> Void in
+                                                    print("cancel")
+                                                })
+                                                alert.addAction(ok)
+                                                alert.addAction(cancel)
+                                                
+                                                self.present(alert, animated: true, completion: nil)
+                                                
+                                                // 処理を実行できなかった場合はfalse
+                                                completion(false)
+        })
+        deleteAction.backgroundColor = #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)
+        let swipeAction = UISwipeActionsConfiguration(actions: [editAction, deleteAction])
+        swipeAction.performsFirstActionWithFullSwipe = false
+        return swipeAction
+    }
+    
     /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -97,15 +142,6 @@ class MyPageTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let playViewController = segue.destination as? PlayViewController{
             if let selectedquestion = sender as? Int{
@@ -118,6 +154,9 @@ class MyPageTableViewController: UITableViewController {
 }
 extension MyPageTableViewController{
     func readData(){
+        self.idList = []
+        self.questionList = []
+        self.tagList = []
         db.collection("users").document("\(self.user!.uid)").collection("userquestions").order(by: "createdAt", descending: true).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
