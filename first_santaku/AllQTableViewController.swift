@@ -54,7 +54,6 @@ class AllQTableViewController: UITableViewController {
         cell.allTags.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         cell.allTags.font = UIFont(name: "Kefa", size: 15)
         cell.allTags.sizeToFit()
-        cell.allTags.adjustsFontSizeToFitWidth = true
         cell.allName.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         cell.allName.font = UIFont(name: "Kefa", size: 15)
         cell.allName.adjustsFontSizeToFitWidth = true
