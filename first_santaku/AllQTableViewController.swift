@@ -22,7 +22,7 @@ class AllQTableViewController: UITableViewController {
         imageView.image = image
         self.tableView.backgroundView = imageView
         tableView.register(UINib(nibName: "AllQTableViewCell", bundle: nil),forCellReuseIdentifier:"allCell")
-        tableView.estimatedRowHeight = 91
+        tableView.estimatedRowHeight = 71
         tableView.rowHeight = UITableView.automaticDimension
         db = Firestore.firestore()
         readData()
@@ -50,11 +50,14 @@ class AllQTableViewController: UITableViewController {
         cell.allTags.text = newTags.joined(separator: " ")
         cell.allTitle.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         cell.allTitle.font = UIFont(name: "Kefa", size: 22)
+        cell.allTitle.adjustsFontSizeToFitWidth = true
         cell.allTags.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         cell.allTags.font = UIFont(name: "Kefa", size: 15)
         cell.allTags.sizeToFit()
+        cell.allTags.adjustsFontSizeToFitWidth = true
         cell.allName.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         cell.allName.font = UIFont(name: "Kefa", size: 15)
+        cell.allName.adjustsFontSizeToFitWidth = true
         cell.backgroundColor = UIColor.clear
         cell.contentView.backgroundColor = UIColor.clear
         return cell
