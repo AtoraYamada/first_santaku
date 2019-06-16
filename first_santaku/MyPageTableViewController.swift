@@ -165,6 +165,12 @@ class MyPageTableViewController: UITableViewController {
                 playViewController.flag = 2
             }
         }
+        if let createFirstViewController = segue.destination as? CreateFirstViewController{
+            if let selectedquestion = sender as? Int{
+                createFirstViewController.selectedQ = selectedquestion
+                createFirstViewController.flag = 1
+            }
+        }
     }
 
 }

@@ -10,6 +10,8 @@ import UIKit
 import Firebase
 
 class CreateFirstViewController: UIViewController, UITextFieldDelegate {
+    var flag: Int!
+    var selectedQ: Int!
     var userId = ""
     var documentId = ""
     var db : Firestore!
@@ -28,28 +30,30 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
     @IBAction func toSecondButton(_ sender: Any) {
     }
     @IBAction func nextButton(_ sender: Any) {
-        let title = inputTitle.text
-        var ref: DocumentReference? = nil
-        if title != "" && tags != [] {
-        ref = db.collection("users").document("\(userId)").collection("userquestions").addDocument(data: [
-            "tablename": title!,
-            "tags": tags,
-            "createdAt": FieldValue.serverTimestamp(),
-            ]){ err in
-                if let err = err {
-                    print("Error adding document: \(err)")
-                } else {
-                    self.documentId = ref!.documentID
-                    print("Document added with ID: \(ref!.documentID)")
-                    self.performSegue(withIdentifier: "createdetails", sender: self.documentId)
+        if flag != 1 {
+            let title = inputTitle.text
+            var ref: DocumentReference? = nil
+            if title != "" && tags != [] {
+            ref = db.collection("users").document("\(userId)").collection("userquestions").addDocument(data: [
+                "tablename": title!,
+                "tags": tags,
+                "createdAt": FieldValue.serverTimestamp(),
+                ]){ err in
+                    if let err = err {
+                        print("Error adding document: \(err)")
+                    } else {
+                        self.documentId = ref!.documentID
+                        print("Document added with ID: \(ref!.documentID)")
+                        self.performSegue(withIdentifier: "createdetails", sender: self.documentId)
+                    }
                 }
+            } else {
+                let alert = UIAlertController(title: "Failed to Create", message: "Fill in both Title and Tags", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                
+                present(alert, animated: true, completion: nil)
             }
-        } else {
-            let alert = UIAlertController(title: "Failed to Create", message: "Fill in both Title and Tags", preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            
-            present(alert, animated: true, completion: nil)
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
