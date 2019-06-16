@@ -79,6 +79,28 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
                 
                 present(alert, animated: true, completion: nil)
             }
+        } else {
+            let title = inputTitle.text
+            if title != "" && tags != [] {
+               let ref = db.collection("users").document("\(userId)").collection("userquestions").document("\(documentId)")
+                ref.updateData([
+                    "tablename": title!,
+                    "tags": tags,
+                    "createdAt": FieldValue.serverTimestamp(),
+                    ]){ err in
+                        if let err = err {
+                            print("Error updating document: \(err)")
+                        } else {
+                            self.performSegue(withIdentifier: "createdetails", sender: self.documentId)
+                        }
+                }
+            } else {
+                let alert = UIAlertController(title: "Failed to Create", message: "Fill in both Title and Tags", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                
+                present(alert, animated: true, completion: nil)
+            }
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
