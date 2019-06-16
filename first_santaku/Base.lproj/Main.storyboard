@@ -1133,6 +1133,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="F77-T1-xqJ" kind="show" identifier="moveToAllQ" id="Kzo-K4-Tmy"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1198,7 +1201,7 @@
         <image name="本棚アイコン" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rX5-9h-RjV"/>
+        <segue reference="Kzo-K4-Tmy"/>
         <segue reference="MOY-Q1-DKw"/>
         <segue reference="cvf-sC-wLt"/>
     </inferredMetricsTieBreakers>
