@@ -15,6 +15,7 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
     var userId = ""
     var documentId = ""
     var tablename = ""
+    var detailIds = Array<String>()
     var db : Firestore!
     @IBOutlet weak var inputTitle: UITextField!
     override func viewDidLoad() {
@@ -82,6 +83,15 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
         } else {
             let title = inputTitle.text
             if title != "" && tags != [] {
+                db.collection("users").document("\(userId)").collection("userquestions").document("\(documentId)").collection("details").order(by: "createdAt").getDocuments() { (querySnapshot, err) in
+                    if let err = err {
+                        print("Error getting documents: \(err)")
+                    } else {
+                        for document in querySnapshot!.documents {
+                            self.detailIds.append(document.documentID)
+                        }
+                    }
+                }
                let ref = db.collection("users").document("\(userId)").collection("userquestions").document("\(documentId)")
                 ref.updateData([
                     "tablename": title!,
@@ -104,9 +114,17 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let createQuestionDetailsViewController = segue.destination as? CreateQuestionDetailsViewController{
-            createQuestionDetailsViewController.userId = self.userId
-            createQuestionDetailsViewController.documentId = self.documentId
+        if flag != 1{
+            if let createQuestionDetailsViewController = segue.destination as? CreateQuestionDetailsViewController{
+                createQuestionDetailsViewController.userId = self.userId
+                createQuestionDetailsViewController.documentId = self.documentId
+            }
+        } else {
+            if let createQuestionDetailsViewController = segue.destination as? CreateQuestionDetailsViewController{
+                createQuestionDetailsViewController.userId = self.userId
+                createQuestionDetailsViewController.documentId = self.documentId
+                createQuestionDetailsViewController.detailIds = self.detailIds
+            }
         }
     }
     

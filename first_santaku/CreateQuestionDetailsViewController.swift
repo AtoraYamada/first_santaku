@@ -15,6 +15,7 @@ class CreateQuestionDetailsViewController: UIViewController, UITextFieldDelegate
     var documentId = ""
     var detail = Array<String>()
     var detailId = ""
+    var detailIds = Array<String>()
 
     @IBOutlet weak var inputQuestion: UITextView!
     @IBOutlet weak var inputCorrect: UITextField!
