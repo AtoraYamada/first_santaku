@@ -62,7 +62,10 @@ class AllQTableViewController: UITableViewController {
         return cell
     }
 
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        let selectedquestion = indexPath.row
+        self.performSegue(withIdentifier: "moveToAllQ", sender: selectedquestion)
+    }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
@@ -117,6 +120,14 @@ class AllQTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let playViewController = segue.destination as? PlayViewController{
+            if let selectedquestion = sender as? Int{
+                playViewController.selectedQ = selectedquestion
+                playViewController.flag = 3
+            }
+        }
+    }
 
 }
 extension AllQTableViewController{
