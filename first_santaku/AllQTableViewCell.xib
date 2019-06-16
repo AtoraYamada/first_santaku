@@ -61,7 +61,7 @@
                 <outlet property="allTags" destination="yiz-fc-3MM" id="fY0-KE-2qo"/>
                 <outlet property="allTitle" destination="kGK-IW-ERf" id="Bj6-FV-gDF"/>
             </connections>
-            <point key="canvasLocation" x="274" y="145"/>
+            <point key="canvasLocation" x="477" y="90"/>
         </tableViewCell>
     </objects>
 </document>

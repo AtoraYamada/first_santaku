@@ -51,6 +51,7 @@ class MyPageTableViewController: UITableViewController {
         cell.mypageTitle.font = UIFont(name: "Kefa", size: 22)
         cell.mypageTags.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         cell.mypageTags.font = UIFont(name: "Kefa", size: 15)
+        cell.mypageTags.sizeToFit()
         cell.backgroundColor = UIColor.clear
         cell.contentView.backgroundColor = UIColor.clear
         return cell
