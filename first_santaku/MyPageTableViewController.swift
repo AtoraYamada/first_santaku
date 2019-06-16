@@ -116,7 +116,7 @@ class MyPageTableViewController: UITableViewController {
 }
 extension MyPageTableViewController{
     func readData(){
-        db.collection("users").document("\(self.user!.uid)").collection("userquestions").order(by: "createdAt", descending: true) .getDocuments() { (querySnapshot, err) in
+        db.collection("users").document("\(self.user!.uid)").collection("userquestions").order(by: "createdAt", descending: true).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
