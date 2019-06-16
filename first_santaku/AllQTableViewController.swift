@@ -143,7 +143,6 @@ extension AllQTableViewController{
                     self.userList.append(document.data()["userRef"] as! DocumentReference)
                 }
             }
-            print(self.userList)
             self.tableView.reloadData()
         }
     }
