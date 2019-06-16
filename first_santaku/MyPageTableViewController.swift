@@ -169,6 +169,9 @@ class MyPageTableViewController: UITableViewController {
             if let selectedquestion = sender as? Int{
                 createFirstViewController.selectedQ = selectedquestion
                 createFirstViewController.flag = 1
+                createFirstViewController.documentId = self.idList[selectedquestion]
+                createFirstViewController.tablename = questionList[selectedquestion]
+                createFirstViewController.tags = tagList[selectedquestion]
             }
         }
     }

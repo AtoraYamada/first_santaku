@@ -693,7 +693,14 @@
                         <viewLayoutGuide key="safeArea" id="vHi-gq-4VW"/>
                     </view>
                     <connections>
+                        <outlet property="cssButton" destination="WHW-2q-AXD" id="5s9-Xb-EUQ"/>
+                        <outlet property="htmlButton" destination="3UK-6g-ue1" id="qHQ-7K-Jmv"/>
                         <outlet property="inputTitle" destination="qHx-Vp-t8z" id="ikE-MP-271"/>
+                        <outlet property="jqueryButton" destination="S63-QR-xVm" id="bSE-iA-2uo"/>
+                        <outlet property="jsButton" destination="VBh-ca-zBe" id="LzG-Wj-uAr"/>
+                        <outlet property="othersButton" destination="3bW-nb-gI7" id="nbw-Xt-ZRD"/>
+                        <outlet property="railsButton" destination="E7y-SE-xGG" id="hq3-aD-zNE"/>
+                        <outlet property="rubyButton" destination="fEe-7u-YHZ" id="yUw-p9-xXv"/>
                         <segue destination="O7m-kl-TDE" kind="show" identifier="createdetails" id="kSV-Li-a16"/>
                     </connections>
                 </viewController>
