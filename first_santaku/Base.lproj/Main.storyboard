@@ -427,7 +427,7 @@
                     <navigationItem key="navigationItem" title="MY PAGE" id="gI2-yE-Tpb">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="H7g-ZO-zct">
                             <connections>
-                                <segue destination="u18-Wv-XVl" kind="show" id="wb7-2H-zMq"/>
+                                <segue destination="u18-Wv-XVl" kind="show" identifier="create" id="wb7-2H-zMq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1202,7 +1202,7 @@
         <image name="本棚アイコン" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Kzo-K4-Tmy"/>
+        <segue reference="rX5-9h-RjV"/>
         <segue reference="MOY-Q1-DKw"/>
         <segue reference="8XM-I4-uft"/>
     </inferredMetricsTieBreakers>
