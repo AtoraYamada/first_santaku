@@ -49,9 +49,18 @@ class PlayViewController: UIViewController {
                 }
             }
         }else if flag == 2{
-            db.collection("users").document("\(self.user!.uid)").collection("userquestions").getDocuments(){(querySnapshot, err) in
+            db.collection("users").document("\(self.user!.uid)").collection("userquestions").order(by: "createdAt", descending: true).getDocuments(){(querySnapshot, err) in
                 let a = querySnapshot!.documents[self.selectedQ].documentID
-                self.db.collection("users").document("\(self.user!.uid)").collection("userquestions").document("\(a)").collection("details").getDocuments(){(querySnapshot, err)in
+                self.db.collection("users").document("\(self.user!.uid)").collection("userquestions").document("\(a)").collection("details").order(by: "createdAt").getDocuments(){(querySnapshot, err)in
+                    for document in querySnapshot!.documents {
+                        self.questions.append(document.data()["detail"]! as! Array<String>)
+                    }
+                }
+            }
+        }else if flag == 3{
+            db.collection("userquestions").order(by: "createdAt", descending: true).getDocuments(){(querySnapshot, err) in
+                let a = querySnapshot!.documents[self.selectedQ].documentID
+                self.db.collection("userquestions").document("\(a)").collection("details").order(by: "createdAt").getDocuments(){(querySnapshot, err)in
                     for document in querySnapshot!.documents {
                         self.questions.append(document.data()["detail"]! as! Array<String>)
                     }

@@ -1,19 +1,19 @@
 //
-//  MyPageTableViewController.swift
+//  AllQTableViewController.swift
 //  first_santaku
 //
-//  Created by 山田 亜虎 on 2019/06/13.
+//  Created by 山田 亜虎 on 2019/06/15.
 //  Copyright © 2019 山田 亜虎. All rights reserved.
 //
 
 import UIKit
 import Firebase
 
-class MyPageTableViewController: UITableViewController {
+class AllQTableViewController: UITableViewController {
     var questionList:[String] = []
     var tagList = [Array<String>]()
     var idList:[String] = []
-    let user = Auth.auth().currentUser
+    var userList:[DocumentReference] = []
     var db : Firestore!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,38 +21,42 @@ class MyPageTableViewController: UITableViewController {
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
         imageView.image = image
         self.tableView.backgroundView = imageView
-        tableView.register(UINib(nibName: "MyPageTableViewCell", bundle: nil),forCellReuseIdentifier:"mypageCell")
-        tableView.estimatedRowHeight = 86
+        tableView.register(UINib(nibName: "AllQTableViewCell", bundle: nil),forCellReuseIdentifier:"allCell")
+        tableView.estimatedRowHeight = 75
         tableView.rowHeight = UITableView.automaticDimension
         db = Firestore.firestore()
         readData()
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        tableView.reloadData()
-    }
-    
+
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
         return idList.count
     }
-
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "allCell", for: indexPath) as! AllQTableViewCell
         var newTags:[String] = []
-        let cell = tableView.dequeueReusableCell(withIdentifier: "mypageCell", for: indexPath) as! MyPageTableViewCell
         let selectedquestion = self.questionList[indexPath.row]
-        cell.mypageTitle.text = selectedquestion
+        cell.allTitle.text = selectedquestion
         let selectedtags = self.tagList[indexPath.row]
         for tag in selectedtags{
             newTags.append("#\(tag)")
         }
-        cell.mypageTags.text = newTags.joined(separator: " ")
-        cell.mypageTitle.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        cell.mypageTitle.font = UIFont(name: "Kefa", size: 22)
-        cell.mypageTitle.adjustsFontSizeToFitWidth = true
-        cell.mypageTags.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        cell.mypageTags.font = UIFont(name: "Kefa", size: 15)
-        cell.mypageTags.sizeToFit()
+        let selecteduserref = self.userList[indexPath.row]
+        db.document("\(selecteduserref.path)").getDocument() { (document, err) in
+            let selectedusername = document!.data()!["username"]
+            cell.allName.text = selectedusername as? String
+        }
+        cell.allTags.text = newTags.joined(separator: " ")
+        cell.allTitle.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        cell.allTitle.font = UIFont(name: "Kefa", size: 22)
+        cell.allTitle.adjustsFontSizeToFitWidth = true
+        cell.allTags.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        cell.allTags.font = UIFont(name: "Kefa", size: 15)
+        cell.allTags.sizeToFit()
+        cell.allName.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        cell.allName.font = UIFont(name: "Kefa", size: 15)
+        cell.allName.adjustsFontSizeToFitWidth = true
         cell.backgroundColor = UIColor.clear
         cell.contentView.backgroundColor = UIColor.clear
         return cell
@@ -60,8 +64,18 @@ class MyPageTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         let selectedquestion = indexPath.row
-        self.performSegue(withIdentifier: "moveToMyQuestion", sender: selectedquestion)
+        self.performSegue(withIdentifier: "moveToAllQ", sender: selectedquestion)
     }
+    /*
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
+
+        return cell
+    }
+    */
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -110,15 +124,15 @@ class MyPageTableViewController: UITableViewController {
         if let playViewController = segue.destination as? PlayViewController{
             if let selectedquestion = sender as? Int{
                 playViewController.selectedQ = selectedquestion
-                playViewController.flag = 2
+                playViewController.flag = 3
             }
         }
     }
 
 }
-extension MyPageTableViewController{
+extension AllQTableViewController{
     func readData(){
-        db.collection("users").document("\(self.user!.uid)").collection("userquestions").order(by: "createdAt", descending: true).getDocuments() { (querySnapshot, err) in
+        db.collection("userquestions").order(by: "createdAt", descending: true).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
@@ -126,8 +140,10 @@ extension MyPageTableViewController{
                     self.idList.append(document.documentID)
                     self.questionList.append(document.data()["tablename"] as! String)
                     self.tagList.append(document.data()["tags"] as! Array<String>)
+                    self.userList.append(document.data()["userRef"] as! DocumentReference)
                 }
             }
+            print(self.userList)
             self.tableView.reloadData()
         }
     }

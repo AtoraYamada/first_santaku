@@ -10,6 +10,9 @@
 		A95232B03406C47F135FDB74 /* Pods_first_santaku.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA6856880B7BACFA2A6CA34 /* Pods_first_santaku.framework */; };
 		D232E4FE22B4E2580029A950 /* MyPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D232E4FC22B4E2580029A950 /* MyPageTableViewCell.swift */; };
 		D232E4FF22B4E2580029A950 /* MyPageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D232E4FD22B4E2580029A950 /* MyPageTableViewCell.xib */; };
+		D232E50222B500070029A950 /* AllQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D232E50022B500070029A950 /* AllQTableViewCell.swift */; };
+		D232E50322B500070029A950 /* AllQTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D232E50122B500070029A950 /* AllQTableViewCell.xib */; };
+		D232E50522B503010029A950 /* AllQTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D232E50422B503010029A950 /* AllQTableViewController.swift */; };
 		D253A19622AB721A008D14EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D253A19522AB721A008D14EB /* AppDelegate.swift */; };
 		D253A19822AB721A008D14EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D253A19722AB721A008D14EB /* ViewController.swift */; };
 		D253A19B22AB721A008D14EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D253A19922AB721A008D14EB /* Main.storyboard */; };
@@ -36,6 +39,9 @@
 		9CA6856880B7BACFA2A6CA34 /* Pods_first_santaku.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_first_santaku.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D232E4FC22B4E2580029A950 /* MyPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTableViewCell.swift; sourceTree = "<group>"; };
 		D232E4FD22B4E2580029A950 /* MyPageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageTableViewCell.xib; sourceTree = "<group>"; };
+		D232E50022B500070029A950 /* AllQTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllQTableViewCell.swift; sourceTree = "<group>"; };
+		D232E50122B500070029A950 /* AllQTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllQTableViewCell.xib; sourceTree = "<group>"; };
+		D232E50422B503010029A950 /* AllQTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllQTableViewController.swift; sourceTree = "<group>"; };
 		D253A19222AB721A008D14EB /* first_santaku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = first_santaku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D253A19522AB721A008D14EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D253A19722AB721A008D14EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +126,9 @@
 				D253A19522AB721A008D14EB /* AppDelegate.swift */,
 				D253A19722AB721A008D14EB /* ViewController.swift */,
 				D253A19922AB721A008D14EB /* Main.storyboard */,
+				D232E50022B500070029A950 /* AllQTableViewCell.swift */,
+				D232E50122B500070029A950 /* AllQTableViewCell.xib */,
+				D232E50422B503010029A950 /* AllQTableViewController.swift */,
 				D270AF2922B2593E0013744C /* CreateFirstViewController.swift */,
 				D2F732B822B244A3009BE8D0 /* CheckBox.swift */,
 				D2F732B422B1DCFC009BE8D0 /* AnswerTableViewController.swift */,
@@ -199,6 +208,7 @@
 				D253A1A022AB721F008D14EB /* LaunchScreen.storyboard in Resources */,
 				D2AAF6F622ABC156003F02AA /* GoogleService-Info.plist in Resources */,
 				D2F732B322B1DBE3009BE8D0 /* AnswerTableViewCell.xib in Resources */,
+				D232E50322B500070029A950 /* AllQTableViewCell.xib in Resources */,
 				D232E4FF22B4E2580029A950 /* MyPageTableViewCell.xib in Resources */,
 				D2CF849F22B4DA7100CA7217 /* first_santaku.xcworkspace in Resources */,
 				D253A19D22AB721F008D14EB /* Assets.xcassets in Resources */,
@@ -264,6 +274,8 @@
 				D2AAF6F422ABA73A003F02AA /* SignUpViewController.swift in Sources */,
 				D270AF2A22B2593E0013744C /* CreateFirstViewController.swift in Sources */,
 				D2B307F322AF677100DBB4DA /* UserEditViewController.swift in Sources */,
+				D232E50522B503010029A950 /* AllQTableViewController.swift in Sources */,
+				D232E50222B500070029A950 /* AllQTableViewCell.swift in Sources */,
 				D2D5EF3622AE4D5B00F48A9F /* MainTableViewController.swift in Sources */,
 				D2F732B522B1DCFC009BE8D0 /* AnswerTableViewController.swift in Sources */,
 				D28C998522B08949004321B6 /* PlayViewController.swift in Sources */,

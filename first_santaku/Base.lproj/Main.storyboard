@@ -323,6 +323,7 @@
                     <connections>
                         <segue destination="Jqh-mr-aIf" kind="relationship" relationship="viewControllers" id="qF1-9d-vgF"/>
                         <segue destination="zkg-6s-IpH" kind="relationship" relationship="viewControllers" id="q2L-Zd-smc"/>
+                        <segue destination="cCN-Fl-q7M" kind="relationship" relationship="viewControllers" id="S3b-2f-G1Q"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8tQ-aF-d1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -381,7 +382,7 @@
         <scene sceneID="rHL-U7-a9x">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jqh-mr-aIf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="HOME" image="icons8-ホーム-26" id="rfp-aq-GVu"/>
+                    <tabBarItem key="tabBarItem" title="HOME" image="家の無料アイコン" id="rfp-aq-GVu"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="HsL-Bj-drc">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -433,7 +434,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UoI-py-wGU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3368.8000000000002" y="918.89055472263874"/>
+            <point key="canvasLocation" x="4308" y="918.89055472263874"/>
         </scene>
         <!--Create First View Controller-->
         <scene sceneID="eec-Nc-ByS">
@@ -1114,13 +1115,45 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hpj-os-jdj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5364" y="858.62068965517244"/>
+            <point key="canvasLocation" x="6303.1999999999998" y="858.62068965517244"/>
+        </scene>
+        <!--All Questions-->
+        <scene sceneID="4RX-dn-JIX">
+            <objects>
+                <tableViewController id="p5i-Jk-rml" customClass="AllQTableViewController" customModule="first_santaku" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pSH-4M-XFJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="mFN-A9-Lbo" customClass="AllQTableViewCell" customModule="first_santaku" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mFN-A9-Lbo" id="Whc-PP-fgX">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="F77-T1-xqJ" kind="show" identifier="moveToAllQ" id="Kzo-K4-Tmy"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="p5i-Jk-rml" id="bFO-Y2-zeX"/>
+                            <outlet property="delegate" destination="p5i-Jk-rml" id="DeT-8x-xEm"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="All Questions" id="sgt-AG-82q"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rh8-Ce-RV4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2532" y="918.89055472263874"/>
         </scene>
         <!--MY PAGE-->
         <scene sceneID="RYa-zC-GC5">
             <objects>
                 <navigationController storyboardIdentifier="mypage" automaticallyAdjustsScrollViewInsets="NO" id="zkg-6s-IpH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="MY PAGE" image="icons8-windows-metro-26" id="cQe-b1-qZa"/>
+                    <tabBarItem key="tabBarItem" title="MY PAGE" image="人物の無料素材" id="cQe-b1-qZa"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="GbQ-QM-B1Z">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1134,17 +1167,41 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fLp-LY-mz9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2429.5999999999999" y="918.89055472263874"/>
+            <point key="canvasLocation" x="3368.8000000000002" y="918.89055472263874"/>
+        </scene>
+        <!--All-->
+        <scene sceneID="L4p-5L-ztQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cCN-Fl-q7M" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="All" image="本棚アイコン" id="Zl3-Ed-9ka"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0Bj-l5-esU">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="p5i-Jk-rml" kind="relationship" relationship="rootViewController" id="oik-9w-OBV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ggx-F5-NLt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1592.8" y="918.89055472263874"/>
         </scene>
     </scenes>
     <resources>
-        <image name="icons8-windows-metro-26" width="26" height="26"/>
-        <image name="icons8-ホーム-26" width="26" height="26"/>
         <image name="matrix-356024_640" width="640" height="452"/>
         <image name="nocheck" width="42" height="42"/>
+        <image name="人物の無料素材" width="32" height="32"/>
+        <image name="家の無料アイコン" width="32" height="32"/>
+        <image name="本棚アイコン" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="H1x-f5-wff"/>
+        <segue reference="Kzo-K4-Tmy"/>
         <segue reference="MOY-Q1-DKw"/>
         <segue reference="cvf-sC-wLt"/>
     </inferredMetricsTieBreakers>
