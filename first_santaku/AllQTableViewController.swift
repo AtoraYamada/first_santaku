@@ -13,6 +13,7 @@ class AllQTableViewController: UITableViewController {
     var questionList:[String] = []
     var tagList = [Array<String>]()
     var idList:[String] = []
+    var userList:[DocumentReference] = []
     var db : Firestore!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,15 +25,29 @@ class AllQTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 91
         tableView.rowHeight = UITableView.automaticDimension
         db = Firestore.firestore()
+        readData()
     }
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return idList.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "allCell", for: indexPath) as! AllQTableViewCell
+        var newTags:[String] = []
+        let selectedquestion = self.questionList[indexPath.row]
+        cell.allTitle.text = selectedquestion
+        let selectedtags = self.tagList[indexPath.row]
+        for tag in selectedtags{
+            newTags.append("#\(tag)")
+        }
+        let selecteduserref = self.userList[indexPath.row]
+        db.document("\(selecteduserref.path)").getDocument() { (document, err) in
+            let selectedusername = document!.data()!["username"]
+            cell.allName.text = selectedusername as? String
+        }
+        cell.allTags.text = newTags.joined(separator: " ")
         cell.allTitle.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         cell.allTitle.font = UIFont(name: "Kefa", size: 22)
         cell.allTags.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -100,4 +115,22 @@ class AllQTableViewController: UITableViewController {
     }
     */
 
+}
+extension AllQTableViewController{
+    func readData(){
+        db.collection("userquestions").order(by: "createdAt", descending: true).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    self.idList.append(document.documentID)
+                    self.questionList.append(document.data()["tablename"] as! String)
+                    self.tagList.append(document.data()["tags"] as! Array<String>)
+                    self.userList.append(document.data()["userRef"] as! DocumentReference)
+                }
+            }
+            print(self.userList)
+            self.tableView.reloadData()
+        }
+    }
 }
