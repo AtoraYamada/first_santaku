@@ -82,6 +82,7 @@ class MyPageTableViewController: UITableViewController {
                                               title: "Delete",
                                               handler: { (action: UIContextualAction, view: UIView, completion: (Bool) -> Void) in
                                                 print("Delete")
+                                                self.deletequestion()
                                                 // 処理を実行できなかった場合はfalse
                                                 completion(false)
         })
@@ -142,5 +143,21 @@ extension MyPageTableViewController{
             }
             self.tableView.reloadData()
         }
+    }
+    
+    func deletequestion(){
+        let alert = UIAlertController(title: "Delete the selected Question", message: "Really Want to Delete ?", preferredStyle: .alert)
+        let ok: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
+            (action: UIAlertAction!) -> Void in
+            print("ok")
+        })
+        let cancel: UIAlertAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler:{
+            (action: UIAlertAction!) -> Void in
+            print("cancel")
+        })
+        alert.addAction(ok)
+        alert.addAction(cancel)
+
+        self.present(alert, animated: true, completion: nil)
     }
 }
