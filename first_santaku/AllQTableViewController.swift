@@ -22,7 +22,7 @@ class AllQTableViewController: UITableViewController {
         imageView.image = image
         self.tableView.backgroundView = imageView
         tableView.register(UINib(nibName: "AllQTableViewCell", bundle: nil),forCellReuseIdentifier:"allCell")
-        tableView.estimatedRowHeight = 71
+        tableView.estimatedRowHeight = 75
         tableView.rowHeight = UITableView.automaticDimension
         db = Firestore.firestore()
         readData()

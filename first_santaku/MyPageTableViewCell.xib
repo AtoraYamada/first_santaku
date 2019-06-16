@@ -50,7 +50,7 @@
                 <outlet property="mypageTags" destination="3Xx-3E-gdh" id="XXr-x8-GMZ"/>
                 <outlet property="mypageTitle" destination="r4a-g4-fHz" id="9eY-jW-TUl"/>
             </connections>
-            <point key="canvasLocation" x="137.59999999999999" y="164.16791604197903"/>
+            <point key="canvasLocation" x="9.5999999999999996" y="98.50074962518741"/>
         </tableViewCell>
     </objects>
 </document>
