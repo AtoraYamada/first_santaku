@@ -27,6 +27,11 @@ class AllQTableViewController: UITableViewController {
         db = Firestore.firestore()
         readData()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    }
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
