@@ -38,11 +38,11 @@ class PlayViewController: UIViewController {
         queue.sync{
             self.readQ()
         }
+        self.tabBarController?.tabBar.items?.forEach { $0.isEnabled = false }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {

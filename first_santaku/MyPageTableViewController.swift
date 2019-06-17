@@ -28,7 +28,7 @@ class MyPageTableViewController: UITableViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = false
+        self.tabBarController?.tabBar.items?.forEach { $0.isEnabled = true }
         readData()
     }
     
