@@ -427,7 +427,7 @@
                     <navigationItem key="navigationItem" title="MY PAGE" id="gI2-yE-Tpb">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="H7g-ZO-zct">
                             <connections>
-                                <segue destination="u18-Wv-XVl" kind="show" id="wb7-2H-zMq"/>
+                                <segue destination="u18-Wv-XVl" kind="show" identifier="create" id="wb7-2H-zMq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -693,7 +693,14 @@
                         <viewLayoutGuide key="safeArea" id="vHi-gq-4VW"/>
                     </view>
                     <connections>
+                        <outlet property="cssButton" destination="WHW-2q-AXD" id="5s9-Xb-EUQ"/>
+                        <outlet property="htmlButton" destination="3UK-6g-ue1" id="qHQ-7K-Jmv"/>
                         <outlet property="inputTitle" destination="qHx-Vp-t8z" id="ikE-MP-271"/>
+                        <outlet property="jqueryButton" destination="S63-QR-xVm" id="bSE-iA-2uo"/>
+                        <outlet property="jsButton" destination="VBh-ca-zBe" id="LzG-Wj-uAr"/>
+                        <outlet property="othersButton" destination="3bW-nb-gI7" id="nbw-Xt-ZRD"/>
+                        <outlet property="railsButton" destination="E7y-SE-xGG" id="hq3-aD-zNE"/>
+                        <outlet property="rubyButton" destination="fEe-7u-YHZ" id="yUw-p9-xXv"/>
                         <segue destination="O7m-kl-TDE" kind="show" identifier="createdetails" id="kSV-Li-a16"/>
                     </connections>
                 </viewController>
@@ -870,6 +877,7 @@
                         <outlet property="inputQuestion" destination="NFE-Kb-smu" id="60r-yR-yEX"/>
                         <outlet property="inputUncorrect1" destination="OBi-Z4-eeK" id="FYO-eD-haC"/>
                         <outlet property="inputUncorrect2" destination="XwC-DR-qBu" id="5MY-F2-yvb"/>
+                        <outlet property="nextButton" destination="pN1-j7-w8V" id="ntk-ct-wms"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pbl-9e-6pu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1083,6 +1091,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <toolbar key="tableHeaderView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="6wt-9g-Ry8">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -1201,8 +1210,8 @@
         <image name="本棚アイコン" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rX5-9h-RjV"/>
-        <segue reference="qlc-07-Pbr"/>
+        <segue reference="Kzo-K4-Tmy"/>
+        <segue reference="MOY-Q1-DKw"/>
         <segue reference="8XM-I4-uft"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

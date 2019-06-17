@@ -11,11 +11,16 @@ import Firebase
 
 class CreateQuestionDetailsViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     var db : Firestore!
+    var flag: Int!
     var userId = ""
     var documentId = ""
     var detail = Array<String>()
     var detailId = ""
+    var detailIds = Array<String>()
+    var counter: Int!
+    var questions = [Array<String>]()
 
+    @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var inputQuestion: UITextView!
     @IBOutlet weak var inputCorrect: UITextField!
     @IBOutlet weak var inputUncorrect1: UITextField!
@@ -40,6 +45,17 @@ class CreateQuestionDetailsViewController: UIViewController, UITextFieldDelegate
         kbToolBar.items = [spacer, commitButton]
         inputQuestion.inputAccessoryView = kbToolBar
         inputAnswer.inputAccessoryView = kbToolBar
+        if flag == 1{
+            let e = self.questions[self.counter]
+                self.inputQuestion.text = e[0]
+                self.inputCorrect.text = e[1]
+                self.inputUncorrect1.text = e[2]
+                self.inputUncorrect2.text = e[3]
+                self.inputAnswer.text = e[4]
+                if self.counter >= self.detailIds.count - 1{
+                    self.nextButton.isHidden = true
+                }
+        }
     }
     
     @objc func commitButtonTapped() {
@@ -69,18 +85,31 @@ class CreateQuestionDetailsViewController: UIViewController, UITextFieldDelegate
         let uncorrect2 = inputUncorrect2.text
         let answer = inputAnswer.text
         if question != "" && correct != "" && uncorrect1 != "" && uncorrect2 != "" && answer != ""{
-            detail += [question!, correct!, uncorrect1!, uncorrect2!, answer!]
-            var ref: DocumentReference? = nil
-            ref = db.collection("users").document("\(userId)").collection("userquestions").document("\(documentId)").collection("details").addDocument(data: [
-                "detail": detail,
-                "createdAt": FieldValue.serverTimestamp(),
-                ]){ err in
-                    if let err = err {
-                        print("Error adding document: \(err)")
-                    } else {
-                        self.detailId = ref!.documentID
-                        print("Document added with ID: \(ref!.documentID)")
-                    }
+                detail += [question!, correct!, uncorrect1!, uncorrect2!, answer!]
+            if flag != 1 {
+                var ref: DocumentReference? = nil
+                ref = db.collection("users").document("\(userId)").collection("userquestions").document("\(documentId)").collection("details").addDocument(data: [
+                    "detail": detail,
+                    "createdAt": FieldValue.serverTimestamp(),
+                    ]){ err in
+                        if let err = err {
+                            print("Error adding document: \(err)")
+                        } else {
+                            self.detailId = ref!.documentID
+                            print("Document added with ID: \(ref!.documentID)")
+                        }
+                }
+            } else {
+                let ref = db.collection("users").document("\(userId)").collection("userquestions").document("\(documentId)").collection("details").document("\(detailIds[counter])")
+                ref.updateData([
+                    "detail": detail
+                    ]){ err in
+                        if let err = err {
+                            print("Error updating document: \(err)")
+                        } else {
+                            print("success update")
+                        }
+                }
             }
         } else {
             let alert = UIAlertController(title: "Failed to Create", message: "Fill in All Entry Points", preferredStyle: .alert)
@@ -100,19 +129,34 @@ class CreateQuestionDetailsViewController: UIViewController, UITextFieldDelegate
         let answer = inputAnswer.text
         if question != "" && correct != "" && uncorrect1 != "" && uncorrect2 != "" && answer != ""{
             detail += [question!, correct!, uncorrect1!, uncorrect2!, answer!]
-            var ref: DocumentReference? = nil
-            ref = db.collection("users").document("\(userId)").collection("userquestions").document("\(documentId)").collection("details").addDocument(data: [
-                "detail": detail,
-                "createdAt": FieldValue.serverTimestamp(),
+            if flag != 1 {
+                var ref: DocumentReference? = nil
+                ref = db.collection("users").document("\(userId)").collection("userquestions").document("\(documentId)").collection("details").addDocument(data: [
+                    "detail": detail,
+                    "createdAt": FieldValue.serverTimestamp(),
+                    ]){ err in
+                        if let err = err {
+                            print("Error adding document: \(err)")
+                        } else {
+                            self.detailId = ref!.documentID
+                            print("Document added with ID: \(ref!.documentID)")
+                            let storyboard = self.storyboard?.instantiateViewController(withIdentifier: "main") as! UITabBarController
+                            self.present(storyboard, animated: true, completion: nil)
+                        }
+                }
+            } else {
+                let ref = db.collection("users").document("\(userId)").collection("userquestions").document("\(documentId)").collection("details").document("\(detailIds[counter])")
+                ref.updateData([
+                    "detail": detail
                 ]){ err in
                     if let err = err {
-                        print("Error adding document: \(err)")
+                        print("Error updating document: \(err)")
                     } else {
-                        self.detailId = ref!.documentID
-                        print("Document added with ID: \(ref!.documentID)")
+                        print("success update")
                         let storyboard = self.storyboard?.instantiateViewController(withIdentifier: "main") as! UITabBarController
                         self.present(storyboard, animated: true, completion: nil)
                     }
+                }
             }
         } else {
             let alert = UIAlertController(title: "Failed to Create", message: "Fill in All Entry Points", preferredStyle: .alert)
@@ -123,10 +167,24 @@ class CreateQuestionDetailsViewController: UIViewController, UITextFieldDelegate
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let createQuestionDetailsViewController = segue.destination as? CreateQuestionDetailsViewController{
-            createQuestionDetailsViewController.userId = self.userId
-            createQuestionDetailsViewController.documentId = self.documentId
-            createQuestionDetailsViewController.detailId = self.detailId
+        if flag != 1{
+            if let createQuestionDetailsViewController = segue.destination as? CreateQuestionDetailsViewController{
+                createQuestionDetailsViewController.userId = self.userId
+                createQuestionDetailsViewController.documentId = self.documentId
+                createQuestionDetailsViewController.detailId = self.detailId
+            }
+        } else {
+            if let createQuestionDetailsViewController = segue.destination as? CreateQuestionDetailsViewController{
+                createQuestionDetailsViewController.userId = self.userId
+                createQuestionDetailsViewController.documentId = self.documentId
+                createQuestionDetailsViewController.detailIds = self.detailIds
+                createQuestionDetailsViewController.flag = 1
+                createQuestionDetailsViewController.questions = self.questions
+                if self.counter <= self.detailIds.count - 1{
+                    self.counter += 1
+                    createQuestionDetailsViewController.counter = self.counter
+                }
+            }
         }
     }
 }

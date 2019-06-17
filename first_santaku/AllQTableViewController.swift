@@ -25,12 +25,11 @@ class AllQTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 75
         tableView.rowHeight = UITableView.automaticDimension
         db = Firestore.firestore()
-        readData()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        tableView.reloadData()
+        readData()
     }
 
 
@@ -137,6 +136,10 @@ class AllQTableViewController: UITableViewController {
 }
 extension AllQTableViewController{
     func readData(){
+        self.idList = []
+        self.questionList = []
+        self.tagList = []
+        self.userList = []
         db.collection("userquestions").order(by: "createdAt", descending: true).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")

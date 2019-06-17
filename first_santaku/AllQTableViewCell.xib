@@ -21,12 +21,18 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGK-IW-ERf">
                         <rect key="frame" x="16" y="13" width="288" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="oBC-Or-MT3"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="22"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiz-fc-3MM">
                         <rect key="frame" x="16" y="42" width="144" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="144" id="9Xl-8e-sNM"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -34,7 +40,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQx-vC-gU1">
                         <rect key="frame" x="197" y="42" width="107" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="107" id="POY-E7-lrf"/>
+                            <constraint firstAttribute="width" constant="107" id="pJQ-Fu-fhF"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="15"/>
                         <nil key="textColor"/>
@@ -42,17 +48,17 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottomMargin" secondItem="kGK-IW-ERf" secondAttribute="bottom" constant="16" id="5Ta-Vi-wix"/>
-                    <constraint firstItem="kGK-IW-ERf" firstAttribute="leading" secondItem="yiz-fc-3MM" secondAttribute="leading" id="MBh-mq-7uN"/>
-                    <constraint firstItem="kGK-IW-ERf" firstAttribute="top" secondItem="deA-dN-zCT" secondAttribute="topMargin" constant="2" id="aQ7-lR-EMD"/>
-                    <constraint firstItem="yiz-fc-3MM" firstAttribute="firstBaseline" secondItem="aQx-vC-gU1" secondAttribute="firstBaseline" id="ecT-xk-uaA"/>
-                    <constraint firstItem="yiz-fc-3MM" firstAttribute="baseline" secondItem="aQx-vC-gU1" secondAttribute="baseline" id="ejC-3Y-JtQ"/>
-                    <constraint firstItem="kGK-IW-ERf" firstAttribute="trailing" secondItem="deA-dN-zCT" secondAttribute="trailingMargin" id="lAs-d7-2P4"/>
-                    <constraint firstItem="kGK-IW-ERf" firstAttribute="trailing" secondItem="aQx-vC-gU1" secondAttribute="trailing" id="mnF-Jf-ML0"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="yiz-fc-3MM" secondAttribute="bottom" constant="1" id="nyD-HV-mGH"/>
-                    <constraint firstItem="aQx-vC-gU1" firstAttribute="leading" secondItem="yiz-fc-3MM" secondAttribute="trailing" constant="37" id="r2g-R8-9dm"/>
-                    <constraint firstItem="yiz-fc-3MM" firstAttribute="top" secondItem="deA-dN-zCT" secondAttribute="topMargin" constant="31" id="s3y-go-poB"/>
-                    <constraint firstItem="kGK-IW-ERf" firstAttribute="leading" secondItem="deA-dN-zCT" secondAttribute="leadingMargin" id="se5-je-CHP"/>
+                    <constraint firstItem="kGK-IW-ERf" firstAttribute="trailing" secondItem="deA-dN-zCT" secondAttribute="trailingMargin" id="3Dr-br-AaH"/>
+                    <constraint firstItem="yiz-fc-3MM" firstAttribute="top" secondItem="deA-dN-zCT" secondAttribute="topMargin" constant="31" id="7oh-sJ-II5"/>
+                    <constraint firstItem="yiz-fc-3MM" firstAttribute="leading" secondItem="deA-dN-zCT" secondAttribute="leadingMargin" id="8es-r5-Qhd"/>
+                    <constraint firstItem="aQx-vC-gU1" firstAttribute="leading" secondItem="yiz-fc-3MM" secondAttribute="trailing" constant="37" id="AhS-y3-hOo"/>
+                    <constraint firstItem="aQx-vC-gU1" firstAttribute="trailing" secondItem="deA-dN-zCT" secondAttribute="trailingMargin" id="BQE-0B-PoG"/>
+                    <constraint firstItem="aQx-vC-gU1" firstAttribute="leading" secondItem="yiz-fc-3MM" secondAttribute="trailing" constant="37" id="Ham-8K-gIZ"/>
+                    <constraint firstItem="kGK-IW-ERf" firstAttribute="leading" secondItem="deA-dN-zCT" secondAttribute="leadingMargin" id="V7j-lf-2Fm"/>
+                    <constraint firstItem="aQx-vC-gU1" firstAttribute="top" secondItem="deA-dN-zCT" secondAttribute="topMargin" constant="31" id="Ve3-DO-4Mu"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="aQx-vC-gU1" secondAttribute="bottom" constant="1" id="XO6-Ob-FzR"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="yiz-fc-3MM" secondAttribute="bottom" constant="1" id="jEr-VM-dvZ"/>
+                    <constraint firstItem="kGK-IW-ERf" firstAttribute="top" secondItem="deA-dN-zCT" secondAttribute="topMargin" constant="2" id="jGd-AC-noj"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aO6-2F-dpI"/>
@@ -61,7 +67,7 @@
                 <outlet property="allTags" destination="yiz-fc-3MM" id="fY0-KE-2qo"/>
                 <outlet property="allTitle" destination="kGK-IW-ERf" id="Bj6-FV-gDF"/>
             </connections>
-            <point key="canvasLocation" x="272" y="53.523238380809602"/>
+            <point key="canvasLocation" x="499" y="-5"/>
         </tableViewCell>
     </objects>
 </document>

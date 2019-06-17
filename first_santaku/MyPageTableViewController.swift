@@ -73,6 +73,22 @@ class MyPageTableViewController: UITableViewController {
                                             title: "Edit",
                                             handler: {(action: UIContextualAction, view: UIView, completion: (Bool) -> Void) in
                                                 print("Edit")
+                                                let alert = UIAlertController(title: "Edit the selected Question", message: "Really Want to Edit ?", preferredStyle: .alert)
+                                                let ok: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
+                                                    (action: UIAlertAction!) -> Void in
+                                                    print("ok")
+                                                    let selectedquestion = indexPath.row
+                                                    self.performSegue(withIdentifier: "create", sender: selectedquestion)
+                                                    
+                                                })
+                                                let cancel: UIAlertAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler:{
+                                                    (action: UIAlertAction!) -> Void in
+                                                    print("cancel")
+                                                })
+                                                alert.addAction(ok)
+                                                alert.addAction(cancel)
+                                                
+                                                self.present(alert, animated: true, completion: nil)
                                                 // 処理を実行完了した場合はtrue
                                                 completion(true)
         })
@@ -147,6 +163,15 @@ class MyPageTableViewController: UITableViewController {
             if let selectedquestion = sender as? Int{
                 playViewController.selectedQ = selectedquestion
                 playViewController.flag = 2
+            }
+        }
+        if let createFirstViewController = segue.destination as? CreateFirstViewController{
+            if let selectedquestion = sender as? Int{
+                createFirstViewController.selectedQ = selectedquestion
+                createFirstViewController.flag = 1
+                createFirstViewController.documentId = self.idList[selectedquestion]
+                createFirstViewController.tablename = questionList[selectedquestion]
+                createFirstViewController.tags = tagList[selectedquestion]
             }
         }
     }
