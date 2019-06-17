@@ -1063,7 +1063,7 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="color">
                                         <color key="value" red="0.29000252485275269" green="0.52857822179794312" blue="0.25484770536422729" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="LineSpinFadeLoader"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="BallScaleRippleMultiple"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
