@@ -47,6 +47,25 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
             if tags.index(of: "Others") != nil {
                 othersButton.isChecked = true
             }
+            if flag == 1{
+                db.collection("users").document("\(userId)").collection("userquestions").document("\(documentId)").collection("details").order(by: "createdAt").getDocuments() { (querySnapshot, err) in
+                    if let err = err {
+                        print("Error getting documents: \(err)")
+                    } else {
+                        for document in querySnapshot!.documents {
+                            self.detailIds.append(document.documentID)
+                        }
+                    }
+                }
+                db.collection("users").document("\(self.userId)").collection("userquestions").order(by: "createdAt", descending: true).getDocuments(){(querySnapshot, err) in
+                    let a = querySnapshot!.documents[self.selectedQ].documentID
+                    self.db.collection("users").document("\(self.userId)").collection("userquestions").document("\(a)").collection("details").order(by: "createdAt").getDocuments(){(querySnapshot, err)in
+                        for document in querySnapshot!.documents {
+                            self.questions.append(document.data()["detail"]! as! Array<String>)
+                        }
+                    }
+                }
+            }
         }
     }
     @IBAction func getTitle(_ sender: Any) {
@@ -84,23 +103,6 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
         } else {
             let title = inputTitle.text
             if title != "" && tags != [] {
-                db.collection("users").document("\(userId)").collection("userquestions").document("\(documentId)").collection("details").order(by: "createdAt").getDocuments() { (querySnapshot, err) in
-                    if let err = err {
-                        print("Error getting documents: \(err)")
-                    } else {
-                        for document in querySnapshot!.documents {
-                            self.detailIds.append(document.documentID)
-                        }
-                    }
-                }
-                db.collection("users").document("\(self.userId)").collection("userquestions").order(by: "createdAt", descending: true).getDocuments(){(querySnapshot, err) in
-                    let a = querySnapshot!.documents[self.selectedQ].documentID
-                    self.db.collection("users").document("\(self.userId)").collection("userquestions").document("\(a)").collection("details").order(by: "createdAt").getDocuments(){(querySnapshot, err)in
-                        for document in querySnapshot!.documents {
-                            self.questions.append(document.data()["detail"]! as! Array<String>)
-                        }
-                    }
-                }
                 if questions != [] && detailIds != [] {
                    let ref = db.collection("users").document("\(userId)").collection("userquestions").document("\(documentId)")
                     ref.updateData([
