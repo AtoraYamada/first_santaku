@@ -11,7 +11,6 @@ import Firebase
 import NVActivityIndicatorView
 
 class PlayViewController: UIViewController {
-    
     var db : Firestore!
     var flag: Int!
     var selectedQ: Int!
@@ -31,8 +30,8 @@ class PlayViewController: UIViewController {
     var タイマー : Timer?
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadingView.backgroundColor = UIColor.clear
         loadingView.startAnimating()
+        loadingView.backgroundColor = UIColor.clear
         db = Firestore.firestore()
         残り時間ビュー.transform = CGAffineTransform(scaleX: 1.0, y: 3.0)
         let queue = DispatchQueue(label: "read")
@@ -42,9 +41,12 @@ class PlayViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.出題()
-        loadingView.stopAnimating()
-        loadingBack.isHidden = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            self.出題()
+            self.loadingView.stopAnimating()
+            self.loadingBack.isHidden = true
+        }
+        
     }
     func readQ(){
         if flag == 1{
