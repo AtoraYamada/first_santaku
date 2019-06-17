@@ -15,8 +15,12 @@ class AllQTableViewController: UITableViewController {
     var idList:[String] = []
     var userList:[DocumentReference] = []
     var db : Firestore!
+    fileprivate let refreshCtl = UIRefreshControl()
+    @IBOutlet var allQTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        allQTableView.refreshControl = refreshCtl
+        refreshCtl.addTarget(self, action: #selector(AllQTableViewController.refresh(sender:)), for: .valueChanged)
         let image = UIImage(named: "matrix-356024_640")
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
         imageView.image = image
@@ -153,5 +157,9 @@ extension AllQTableViewController{
             }
             self.tableView.reloadData()
         }
+    }
+    
+    @objc func refresh(sender: UIRefreshControl) {
+        refreshCtl.endRefreshing()
     }
 }
