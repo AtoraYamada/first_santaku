@@ -47,7 +47,7 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
             if tags.index(of: "Others") != nil {
                 othersButton.isChecked = true
             }
-            if flag == 1{
+            if flag == 1 {
                 db.collection("users").document("\(userId)").collection("userquestions").document("\(documentId)").collection("details").order(by: "createdAt").getDocuments() { (querySnapshot, err) in
                     if let err = err {
                         print("Error getting documents: \(err)")
