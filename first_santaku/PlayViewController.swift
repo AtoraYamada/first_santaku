@@ -8,8 +8,10 @@
 
 import UIKit
 import Firebase
+import NVActivityIndicatorView
 
 class PlayViewController: UIViewController {
+    
     var db : Firestore!
     var flag: Int!
     var selectedQ: Int!
@@ -20,12 +22,16 @@ class PlayViewController: UIViewController {
     @IBOutlet weak var 残り時間ビュー: UIProgressView!
     @IBOutlet var 解答ボタン: [UIButton]!
     
+    @IBOutlet weak var loadingView: NVActivityIndicatorView!
+    
     var 問題番号 = 0
     var 残り時間 = 10
     var 正解数 = 0
     var タイマー : Timer?
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .lightGray
+        loadingView.startAnimating()
         db = Firestore.firestore()
         残り時間ビュー.transform = CGAffineTransform(scaleX: 1.0, y: 3.0)
         let queue = DispatchQueue(label: "read")

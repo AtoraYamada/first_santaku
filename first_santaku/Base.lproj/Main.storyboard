@@ -1049,6 +1049,11 @@
                                     <constraint firstAttribute="height" constant="2" id="cr1-qd-gb4"/>
                                 </constraints>
                             </progressView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YUZ-jR-8RM" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1071,6 +1076,7 @@
                         <viewLayoutGuide key="safeArea" id="xnO-6a-5QA"/>
                     </view>
                     <connections>
+                        <outlet property="loadingView" destination="YUZ-jR-8RM" id="Jnv-Fi-eEq"/>
                         <outlet property="問題ラベル" destination="6BK-KY-WIk" id="h1j-I9-I8e"/>
                         <outlet property="残り時間ビュー" destination="m9D-ZX-RWO" id="Wv6-05-bgY"/>
                         <outletCollection property="解答ボタン" destination="A44-ls-iB1" collectionClass="NSMutableArray" id="5vh-YH-DIE"/>
@@ -1080,7 +1086,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K0H-Q3-hRD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4503" y="107"/>
+            <point key="canvasLocation" x="4501.6000000000004" y="106.59670164917542"/>
         </scene>
         <!--Answer Table View Controller-->
         <scene sceneID="bNy-qB-ij3">
