@@ -46,3 +46,25 @@ exports.deletequestion = functions.region('asia-northeast1').firestore.document(
   const documentId = context.params.documentId;
   db.collection('userquestions').doc(documentId).delete();
 });
+
+exports.updatefirst = functions.region('asia-northeast1').firestore.document('users/{userId}/userquestions/{documentId}').onUpdate((change, context) => {
+  const newValue = change.after.data();
+  const tablename = newValue.tablename;
+  const tags = newValue.tags;
+  const createdAt = newValue.createdAt;
+  const documentId = context.params.documentId;
+  var data = {
+    tablename: tablename,
+    tags: tags,
+    createdAt: createdAt
+  }
+  db.collection('userquestions').doc(documentId).update(data);
+});
+
+exports.updatedetails = functions.region('asia-northeast1').firestore.document('users/{userId}/userquestions/{documentId}/details/{detailId}').onUpdate((change, context) => {
+  const newValue = change.after.data();
+  const detail = newValue.detail;
+  const detailId = context.params.detailId;
+  const documentId = context.params.documentId;
+  db.collection('userquestions').doc(documentId).collection('details').doc(detailId).update({detail: detail});
+});
