@@ -25,12 +25,11 @@ class MyPageTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 86
         tableView.rowHeight = UITableView.automaticDimension
         db = Firestore.firestore()
-        readData()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        tableView.reloadData()
+        self.tabBarController?.tabBar.items?.forEach { $0.isEnabled = true }
+        readData()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

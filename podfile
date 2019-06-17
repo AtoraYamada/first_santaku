@@ -10,5 +10,6 @@ target 'first_santaku' do
   pod 'Firebase/Auth'
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
+  pod 'NVActivityIndicatorView/AppExtension'
 
 end

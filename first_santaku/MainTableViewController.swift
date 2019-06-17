@@ -32,13 +32,12 @@ class MainTableViewController: UITableViewController {
         imageView.image = image
         self.tableView.backgroundView = imageView
         db = Firestore.firestore()
-        readData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        tableView.reloadData()
+        self.tabBarController?.tabBar.items?.forEach { $0.isEnabled = true }
+        readData()
     }
     // MARK: - Table view data source
 
@@ -109,6 +108,8 @@ class MainTableViewController: UITableViewController {
 
 extension MainTableViewController{
     func readData(){
+        self.idList = []
+        self.questionList = []
         db.collection("questions").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")

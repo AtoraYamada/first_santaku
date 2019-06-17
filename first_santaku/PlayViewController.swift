@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import NVActivityIndicatorView
 
 class PlayViewController: UIViewController {
     var db : Firestore!
@@ -20,22 +21,37 @@ class PlayViewController: UIViewController {
     @IBOutlet weak var 残り時間ビュー: UIProgressView!
     @IBOutlet var 解答ボタン: [UIButton]!
     
+    @IBOutlet weak var loadingView: NVActivityIndicatorView!
+    
+    @IBOutlet weak var loadingBack: UIImageView!
     var 問題番号 = 0
     var 残り時間 = 10
     var 正解数 = 0
     var タイマー : Timer?
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadingView.startAnimating()
+        loadingView.backgroundColor = UIColor.clear
         db = Firestore.firestore()
         残り時間ビュー.transform = CGAffineTransform(scaleX: 1.0, y: 3.0)
-        readQ()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            self.出題()
+        let queue = DispatchQueue(label: "read")
+        queue.sync{
+            self.readQ()
         }
-
+        self.tabBarController?.tabBar.items?.forEach { $0.isEnabled = false }
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            self.出題()
+            self.loadingView.stopAnimating()
+            self.loadingBack.isHidden = true
+        }
         
     }
     func readQ(){
