@@ -40,34 +40,44 @@ class AllQTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return idList.count
+        if idList != [] {
+            return idList.count
+        } else {
+            return 1
+        }
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "allCell", for: indexPath) as! AllQTableViewCell
         var newTags:[String] = []
-        let selectedquestion = self.questionList[indexPath.row]
-        cell.allTitle.text = selectedquestion
-        let selectedtags = self.tagList[indexPath.row]
-        for tag in selectedtags{
-            newTags.append("#\(tag)")
+        if questionList != [] {
+            let selectedquestion = self.questionList[indexPath.row]
+            cell.allTitle.text = selectedquestion
+            let selectedtags = self.tagList[indexPath.row]
+            for tag in selectedtags{
+                newTags.append("#\(tag)")
+            }
+            let selecteduserref = self.userList[indexPath.row]
+            db.document("\(selecteduserref.path)").getDocument() { (document, err) in
+                let selectedusername = document!.data()!["username"]
+                cell.allName.text = selectedusername as? String
+            }
+            cell.allTags.text = newTags.joined(separator: " ")
+            cell.allTitle.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            cell.allTitle.font = UIFont(name: "Kefa", size: 22)
+            cell.allTitle.adjustsFontSizeToFitWidth = true
+            cell.allTags.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            cell.allTags.font = UIFont(name: "Kefa", size: 15)
+            cell.allTags.sizeToFit()
+            cell.allName.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            cell.allName.font = UIFont(name: "Kefa", size: 15)
+            cell.allName.adjustsFontSizeToFitWidth = true
+            cell.backgroundColor = UIColor.clear
+            cell.contentView.backgroundColor = UIColor.clear
+        } else {
+            cell.allTitle.text = "再読み込みしてください"
+            cell.allTitle.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            cell.allTitle.font = UIFont(name: "Kefa", size: 22)
         }
-        let selecteduserref = self.userList[indexPath.row]
-        db.document("\(selecteduserref.path)").getDocument() { (document, err) in
-            let selectedusername = document!.data()!["username"]
-            cell.allName.text = selectedusername as? String
-        }
-        cell.allTags.text = newTags.joined(separator: " ")
-        cell.allTitle.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        cell.allTitle.font = UIFont(name: "Kefa", size: 22)
-        cell.allTitle.adjustsFontSizeToFitWidth = true
-        cell.allTags.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        cell.allTags.font = UIFont(name: "Kefa", size: 15)
-        cell.allTags.sizeToFit()
-        cell.allName.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        cell.allName.font = UIFont(name: "Kefa", size: 15)
-        cell.allName.adjustsFontSizeToFitWidth = true
-        cell.backgroundColor = UIColor.clear
-        cell.contentView.backgroundColor = UIColor.clear
         return cell
     }
 
