@@ -20,9 +20,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4a-g4-fHz">
-                        <rect key="frame" x="16" y="11" width="288" height="35"/>
+                        <rect key="frame" x="16" y="13" width="288" height="35"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="35" id="Eu5-Rx-fe6"/>
+                            <constraint firstAttribute="height" constant="35" id="Kpq-ca-cag"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="22"/>
                         <nil key="textColor"/>
@@ -36,13 +36,13 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="3Xx-3E-gdh" firstAttribute="leading" secondItem="r4a-g4-fHz" secondAttribute="leading" id="INn-Ul-C02"/>
-                    <constraint firstItem="3Xx-3E-gdh" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" constant="-1" id="hl7-9a-tYu"/>
-                    <constraint firstItem="r4a-g4-fHz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="j6q-e6-g8n"/>
-                    <constraint firstItem="r4a-g4-fHz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="jVd-R6-WPL"/>
-                    <constraint firstItem="3Xx-3E-gdh" firstAttribute="trailing" secondItem="r4a-g4-fHz" secondAttribute="trailing" id="ncL-y8-MLf"/>
-                    <constraint firstItem="r4a-g4-fHz" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="ok3-Io-oeM"/>
-                    <constraint firstItem="3Xx-3E-gdh" firstAttribute="top" secondItem="r4a-g4-fHz" secondAttribute="bottom" constant="-4" id="wMH-MR-n6s"/>
+                    <constraint firstItem="r4a-g4-fHz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="6lb-Xm-iZc"/>
+                    <constraint firstItem="r4a-g4-fHz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="Pku-oJ-mr7"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="3Xx-3E-gdh" secondAttribute="bottom" constant="1" id="XGc-UQ-pAv"/>
+                    <constraint firstItem="3Xx-3E-gdh" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="dGf-KU-Eio"/>
+                    <constraint firstItem="3Xx-3E-gdh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="31" id="hHi-OW-vFS"/>
+                    <constraint firstItem="r4a-g4-fHz" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="van-u6-arP"/>
+                    <constraint firstItem="3Xx-3E-gdh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="xsF-XJ-Usb"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
