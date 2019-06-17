@@ -19,7 +19,6 @@ class ViewController: UIViewController {
         attributed()
         buttonatrributed()
     }
-
     
     func attributed() {
         let style = NSMutableParagraphStyle()
