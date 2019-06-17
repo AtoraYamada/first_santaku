@@ -101,18 +101,26 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
                         }
                     }
                 }
-               let ref = db.collection("users").document("\(userId)").collection("userquestions").document("\(documentId)")
-                ref.updateData([
-                    "tablename": title!,
-                    "tags": tags,
-                    "createdAt": FieldValue.serverTimestamp(),
-                    ]){ err in
-                        if let err = err {
-                            print("Error updating document: \(err)")
-                        } else {
-                            print("success update")
-                            self.performSegue(withIdentifier: "createdetails", sender: self.detailIds)
-                        }
+                if questions != [] && detailIds != [] {
+                   let ref = db.collection("users").document("\(userId)").collection("userquestions").document("\(documentId)")
+                    ref.updateData([
+                        "tablename": title!,
+                        "tags": tags,
+                        "createdAt": FieldValue.serverTimestamp(),
+                        ]){ err in
+                            if let err = err {
+                                print("Error updating document: \(err)")
+                            } else {
+                                print("success update")
+                                self.performSegue(withIdentifier: "createdetails", sender: self.detailIds)
+                            }
+                    }
+                } else {
+                    let alert = UIAlertController(title: "Failed to Update", message: "Wait for seconds, and Tap Next", preferredStyle: .alert)
+                    
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    
+                    present(alert, animated: true, completion: nil)
                 }
             } else {
                 let alert = UIAlertController(title: "Failed to Create", message: "Fill in both Title and Tags", preferredStyle: .alert)
