@@ -28,15 +28,14 @@ class PlayViewController: UIViewController {
         super.viewDidLoad()
         db = Firestore.firestore()
         残り時間ビュー.transform = CGAffineTransform(scaleX: 1.0, y: 3.0)
-        readQ()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            self.出題()
+        let queue = DispatchQueue(label: "read")
+        queue.sync{
+            self.readQ()
         }
-
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.出題()
     }
     func readQ(){
         if flag == 1{
