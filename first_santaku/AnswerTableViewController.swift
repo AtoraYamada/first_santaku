@@ -31,7 +31,11 @@ class AnswerTableViewController: UITableViewController {
         let question = questions[indexPath.row]
         cell.問題文?.text = question[0]
         cell.問題文.sizeToFit()
-        cell.userAnswer?.text = question[answers[indexPath.row]]
+        if answers[indexPath.row] != 5 {
+            cell.userAnswer?.text = question[answers[indexPath.row]]
+        } else {
+            cell.userAnswer?.text = "無解答"
+        }
         cell.correctAnswer?.text = question[1]
         cell.解説?.text = question[4]
         cell.解説.sizeToFit()
