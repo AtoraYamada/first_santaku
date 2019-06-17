@@ -30,7 +30,7 @@ class PlayViewController: UIViewController {
     var タイマー : Timer?
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .lightGray
+        loadingView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         loadingView.startAnimating()
         db = Firestore.firestore()
         残り時間ビュー.transform = CGAffineTransform(scaleX: 1.0, y: 3.0)
@@ -42,6 +42,7 @@ class PlayViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.出題()
+        loadingView.stopAnimating()
     }
     func readQ(){
         if flag == 1{
