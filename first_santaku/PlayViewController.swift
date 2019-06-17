@@ -24,13 +24,14 @@ class PlayViewController: UIViewController {
     
     @IBOutlet weak var loadingView: NVActivityIndicatorView!
     
+    @IBOutlet weak var loadingBack: UIImageView!
     var 問題番号 = 0
     var 残り時間 = 10
     var 正解数 = 0
     var タイマー : Timer?
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadingView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        loadingView.backgroundColor = UIColor.clear
         loadingView.startAnimating()
         db = Firestore.firestore()
         残り時間ビュー.transform = CGAffineTransform(scaleX: 1.0, y: 3.0)
@@ -43,6 +44,7 @@ class PlayViewController: UIViewController {
         super.viewDidAppear(animated)
         self.出題()
         loadingView.stopAnimating()
+        loadingBack.isHidden = true
     }
     func readQ(){
         if flag == 1{
