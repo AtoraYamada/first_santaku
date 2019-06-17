@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 
 class AllQTableViewController: UITableViewController {
+    let semaphore = DispatchSemaphore(value: 1)
     var questionList:[String] = []
     var tagList = [Array<String>]()
     var idList:[String] = []
@@ -140,26 +141,34 @@ class AllQTableViewController: UITableViewController {
 }
 extension AllQTableViewController{
     func readData(){
-        self.idList = []
-        self.questionList = []
-        self.tagList = []
-        self.userList = []
-        db.collection("userquestions").order(by: "createdAt", descending: true).getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    self.idList.append(document.documentID)
-                    self.questionList.append(document.data()["tablename"] as! String)
-                    self.tagList.append(document.data()["tags"] as! Array<String>)
-                    self.userList.append(document.data()["userRef"] as! DocumentReference)
+        DispatchQueue.global().async {
+            self.idList = []
+            self.questionList = []
+            self.tagList = []
+            self.userList = []
+            self.db.collection("userquestions").order(by: "createdAt", descending: true).getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        self.idList.append(document.documentID)
+                        self.questionList.append(document.data()["tablename"] as! String)
+                        self.tagList.append(document.data()["tags"] as! Array<String>)
+                        self.userList.append(document.data()["userRef"] as! DocumentReference)
+                    }
+                }
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                    self.semaphore.signal()
                 }
             }
-            self.tableView.reloadData()
         }
     }
     
     @objc func refresh(sender: UIRefreshControl) {
+        readData()
+        semaphore.wait()
+        semaphore.signal()
         refreshCtl.endRefreshing()
     }
 }
