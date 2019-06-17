@@ -125,6 +125,7 @@ class PlayViewController: UIViewController {
         残り時間ビュー.progress = Float(残り時間) / 10
         if 残り時間 == 0 {
             タイマー!.invalidate()
+            self.answers.append(5)
             問題番号 += 1
             出題()
         }
