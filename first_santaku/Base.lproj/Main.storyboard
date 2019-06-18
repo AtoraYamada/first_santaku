@@ -1180,7 +1180,14 @@
                             <outlet property="delegate" destination="p5i-Jk-rml" id="DeT-8x-xEm"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="All Questions" id="sgt-AG-82q"/>
+                    <navigationItem key="navigationItem" title="All Questions" id="sgt-AG-82q">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="lUa-S5-pIJ">
+                            <connections>
+                                <action selector="searchButton:" destination="p5i-Jk-rml" id="It9-hr-733"/>
+                                <segue destination="9bg-im-INr" kind="showDetail" identifier="search" id="E2M-KY-Axw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="allQTableView" destination="pSH-4M-XFJ" id="iSG-z8-LVs"/>
                     </connections>
@@ -1232,6 +1239,205 @@
             </objects>
             <point key="canvasLocation" x="1592.8" y="918.89055472263874"/>
         </scene>
+        <!--Search View Controller-->
+        <scene sceneID="1F6-ao-KZk">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="9bg-im-INr" customClass="SearchViewController" customModule="first_santaku" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vlo-xZ-9c8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZSj-5f-i2j">
+                                <rect key="frame" x="0.0" y="225" width="375" height="217"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ega-90-Xdv">
+                                        <rect key="frame" x="130.5" y="150" width="114" height="47"/>
+                                        <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="30"/>
+                                        <state key="normal" title="SEARCH"/>
+                                        <connections>
+                                            <action selector="searchButton:" destination="9bg-im-INr" eventType="touchUpInside" id="Ujp-RX-akQ"/>
+                                            <segue destination="8Ld-BB-RM7" kind="unwind" identifier="backToAll" unwindAction="returnToMeWithSegue:" id="cul-Iw-Ud1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ega-90-Xdv" firstAttribute="centerX" secondItem="ZSj-5f-i2j" secondAttribute="centerX" id="9yz-KS-Rg2"/>
+                                    <constraint firstAttribute="bottom" secondItem="ega-90-Xdv" secondAttribute="bottom" constant="20" id="sBN-NC-ZiA"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdn-wD-AZf" customClass="CheckBox" customModule="first_santaku" customModuleProvider="target">
+                                <rect key="frame" x="22" y="247" width="28" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="HlR-bO-3iG"/>
+                                    <constraint firstAttribute="width" constant="28" id="OpK-WG-q84"/>
+                                </constraints>
+                                <state key="normal" image="nocheck">
+                                    <color key="titleShadowColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="htmlButton:" destination="9bg-im-INr" eventType="touchUpInside" id="5J1-Sp-TBi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6in-K1-aCh" customClass="CheckBox" customModule="first_santaku" customModuleProvider="target">
+                                <rect key="frame" x="22" y="293" width="28" height="28"/>
+                                <state key="normal" image="nocheck">
+                                    <color key="titleShadowColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="railsButton:" destination="9bg-im-INr" eventType="touchUpInside" id="vp5-37-YpN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dE-Tn-WqT" customClass="CheckBox" customModule="first_santaku" customModuleProvider="target">
+                                <rect key="frame" x="135" y="247" width="28" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="28" id="stB-gq-w4Q"/>
+                                </constraints>
+                                <state key="normal" image="nocheck">
+                                    <color key="titleShadowColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cssButton:" destination="9bg-im-INr" eventType="touchUpInside" id="exZ-ia-BlR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbM-XU-c0R" customClass="CheckBox" customModule="first_santaku" customModuleProvider="target">
+                                <rect key="frame" x="134" y="293" width="28" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="28" id="mfp-Vu-ohW"/>
+                                </constraints>
+                                <state key="normal" image="nocheck">
+                                    <color key="titleShadowColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="jsButton:" destination="9bg-im-INr" eventType="touchUpInside" id="j90-3W-u6O"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HTML" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icC-cw-xKJ">
+                                <rect key="frame" x="58" y="248" width="55" height="24"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CSS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7sw-aZ-b0R">
+                                <rect key="frame" x="171" y="248" width="35" height="24"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3Y-sE-cRL" customClass="CheckBox" customModule="first_santaku" customModuleProvider="target">
+                                <rect key="frame" x="264" y="247" width="28" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="28" id="oAY-4p-FeU"/>
+                                </constraints>
+                                <state key="normal" image="nocheck">
+                                    <color key="titleShadowColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="rubyButton:" destination="9bg-im-INr" eventType="touchUpInside" id="lZK-gf-P0i"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ruby" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Fe-qg-CjD">
+                                <rect key="frame" x="300" y="248" width="45" height="24"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JavaScript" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpg-2l-lsa">
+                                <rect key="frame" x="170" y="294" width="92" height="24"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZQ-C7-T34" customClass="CheckBox" customModule="first_santaku" customModuleProvider="target">
+                                <rect key="frame" x="264" y="293" width="28" height="28"/>
+                                <state key="normal" image="nocheck">
+                                    <color key="titleShadowColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="jqueryButton:" destination="9bg-im-INr" eventType="touchUpInside" id="5X8-84-kJt"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="jQuery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QvW-H6-ngU">
+                                <rect key="frame" x="300" y="294" width="60" height="24"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XGk-2v-f3P" customClass="CheckBox" customModule="first_santaku" customModuleProvider="target">
+                                <rect key="frame" x="22" y="339" width="28" height="28"/>
+                                <state key="normal" image="nocheck">
+                                    <color key="titleShadowColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="othersButton:" destination="u18-Wv-XVl" eventType="touchUpInside" id="THg-vO-2EM"/>
+                                    <action selector="othersButton:" destination="9bg-im-INr" eventType="touchUpInside" id="xGh-gQ-rSz"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Others" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJl-8e-wTj">
+                                <rect key="frame" x="58" y="341" width="61" height="24"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rails" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myv-S9-Wtq">
+                                <rect key="frame" x="58" y="294" width="45" height="24"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XGk-2v-f3P" firstAttribute="top" secondItem="6in-K1-aCh" secondAttribute="bottom" constant="18" id="1JZ-FN-mad"/>
+                            <constraint firstItem="LYh-B1-qx8" firstAttribute="bottom" secondItem="XGk-2v-f3P" secondAttribute="bottom" constant="300" id="2y5-LE-gZ5"/>
+                            <constraint firstItem="2dE-Tn-WqT" firstAttribute="top" secondItem="g3Y-sE-cRL" secondAttribute="top" id="4dR-pR-xKa"/>
+                            <constraint firstItem="icC-cw-xKJ" firstAttribute="baseline" secondItem="7sw-aZ-b0R" secondAttribute="baseline" id="68y-Ma-svy"/>
+                            <constraint firstItem="6in-K1-aCh" firstAttribute="bottom" secondItem="rbM-XU-c0R" secondAttribute="bottom" id="7Ay-0u-CYG"/>
+                            <constraint firstItem="2dE-Tn-WqT" firstAttribute="bottom" secondItem="g3Y-sE-cRL" secondAttribute="bottom" id="8Pc-JW-hEy"/>
+                            <constraint firstAttribute="trailing" secondItem="ZSj-5f-i2j" secondAttribute="trailing" id="BCn-86-xGY"/>
+                            <constraint firstItem="myv-S9-Wtq" firstAttribute="leading" secondItem="6in-K1-aCh" secondAttribute="trailing" constant="8" symbolic="YES" id="BHB-o4-eIw"/>
+                            <constraint firstItem="6in-K1-aCh" firstAttribute="top" secondItem="hdn-wD-AZf" secondAttribute="bottom" constant="18" id="CHH-Lv-Siz"/>
+                            <constraint firstItem="hdn-wD-AZf" firstAttribute="top" secondItem="2dE-Tn-WqT" secondAttribute="top" id="Cok-qL-SKc"/>
+                            <constraint firstItem="7sw-aZ-b0R" firstAttribute="leading" secondItem="2dE-Tn-WqT" secondAttribute="trailing" constant="8" symbolic="YES" id="EaQ-s8-Fr4"/>
+                            <constraint firstItem="QvW-H6-ngU" firstAttribute="leading" secondItem="WZQ-C7-T34" secondAttribute="trailing" constant="8" symbolic="YES" id="GXi-9t-gMy"/>
+                            <constraint firstItem="rbM-XU-c0R" firstAttribute="bottom" secondItem="WZQ-C7-T34" secondAttribute="bottom" id="HFJ-Ue-RuR"/>
+                            <constraint firstItem="hdn-wD-AZf" firstAttribute="bottom" secondItem="2dE-Tn-WqT" secondAttribute="bottom" id="Hyt-Zv-nn8"/>
+                            <constraint firstItem="6in-K1-aCh" firstAttribute="leading" secondItem="XGk-2v-f3P" secondAttribute="leading" id="I25-Am-KsD"/>
+                            <constraint firstItem="rbM-XU-c0R" firstAttribute="top" secondItem="WZQ-C7-T34" secondAttribute="top" id="JU5-zq-TUn"/>
+                            <constraint firstItem="myv-S9-Wtq" firstAttribute="leading" secondItem="SJl-8e-wTj" secondAttribute="leading" id="Jrv-Cz-KVH"/>
+                            <constraint firstItem="ZSj-5f-i2j" firstAttribute="leading" secondItem="Vlo-xZ-9c8" secondAttribute="leading" id="KVe-Vw-elF"/>
+                            <constraint firstItem="hdn-wD-AZf" firstAttribute="leading" secondItem="6in-K1-aCh" secondAttribute="leading" id="ONY-rO-ops"/>
+                            <constraint firstItem="2Fe-qg-CjD" firstAttribute="leading" secondItem="QvW-H6-ngU" secondAttribute="leading" id="POW-Gu-XiC"/>
+                            <constraint firstItem="jpg-2l-lsa" firstAttribute="baseline" secondItem="QvW-H6-ngU" secondAttribute="baseline" id="Qvu-Sq-9CR"/>
+                            <constraint firstItem="icC-cw-xKJ" firstAttribute="leading" secondItem="myv-S9-Wtq" secondAttribute="leading" id="SZW-0u-D5v"/>
+                            <constraint firstItem="myv-S9-Wtq" firstAttribute="top" secondItem="icC-cw-xKJ" secondAttribute="bottom" constant="22" id="TlI-KT-XDz"/>
+                            <constraint firstItem="ZSj-5f-i2j" firstAttribute="top" secondItem="LYh-B1-qx8" secondAttribute="top" constant="205" id="VTA-4R-pEa"/>
+                            <constraint firstItem="myv-S9-Wtq" firstAttribute="baseline" secondItem="jpg-2l-lsa" secondAttribute="baseline" id="XeT-dC-hzv"/>
+                            <constraint firstItem="icC-cw-xKJ" firstAttribute="leading" secondItem="hdn-wD-AZf" secondAttribute="trailing" constant="8" symbolic="YES" id="YZk-kK-2lt"/>
+                            <constraint firstItem="icC-cw-xKJ" firstAttribute="top" secondItem="LYh-B1-qx8" secondAttribute="top" constant="228" id="Z02-8o-JHt"/>
+                            <constraint firstItem="rbM-XU-c0R" firstAttribute="leading" secondItem="myv-S9-Wtq" secondAttribute="trailing" constant="31" id="eRE-Bk-nfi"/>
+                            <constraint firstItem="hdn-wD-AZf" firstAttribute="leading" secondItem="LYh-B1-qx8" secondAttribute="leading" constant="22" id="g3V-Rq-dcl"/>
+                            <constraint firstItem="SJl-8e-wTj" firstAttribute="leading" secondItem="XGk-2v-f3P" secondAttribute="trailing" constant="8" symbolic="YES" id="g97-vq-tDn"/>
+                            <constraint firstItem="LYh-B1-qx8" firstAttribute="bottom" secondItem="rbM-XU-c0R" secondAttribute="bottom" constant="346" id="gC1-rV-usV"/>
+                            <constraint firstItem="WZQ-C7-T34" firstAttribute="leading" secondItem="jpg-2l-lsa" secondAttribute="trailing" constant="2" id="hSe-Bi-msc"/>
+                            <constraint firstItem="6in-K1-aCh" firstAttribute="top" secondItem="rbM-XU-c0R" secondAttribute="top" id="kmc-oo-vY7"/>
+                            <constraint firstItem="g3Y-sE-cRL" firstAttribute="leading" secondItem="WZQ-C7-T34" secondAttribute="leading" id="ngd-xq-Q54"/>
+                            <constraint firstItem="2dE-Tn-WqT" firstAttribute="leading" secondItem="icC-cw-xKJ" secondAttribute="trailing" constant="22" id="o0O-hP-Bhe"/>
+                            <constraint firstItem="jpg-2l-lsa" firstAttribute="leading" secondItem="rbM-XU-c0R" secondAttribute="trailing" constant="8" symbolic="YES" id="sYR-tx-QfP"/>
+                            <constraint firstItem="XGk-2v-f3P" firstAttribute="centerY" secondItem="SJl-8e-wTj" secondAttribute="centerY" id="tgn-hg-db1"/>
+                            <constraint firstItem="7sw-aZ-b0R" firstAttribute="baseline" secondItem="2Fe-qg-CjD" secondAttribute="baseline" id="wiL-VP-J3t"/>
+                            <constraint firstItem="ZSj-5f-i2j" firstAttribute="centerY" secondItem="Vlo-xZ-9c8" secondAttribute="centerY" id="xNS-j3-Qc5"/>
+                            <constraint firstItem="2Fe-qg-CjD" firstAttribute="leading" secondItem="g3Y-sE-cRL" secondAttribute="trailing" constant="8" symbolic="YES" id="y8N-ep-1AI"/>
+                            <constraint firstItem="hdn-wD-AZf" firstAttribute="top" secondItem="LYh-B1-qx8" secondAttribute="top" constant="227" id="zIs-eV-kLn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LYh-B1-qx8"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HYA-tj-1xJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="8Ld-BB-RM7" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2532" y="1671.8140929535234"/>
+        </scene>
     </scenes>
     <resources>
         <image name="matrix-356024_640" width="640" height="452"/>
@@ -1241,8 +1447,8 @@
         <image name="本棚アイコン" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Kzo-K4-Tmy"/>
-        <segue reference="qp8-yf-izO"/>
+        <segue reference="H1x-f5-wff"/>
+        <segue reference="qlc-07-Pbr"/>
         <segue reference="cvf-sC-wLt"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

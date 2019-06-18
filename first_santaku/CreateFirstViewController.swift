@@ -162,6 +162,9 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var jqueryButton: CheckBox!
     @IBOutlet weak var othersButton: CheckBox!
     @IBAction func htmlButton(_ sender: CheckBox) {
+        if tags.index(of: "HTML") != nil{
+            sender.isChecked = true
+        }
         if !sender.isChecked == true {
             tags.append("HTML")
         }else{
