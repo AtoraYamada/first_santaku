@@ -1271,7 +1271,7 @@
                                     <color key="titleShadowColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="htmlButton:" destination="u18-Wv-XVl" eventType="touchUpInside" id="ehk-M8-eJF"/>
+                                    <action selector="htmlButton:" destination="9bg-im-INr" eventType="touchUpInside" id="IQX-4u-KAa"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6in-K1-aCh" customClass="CheckBox" customModule="first_santaku" customModuleProvider="target">
@@ -1280,7 +1280,7 @@
                                     <color key="titleShadowColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="railsButton:" destination="u18-Wv-XVl" eventType="touchUpInside" id="MeT-A9-l1f"/>
+                                    <action selector="railsButton:" destination="9bg-im-INr" eventType="touchUpInside" id="vp5-37-YpN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dE-Tn-WqT" customClass="CheckBox" customModule="first_santaku" customModuleProvider="target">
@@ -1292,7 +1292,7 @@
                                     <color key="titleShadowColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="cssButton:" destination="u18-Wv-XVl" eventType="touchUpInside" id="cEJ-u8-R5L"/>
+                                    <action selector="cssButton:" destination="9bg-im-INr" eventType="touchUpInside" id="exZ-ia-BlR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbM-XU-c0R" customClass="CheckBox" customModule="first_santaku" customModuleProvider="target">
@@ -1304,7 +1304,7 @@
                                     <color key="titleShadowColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="jsButton:" destination="u18-Wv-XVl" eventType="touchUpInside" id="jZh-Bg-a5B"/>
+                                    <action selector="jsButton:" destination="9bg-im-INr" eventType="touchUpInside" id="j90-3W-u6O"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HTML" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icC-cw-xKJ">
@@ -1328,7 +1328,7 @@
                                     <color key="titleShadowColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="rubyButton:" destination="u18-Wv-XVl" eventType="touchUpInside" id="Ahc-61-O8p"/>
+                                    <action selector="rubyButton:" destination="9bg-im-INr" eventType="touchUpInside" id="lZK-gf-P0i"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ruby" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Fe-qg-CjD">
@@ -1349,7 +1349,7 @@
                                     <color key="titleShadowColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="jqueryButton:" destination="u18-Wv-XVl" eventType="touchUpInside" id="SM6-4z-F3i"/>
+                                    <action selector="jqueryButton:" destination="9bg-im-INr" eventType="touchUpInside" id="5X8-84-kJt"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="jQuery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QvW-H6-ngU">
@@ -1365,6 +1365,7 @@
                                 </state>
                                 <connections>
                                     <action selector="othersButton:" destination="u18-Wv-XVl" eventType="touchUpInside" id="THg-vO-2EM"/>
+                                    <action selector="othersButton:" destination="9bg-im-INr" eventType="touchUpInside" id="xGh-gQ-rSz"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Others" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJl-8e-wTj">
