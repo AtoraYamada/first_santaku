@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 
 class AllQTableViewController: UITableViewController {
+    var documentId = ""
     var searchSet = Set<String>()
     let semaphore = DispatchSemaphore(value: 1)
     var questionList:[String] = []
@@ -84,6 +85,7 @@ class AllQTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        self.documentId = idList[indexPath.row]
         let selectedquestion = indexPath.row
         self.performSegue(withIdentifier: "moveToAllQ", sender: selectedquestion)
     }
@@ -157,6 +159,7 @@ class AllQTableViewController: UITableViewController {
             if let selectedquestion = sender as? Int{
                 playViewController.selectedQ = selectedquestion
                 playViewController.flag = 3
+                playViewController.documentId = self.documentId
             }
         }
     }
