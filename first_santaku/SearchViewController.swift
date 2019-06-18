@@ -9,14 +9,16 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-
+    var searchSet = Set<String>()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
     }
     
     @IBAction func searchButton(_ sender: Any) {
-        let searchSet = Set(searchTags)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        searchSet = Set(searchTags)
     }
     
     /*

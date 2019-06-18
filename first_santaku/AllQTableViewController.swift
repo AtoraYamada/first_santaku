@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class AllQTableViewController: UITableViewController {
-    let searchSet = Set<String>()
+    var searchSet = Set<String>()
     let semaphore = DispatchSemaphore(value: 1)
     var questionList:[String] = []
     var tagList = [Array<String>]()
@@ -34,6 +34,7 @@ class AllQTableViewController: UITableViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         self.tabBarController?.tabBar.items?.forEach { $0.isEnabled = true }
         readData()
     }
@@ -88,7 +89,15 @@ class AllQTableViewController: UITableViewController {
     }
     @IBAction func searchButton(_ sender: Any) {
     }
-    @IBAction func returnToMe(segue: UIStoryboardSegue) { }
+    func setupMethod(){}
+    @IBAction func returnToMe(segue: UIStoryboardSegue) {
+        if segue.source is SearchViewController {
+            if let searchViewController = segue.source as? SearchViewController{
+                searchSet = searchViewController.searchSet
+                print(searchSet)
+            }
+        }
+    }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

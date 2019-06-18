@@ -1184,7 +1184,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="lUa-S5-pIJ">
                             <connections>
                                 <action selector="searchButton:" destination="p5i-Jk-rml" id="It9-hr-733"/>
-                                <segue destination="9bg-im-INr" kind="showDetail" id="E2M-KY-Axw"/>
+                                <segue destination="9bg-im-INr" kind="showDetail" identifier="search" id="E2M-KY-Axw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1256,7 +1256,7 @@
                                         <state key="normal" title="SEARCH"/>
                                         <connections>
                                             <action selector="searchButton:" destination="9bg-im-INr" eventType="touchUpInside" id="Ujp-RX-akQ"/>
-                                            <segue destination="8Ld-BB-RM7" kind="unwind" unwindAction="returnToMeWithSegue:" id="hKO-QB-4Tf"/>
+                                            <segue destination="8Ld-BB-RM7" kind="unwind" identifier="backToAll" unwindAction="returnToMeWithSegue:" id="cul-Iw-Ud1"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1276,7 +1276,7 @@
                                     <color key="titleShadowColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="htmlButton:" destination="9bg-im-INr" eventType="touchUpInside" id="IQX-4u-KAa"/>
+                                    <action selector="htmlButton:" destination="9bg-im-INr" eventType="touchUpInside" id="5J1-Sp-TBi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6in-K1-aCh" customClass="CheckBox" customModule="first_santaku" customModuleProvider="target">
