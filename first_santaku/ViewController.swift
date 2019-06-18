@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var enterButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         attributed()
         buttonatrributed()
     }
