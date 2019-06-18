@@ -94,7 +94,7 @@ class AllQTableViewController: UITableViewController {
         if segue.source is SearchViewController {
             if let searchViewController = segue.source as? SearchViewController{
                 searchSet = searchViewController.searchSet
-                print(searchSet)
+                searchData()
             }
         }
     }
@@ -193,5 +193,33 @@ extension AllQTableViewController{
         semaphore.wait()
         semaphore.signal()
         refreshCtl.endRefreshing()
+    }
+    
+    func searchData(){
+        DispatchQueue.global().async {
+            self.idList = []
+            self.questionList = []
+            self.tagList = []
+            self.userList = []
+            self.db.collection("userquestions").order(by: "createdAt", descending: true).getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        let tag = document.data()["tags"] as! Array<String>
+                        if self.searchSet.isSubset(of: Set(tag)) {
+                            self.idList.append(document.documentID)
+                            self.questionList.append(document.data()["tablename"] as! String)
+                            self.tagList.append(document.data()["tags"] as! Array<String>)
+                            self.userList.append(document.data()["userRef"] as! DocumentReference)
+                        }
+                    }
+                }
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                    self.semaphore.signal()
+                }
+            }
+        }
     }
 }
