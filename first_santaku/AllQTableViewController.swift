@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 
 class AllQTableViewController: UITableViewController {
+    let searchSet = Set<String>()
     let semaphore = DispatchSemaphore(value: 1)
     var questionList:[String] = []
     var tagList = [Array<String>]()
@@ -85,6 +86,9 @@ class AllQTableViewController: UITableViewController {
         let selectedquestion = indexPath.row
         self.performSegue(withIdentifier: "moveToAllQ", sender: selectedquestion)
     }
+    @IBAction func searchButton(_ sender: Any) {
+    }
+    @IBAction func returnToMe(segue: UIStoryboardSegue) { }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
