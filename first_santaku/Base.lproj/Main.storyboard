@@ -1180,7 +1180,13 @@
                             <outlet property="delegate" destination="p5i-Jk-rml" id="DeT-8x-xEm"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="All Questions" id="sgt-AG-82q"/>
+                    <navigationItem key="navigationItem" title="All Questions" id="sgt-AG-82q">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="lUa-S5-pIJ">
+                            <connections>
+                                <segue destination="9bg-im-INr" kind="show" id="dQk-Nj-XW8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="allQTableView" destination="pSH-4M-XFJ" id="iSG-z8-LVs"/>
                     </connections>
