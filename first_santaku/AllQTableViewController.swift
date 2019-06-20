@@ -138,10 +138,17 @@ extension AllQTableViewController{
     }
     
     @objc func refresh(sender: UIRefreshControl) {
-        readData()
-        semaphore.wait()
-        semaphore.signal()
-        refreshCtl.endRefreshing()
+        if searchSet == [] {
+            readData()
+            semaphore.wait()
+            semaphore.signal()
+            refreshCtl.endRefreshing()
+        } else {
+            searchData()
+            semaphore.wait()
+            semaphore.signal()
+            refreshCtl.endRefreshing()
+        }
     }
     
     func searchData(){
