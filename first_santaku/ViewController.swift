@@ -10,27 +10,27 @@ import UIKit
 import AVFoundation
 
 class ViewController: UIViewController {
-    var audioPlayerInstance : AVAudioPlayer! = nil
+    var keyboard2 : AVAudioPlayer! = nil
     @IBOutlet weak var textTitle: UILabel!
     
     @IBOutlet weak var enterButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let soundFilePath = Bundle.main.path(forResource: "keyboard2", ofType: "mp3")!
-        let sound:URL = URL(fileURLWithPath: soundFilePath)
+        let keyboard2Path = Bundle.main.path(forResource: "keyboard2", ofType: "mp3")!
+        let k2:URL = URL(fileURLWithPath: keyboard2Path)
         do {
-            audioPlayerInstance = try AVAudioPlayer(contentsOf: sound, fileTypeHint:nil)
+            keyboard2 = try AVAudioPlayer(contentsOf: k2, fileTypeHint:nil)
         } catch {
             print("AVAudioPlayerインスタンス作成でエラー")
         }
-        audioPlayerInstance.prepareToPlay()
+        keyboard2.prepareToPlay()
         attributed()
         buttonatrributed()
     }
     
     @IBAction func enterButton(_ sender: Any) {
-        audioPlayerInstance.currentTime = 0
-        audioPlayerInstance.play()
+        keyboard2.currentTime = 0
+        keyboard2.play()
     }
     func attributed() {
         let style = NSMutableParagraphStyle()

@@ -83,6 +83,7 @@
                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="25"/>
                                 <state key="normal" title="SIGN UP"/>
                                 <connections>
+                                    <action selector="moveToSignUp:" destination="KH4-nk-uk2" eventType="touchUpInside" id="mpG-vW-nPQ"/>
                                     <segue destination="8QF-c0-LGo" kind="presentation" id="oox-6U-JKZ"/>
                                 </connections>
                             </button>
