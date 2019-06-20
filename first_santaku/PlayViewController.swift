@@ -93,7 +93,9 @@ class PlayViewController: UIViewController {
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        タイマー!.invalidate()
+        if let timer = タイマー {
+            timer.invalidate()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
