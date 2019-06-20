@@ -9,8 +9,12 @@
 import UIKit
 import Firebase
 import NVActivityIndicatorView
+import AVFoundation
 
 class PlayViewController: UIViewController {
+    var keyboard1 : AVAudioPlayer! = nil
+    var timer1 : AVAudioPlayer! = nil
+    var timer2 : AVAudioPlayer! = nil
     var db : Firestore!
     var documentId = ""
     var flag: Int!
@@ -40,10 +44,38 @@ class PlayViewController: UIViewController {
             self.readQ()
         }
         self.tabBarController?.tabBar.items?.forEach { $0.isEnabled = false }
+        let keyboard1Path = Bundle.main.path(forResource: "keyboard1", ofType: "mp3")!
+        let k1:URL = URL(fileURLWithPath: keyboard1Path)
+        do {
+            keyboard1 = try AVAudioPlayer(contentsOf: k1, fileTypeHint:nil)
+        } catch {
+            print("AVAudioPlayerインスタンス作成でエラー")
+        }
+        let timer1Path = Bundle.main.path(forResource: "oven-timer1", ofType: "mp3")!
+        let t1:URL = URL(fileURLWithPath: timer1Path)
+        do {
+            timer1 = try AVAudioPlayer(contentsOf: t1, fileTypeHint:nil)
+        } catch {
+            print("AVAudioPlayerインスタンス作成でエラー")
+        }
+        let timer2Path = Bundle.main.path(forResource: "crossing1", ofType: "mp3")!
+        let t2:URL = URL(fileURLWithPath: timer2Path)
+        do {
+            timer2 = try AVAudioPlayer(contentsOf: t2, fileTypeHint:nil)
+        } catch {
+            print("AVAudioPlayerインスタンス作成でエラー")
+        }
+        keyboard1.prepareToPlay()
+        timer1.prepareToPlay()
+        timer2.prepareToPlay()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        タイマー!.invalidate()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -104,6 +136,8 @@ class PlayViewController: UIViewController {
         }
         残り時間 = 10
         残り時間ビュー.progress = 1.0
+        timer1.currentTime = 0
+        timer1.play()
         タイマー = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(タイマー関数), userInfo: nil, repeats: true)
     }
     
@@ -122,7 +156,13 @@ class PlayViewController: UIViewController {
     @objc func タイマー関数() {
         残り時間 -= 1
         残り時間ビュー.progress = Float(残り時間) / 10
+        if 残り時間 == 4 {
+            timer1.stop()
+            timer2.currentTime = 0
+            timer2.play()
+        }
         if 残り時間 == 0 {
+            timer2.stop()
             タイマー!.invalidate()
             self.answers.append(5)
             問題番号 += 1
@@ -130,6 +170,10 @@ class PlayViewController: UIViewController {
         }
     }
     @IBAction func 解答チェック(_ sender: UIButton) {
+        keyboard1.currentTime = 0
+        keyboard1.play()
+        timer1.stop()
+        timer2.stop()
         タイマー!.invalidate()
         let 解答 = sender.currentTitle
         let 問題データ = questions[問題番号]
