@@ -32,12 +32,12 @@ class AllQTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 75
         tableView.rowHeight = UITableView.automaticDimension
         db = Firestore.firestore()
+        readData()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.tabBarController?.tabBar.items?.forEach { $0.isEnabled = true }
-        readData()
     }
 
 
@@ -110,6 +110,7 @@ class AllQTableViewController: UITableViewController {
         }
     }
     @IBAction func unwind(for unwindSegue: UIStoryboardSegue) {
+        searchData()
     }
 
 }
