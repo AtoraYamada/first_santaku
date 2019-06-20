@@ -7,18 +7,31 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
-
+    var audioPlayerInstance : AVAudioPlayer! = nil
     @IBOutlet weak var textTitle: UILabel!
     
     @IBOutlet weak var enterButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        let soundFilePath = Bundle.main.path(forResource: "keyboard2", ofType: "mp3")!
+        let sound:URL = URL(fileURLWithPath: soundFilePath)
+        do {
+            audioPlayerInstance = try AVAudioPlayer(contentsOf: sound, fileTypeHint:nil)
+        } catch {
+            print("AVAudioPlayerインスタンス作成でエラー")
+        }
+        audioPlayerInstance.prepareToPlay()
         attributed()
         buttonatrributed()
     }
     
+    @IBAction func enterButton(_ sender: Any) {
+        audioPlayerInstance.currentTime = 0
+        audioPlayerInstance.play()
+    }
     func attributed() {
         let style = NSMutableParagraphStyle()
         style.lineSpacing = 6

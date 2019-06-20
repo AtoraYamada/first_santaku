@@ -33,6 +33,7 @@
                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="40"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
+                                    <action selector="enterButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tSY-P1-wPv"/>
                                     <segue destination="KH4-nk-uk2" kind="presentation" id="cvf-sC-wLt"/>
                                 </connections>
                             </button>
@@ -1453,7 +1454,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Kzo-K4-Tmy"/>
-        <segue reference="qlc-07-Pbr"/>
+        <segue reference="qp8-yf-izO"/>
         <segue reference="cvf-sC-wLt"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

@@ -26,6 +26,8 @@
 		D2AAF6F422ABA73A003F02AA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AAF6F322ABA73A003F02AA /* SignUpViewController.swift */; };
 		D2AAF6F622ABC156003F02AA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2AAF6F522ABC156003F02AA /* GoogleService-Info.plist */; };
 		D2B307F322AF677100DBB4DA /* UserEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B307F222AF677000DBB4DA /* UserEditViewController.swift */; };
+		D2B90EF122BB66110071E229 /* keyboard1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D2B90EEF22BB66100071E229 /* keyboard1.mp3 */; };
+		D2B90EF222BB66110071E229 /* keyboard2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D2B90EF022BB66110071E229 /* keyboard2.mp3 */; };
 		D2CF849F22B4DA7100CA7217 /* first_santaku.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = D2CF849E22B4DA7100CA7217 /* first_santaku.xcworkspace */; };
 		D2D5EF3622AE4D5B00F48A9F /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D5EF3522AE4D5B00F48A9F /* MainTableViewController.swift */; };
 		D2F732B222B1DBE3009BE8D0 /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F732B022B1DBE3009BE8D0 /* AnswerTableViewCell.swift */; };
@@ -58,6 +60,8 @@
 		D2AAF6F322ABA73A003F02AA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		D2AAF6F522ABC156003F02AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D2B307F222AF677000DBB4DA /* UserEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditViewController.swift; sourceTree = "<group>"; };
+		D2B90EEF22BB66100071E229 /* keyboard1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = keyboard1.mp3; sourceTree = "<group>"; };
+		D2B90EF022BB66110071E229 /* keyboard2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = keyboard2.mp3; sourceTree = "<group>"; };
 		D2CF849E22B4DA7100CA7217 /* first_santaku.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = first_santaku.xcworkspace; sourceTree = SOURCE_ROOT; };
 		D2D5EF3522AE4D5B00F48A9F /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		D2F732B022B1DBE3009BE8D0 /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
@@ -141,6 +145,8 @@
 				D2AAF6F322ABA73A003F02AA /* SignUpViewController.swift */,
 				D2AAF6F122AB8F1C003F02AA /* SignInViewController.swift */,
 				D253A19C22AB721F008D14EB /* Assets.xcassets */,
+				D2B90EEF22BB66100071E229 /* keyboard1.mp3 */,
+				D2B90EF022BB66110071E229 /* keyboard2.mp3 */,
 				D253A19E22AB721F008D14EB /* LaunchScreen.storyboard */,
 				D2AAF6F522ABC156003F02AA /* GoogleService-Info.plist */,
 				D253A1A122AB721F008D14EB /* Info.plist */,
@@ -208,11 +214,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2B90EF222BB66110071E229 /* keyboard2.mp3 in Resources */,
 				D253A1A022AB721F008D14EB /* LaunchScreen.storyboard in Resources */,
 				D2AAF6F622ABC156003F02AA /* GoogleService-Info.plist in Resources */,
 				D2F732B322B1DBE3009BE8D0 /* AnswerTableViewCell.xib in Resources */,
 				D232E50322B500070029A950 /* AllQTableViewCell.xib in Resources */,
 				D232E4FF22B4E2580029A950 /* MyPageTableViewCell.xib in Resources */,
+				D2B90EF122BB66110071E229 /* keyboard1.mp3 in Resources */,
 				D2CF849F22B4DA7100CA7217 /* first_santaku.xcworkspace in Resources */,
 				D253A19D22AB721F008D14EB /* Assets.xcassets in Resources */,
 				D253A19B22AB721A008D14EB /* Main.storyboard in Resources */,
