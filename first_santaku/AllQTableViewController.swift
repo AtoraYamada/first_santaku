@@ -36,7 +36,6 @@ class AllQTableViewController: UITableViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         self.tabBarController?.tabBar.items?.forEach { $0.isEnabled = true }
     }
 
@@ -48,6 +47,7 @@ class AllQTableViewController: UITableViewController {
             return 1
         }
     }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "allCell", for: indexPath) as! AllQTableViewCell
         var newTags:[String] = []
