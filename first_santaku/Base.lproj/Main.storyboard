@@ -210,6 +210,7 @@
                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="25"/>
                                 <state key="normal" title="SIGN IN"/>
                                 <connections>
+                                    <action selector="moveToSignIn:" destination="8QF-c0-LGo" eventType="touchUpInside" id="yln-BN-p7y"/>
                                     <segue destination="KH4-nk-uk2" kind="presentation" id="8XM-I4-uft"/>
                                 </connections>
                             </button>
@@ -1455,8 +1456,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Kzo-K4-Tmy"/>
-        <segue reference="qp8-yf-izO"/>
-        <segue reference="cvf-sC-wLt"/>
+        <segue reference="qlc-07-Pbr"/>
+        <segue reference="8XM-I4-uft"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
 </document>

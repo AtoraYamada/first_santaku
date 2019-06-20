@@ -8,8 +8,11 @@
 
 import UIKit
 import Firebase
+import AVFoundation
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
+    var keyboard2 : AVAudioPlayer! = nil
+    var keyboard1 : AVAudioPlayer! = nil
 
     @IBOutlet weak var nickname: UILabel!
     @IBOutlet weak var signUp: UILabel!
@@ -22,6 +25,22 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var signInButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        let keyboard2Path = Bundle.main.path(forResource: "keyboard2", ofType: "mp3")!
+        let k2:URL = URL(fileURLWithPath: keyboard2Path)
+        do {
+            keyboard2 = try AVAudioPlayer(contentsOf: k2, fileTypeHint:nil)
+        } catch {
+            print("AVAudioPlayerインスタンス作成でエラー")
+        }
+        let keyboard1Path = Bundle.main.path(forResource: "keyboard1", ofType: "mp3")!
+        let k1:URL = URL(fileURLWithPath: keyboard1Path)
+        do {
+            keyboard1 = try AVAudioPlayer(contentsOf: k1, fileTypeHint:nil)
+        } catch {
+            print("AVAudioPlayerインスタンス作成でエラー")
+        }
+        keyboard2.prepareToPlay()
+        keyboard1.prepareToPlay()
         attributed()
         inputNickname.delegate = self
         inputEmail.delegate = self
@@ -68,6 +87,12 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func signUpButton(_ sender: Any) {
         signup()
+        keyboard2.currentTime = 0
+        keyboard2.play()
+    }
+    @IBAction func moveToSignIn(_ sender: Any) {
+        keyboard1.currentTime = 0
+        keyboard1.play()
     }
     func signup() {
         
