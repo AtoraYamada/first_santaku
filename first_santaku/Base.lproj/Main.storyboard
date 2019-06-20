@@ -369,13 +369,15 @@
                                 <action selector="signOut:" destination="xcP-s2-LDF" id="RQQ-Re-l3m"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="EDIT" id="t6s-3N-TgA">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="GrM-zq-ah0">
                             <connections>
-                                <segue destination="5Gm-MQ-FRQ" kind="show" id="s72-S8-US7"/>
+                                <action selector="moveToEdit:" destination="xcP-s2-LDF" id="nSy-9l-FVk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="5Gm-MQ-FRQ" kind="show" identifier="edit" id="cZm-uy-88B"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hav-yE-kQH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1455,9 +1457,9 @@
         <image name="本棚アイコン" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Kzo-K4-Tmy"/>
-        <segue reference="qlc-07-Pbr"/>
-        <segue reference="8XM-I4-uft"/>
+        <segue reference="H1x-f5-wff"/>
+        <segue reference="qp8-yf-izO"/>
+        <segue reference="cvf-sC-wLt"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
 </document>
