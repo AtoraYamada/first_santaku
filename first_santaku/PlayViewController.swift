@@ -15,6 +15,8 @@ class PlayViewController: UIViewController {
     var keyboard1 : AVAudioPlayer! = nil
     var timer1 : AVAudioPlayer! = nil
     var timer2 : AVAudioPlayer! = nil
+    var correct : AVAudioPlayer! = nil
+    var incorrect : AVAudioPlayer! = nil
     var db : Firestore!
     var documentId = ""
     var flag: Int!
@@ -65,9 +67,25 @@ class PlayViewController: UIViewController {
         } catch {
             print("AVAudioPlayerインスタンス作成でエラー")
         }
+        let correctPath = Bundle.main.path(forResource: "correct1", ofType: "mp3")!
+        let c1:URL = URL(fileURLWithPath: correctPath)
+        do {
+            correct = try AVAudioPlayer(contentsOf: c1, fileTypeHint:nil)
+        } catch {
+            print("AVAudioPlayerインスタンス作成でエラー")
+        }
+        let incorrectPath = Bundle.main.path(forResource: "incorrect1", ofType: "mp3")!
+        let ic1:URL = URL(fileURLWithPath: incorrectPath)
+        do {
+            incorrect = try AVAudioPlayer(contentsOf: ic1, fileTypeHint:nil)
+        } catch {
+            print("AVAudioPlayerインスタンス作成でエラー")
+        }
         keyboard1.prepareToPlay()
         timer1.prepareToPlay()
         timer2.prepareToPlay()
+        correct.prepareToPlay()
+        incorrect.prepareToPlay()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -181,9 +199,13 @@ class PlayViewController: UIViewController {
         self.answers.append(解答番号!)
         let alert = UIAlertController(title: "\(問題番号+1)問目", message: "", preferredStyle: .alert)
         if 解答番号 == 1 {
+            correct.currentTime = 0
+            correct.play()
             正解数 += 1
             alert.message = "正解!!"
         } else {
+            incorrect.currentTime = 0
+            incorrect.play()
             alert.message = "はずれ!!"
         }
         let action = UIAlertAction(title: "OK", style: .default) { (_) in
