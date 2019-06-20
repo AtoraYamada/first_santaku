@@ -134,6 +134,7 @@ class AllQTableViewController: UITableViewController {
         searchData()
     }
     @IBAction func backToAll(_ sender: Any) {
+        searchSet = []
         readData()
         keyboard1.currentTime = 0
         keyboard1.play()
