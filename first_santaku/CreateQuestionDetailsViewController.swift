@@ -140,8 +140,8 @@ class CreateQuestionDetailsViewController: UIViewController, UITextFieldDelegate
                         } else {
                             self.detailId = ref!.documentID
                             print("Document added with ID: \(ref!.documentID)")
-                            let storyboard = self.storyboard?.instantiateViewController(withIdentifier: "main") as! UITabBarController
-                            self.present(storyboard, animated: true, completion: nil)
+//                            let storyboard = self.storyboard?.instantiateViewController(withIdentifier: "main") as! UITabBarController
+//                            self.present(storyboard, animated: true, completion: nil)
                         }
                 }
             } else {
@@ -153,8 +153,8 @@ class CreateQuestionDetailsViewController: UIViewController, UITextFieldDelegate
                         print("Error updating document: \(err)")
                     } else {
                         print("success update")
-                        let storyboard = self.storyboard?.instantiateViewController(withIdentifier: "main") as! UITabBarController
-                        self.present(storyboard, animated: true, completion: nil)
+//                        let storyboard = self.storyboard?.instantiateViewController(withIdentifier: "main") as! UITabBarController
+//                        self.present(storyboard, animated: true, completion: nil)
                     }
                 }
             }
