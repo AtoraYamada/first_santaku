@@ -41,11 +41,7 @@ class AllQTableViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if idList != [] {
-            return idList.count
-        } else {
-            return 1
-        }
+        return idList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -76,6 +72,7 @@ class AllQTableViewController: UITableViewController {
             cell.backgroundColor = UIColor.clear
             cell.contentView.backgroundColor = UIColor.clear
         } else {
+            self.idList.append("1")
             cell.allTitle.text = "再読み込みしてください"
             cell.allTitle.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
             cell.allTitle.font = UIFont(name: "Kefa", size: 22)
