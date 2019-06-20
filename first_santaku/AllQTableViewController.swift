@@ -8,8 +8,11 @@
 
 import UIKit
 import Firebase
+import AVFoundation
 
 class AllQTableViewController: UITableViewController {
+    var keyboard2 : AVAudioPlayer! = nil
+    var keyboard1 : AVAudioPlayer! = nil
     var documentId = ""
     var searchSet = Set<String>()
     let semaphore = DispatchSemaphore(value: 1)
@@ -31,6 +34,22 @@ class AllQTableViewController: UITableViewController {
         tableView.register(UINib(nibName: "AllQTableViewCell", bundle: nil),forCellReuseIdentifier:"allCell")
         tableView.estimatedRowHeight = 75
         tableView.rowHeight = UITableView.automaticDimension
+        let keyboard2Path = Bundle.main.path(forResource: "keyboard2", ofType: "mp3")!
+        let k2:URL = URL(fileURLWithPath: keyboard2Path)
+        do {
+            keyboard2 = try AVAudioPlayer(contentsOf: k2, fileTypeHint:nil)
+        } catch {
+            print("AVAudioPlayerインスタンス作成でエラー")
+        }
+        let keyboard1Path = Bundle.main.path(forResource: "keyboard1", ofType: "mp3")!
+        let k1:URL = URL(fileURLWithPath: keyboard1Path)
+        do {
+            keyboard1 = try AVAudioPlayer(contentsOf: k1, fileTypeHint:nil)
+        } catch {
+            print("AVAudioPlayerインスタンス作成でエラー")
+        }
+        keyboard1.prepareToPlay()
+        keyboard2.prepareToPlay()
         db = Firestore.firestore()
         readData()
     }
@@ -81,11 +100,16 @@ class AllQTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        keyboard2.currentTime = 0
+        keyboard2.play()
         self.documentId = idList[indexPath.row]
         let selectedquestion = indexPath.row
         self.performSegue(withIdentifier: "moveToAllQ", sender: selectedquestion)
     }
     @IBAction func searchButton(_ sender: Any) {
+        keyboard1.currentTime = 0
+        keyboard1.play()
+        self.performSegue(withIdentifier: "search", sender: self)
     }
     func setupMethod(){}
     @IBAction func returnToMe(segue: UIStoryboardSegue) {
@@ -111,6 +135,8 @@ class AllQTableViewController: UITableViewController {
     }
     @IBAction func backToAll(_ sender: Any) {
         readData()
+        keyboard1.currentTime = 0
+        keyboard1.play()
     }
     
 }

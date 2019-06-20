@@ -1197,12 +1197,12 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="lUa-S5-pIJ">
                             <connections>
                                 <action selector="searchButton:" destination="p5i-Jk-rml" id="It9-hr-733"/>
-                                <segue destination="9bg-im-INr" kind="showDetail" identifier="search" id="E2M-KY-Axw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="allQTableView" destination="pSH-4M-XFJ" id="iSG-z8-LVs"/>
+                        <segue destination="9bg-im-INr" kind="showDetail" identifier="search" id="4UF-H9-bax"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rh8-Ce-RV4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1457,7 +1457,7 @@
         <image name="本棚アイコン" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="H1x-f5-wff"/>
+        <segue reference="Kzo-K4-Tmy"/>
         <segue reference="qlc-07-Pbr"/>
         <segue reference="8XM-I4-uft"/>
     </inferredMetricsTieBreakers>
