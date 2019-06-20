@@ -1155,7 +1155,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hpj-os-jdj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="12Y-Oz-prP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="6303.1999999999998" y="858.62068965517244"/>
+            <point key="canvasLocation" x="5438" y="107"/>
         </scene>
         <!--All Questions-->
         <scene sceneID="4RX-dn-JIX">
@@ -1225,13 +1225,10 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cCN-Fl-q7M" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="All" image="本棚アイコン" id="Zl3-Ed-9ka"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0Bj-l5-esU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="0Bj-l5-esU">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1450,7 +1447,7 @@
         <image name="本棚アイコン" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Kzo-K4-Tmy"/>
+        <segue reference="rX5-9h-RjV"/>
         <segue reference="qlc-07-Pbr"/>
         <segue reference="cvf-sC-wLt"/>
     </inferredMetricsTieBreakers>
