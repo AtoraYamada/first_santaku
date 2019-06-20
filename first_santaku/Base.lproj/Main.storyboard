@@ -1184,6 +1184,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="All Questions" id="sgt-AG-82q">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="refresh" id="Oug-30-Y4I">
+                            <connections>
+                                <action selector="backToAll:" destination="p5i-Jk-rml" id="CWA-dB-SVS"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="lUa-S5-pIJ">
                             <connections>
                                 <action selector="searchButton:" destination="p5i-Jk-rml" id="It9-hr-733"/>

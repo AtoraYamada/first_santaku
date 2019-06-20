@@ -109,7 +109,10 @@ class AllQTableViewController: UITableViewController {
     @IBAction func unwind(for unwindSegue: UIStoryboardSegue) {
         searchData()
     }
-
+    @IBAction func backToAll(_ sender: Any) {
+        readData()
+    }
+    
 }
 extension AllQTableViewController{
     func readData(){
