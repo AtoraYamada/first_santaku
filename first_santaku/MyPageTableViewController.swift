@@ -147,6 +147,8 @@ class MyPageTableViewController: UITableViewController {
             }
         }
     }
+    @IBAction func unwind(for unwindSegue: UIStoryboardSegue) {
+    }
 
 }
 extension MyPageTableViewController{

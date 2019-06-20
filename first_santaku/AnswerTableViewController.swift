@@ -36,7 +36,9 @@ class AnswerTableViewController: UITableViewController {
         } else {
             cell.userAnswer?.text = "無解答"
         }
+        cell.userAnswer.sizeToFit()
         cell.correctAnswer?.text = question[1]
+        cell.correctAnswer.sizeToFit()
         cell.解説?.text = question[4]
         cell.解説.sizeToFit()
         return cell
