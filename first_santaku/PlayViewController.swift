@@ -101,9 +101,11 @@ class PlayViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-            self.出題()
-            self.loadingView.stopAnimating()
-            self.loadingBack.isHidden = true
+            if self.viewIfLoaded?.window != nil {
+                self.出題()
+                self.loadingView.stopAnimating()
+                self.loadingBack.isHidden = true
+            }
         }
         
     }
