@@ -1128,7 +1128,7 @@
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <connections>
                                         <action selector="backToMain:" destination="Aho-gr-PMF" id="Wyy-lK-Tjs"/>
-                                        <segue destination="vmO-nt-LPp" kind="show" id="MOY-Q1-DKw"/>
+                                        <segue destination="12Y-Oz-prP" kind="unwind" unwindAction="unwindFor:" id="Jts-wu-eZm"/>
                                     </connections>
                                 </barButtonItem>
                             </items>
@@ -1151,6 +1151,7 @@
                     </tableView>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hpj-os-jdj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="12Y-Oz-prP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="6303.1999999999998" y="858.62068965517244"/>
         </scene>
