@@ -100,6 +100,7 @@ class PlayViewController: UIViewController {
         let 番号 = 番号リスト()
         for i in 0...2 {
             解答ボタン[i].setTitle(問題データ[番号[i]], for: UIControl.State())
+            解答ボタン[i].titleLabel?.adjustsFontSizeToFitWidth = true
         }
         残り時間 = 10
         残り時間ビュー.progress = 1.0
