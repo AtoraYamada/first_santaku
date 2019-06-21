@@ -8,8 +8,10 @@
 
 import UIKit
 import Firebase
+import AVFoundation
 
 class UserEditViewController: UIViewController, UITextFieldDelegate {
+    var keyboard2 : AVAudioPlayer! = nil
     
     @IBOutlet weak var nickname: UILabel!
     @IBOutlet weak var signUp: UILabel!
@@ -24,6 +26,14 @@ class UserEditViewController: UIViewController, UITextFieldDelegate {
                 inputNickname.text = user.displayName
                 inputEmail.text = user.email
         }
+        let keyboard2Path = Bundle.main.path(forResource: "keyboard2", ofType: "mp3")!
+        let k2:URL = URL(fileURLWithPath: keyboard2Path)
+        do {
+            keyboard2 = try AVAudioPlayer(contentsOf: k2, fileTypeHint:nil)
+        } catch {
+            print("AVAudioPlayerインスタンス作成でエラー")
+        }
+        keyboard2.prepareToPlay()
         attributed()
         inputNickname.delegate = self
         inputEmail.delegate = self
@@ -62,7 +72,10 @@ class UserEditViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func DoneButton(_ sender: Any) {
         done()
+        keyboard2.currentTime = 0
+        keyboard2.play()
     }
+    
     func done() {
 
         guard let nickname = inputNickname.text else { return }

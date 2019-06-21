@@ -8,8 +8,11 @@
 
 import UIKit
 import Firebase
+import AVFoundation
 
 class CreateFirstViewController: UIViewController, UITextFieldDelegate {
+    var keyboard2 : AVAudioPlayer! = nil
+    var keyboard1 : AVAudioPlayer! = nil
     var flag: Int!
     var selectedQ: Int!
     var userId = ""
@@ -67,6 +70,22 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
                 }
             }
         }
+        let keyboard2Path = Bundle.main.path(forResource: "keyboard2", ofType: "mp3")!
+        let k2:URL = URL(fileURLWithPath: keyboard2Path)
+        do {
+            keyboard2 = try AVAudioPlayer(contentsOf: k2, fileTypeHint:nil)
+        } catch {
+            print("AVAudioPlayerインスタンス作成でエラー")
+        }
+        let keyboard1Path = Bundle.main.path(forResource: "keyboard1", ofType: "mp3")!
+        let k1:URL = URL(fileURLWithPath: keyboard1Path)
+        do {
+            keyboard1 = try AVAudioPlayer(contentsOf: k1, fileTypeHint:nil)
+        } catch {
+            print("AVAudioPlayerインスタンス作成でエラー")
+        }
+        keyboard1.prepareToPlay()
+        keyboard2.prepareToPlay()
     }
     @IBAction func getTitle(_ sender: Any) {
     }
@@ -76,6 +95,8 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
     @IBAction func toSecondButton(_ sender: Any) {
     }
     @IBAction func nextButton(_ sender: Any) {
+        keyboard2.currentTime = 0
+        keyboard2.play()
         if flag != 1 {
             let title = inputTitle.text
             var ref: DocumentReference? = nil
@@ -162,6 +183,8 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var jqueryButton: CheckBox!
     @IBOutlet weak var othersButton: CheckBox!
     @IBAction func htmlButton(_ sender: CheckBox) {
+        keyboard1.currentTime = 0
+        keyboard1.play()
         if tags.index(of: "HTML") != nil{
             sender.isChecked = true
         }
@@ -174,6 +197,8 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func cssButton(_ sender: CheckBox) {
+        keyboard1.currentTime = 0
+        keyboard1.play()
         if tags.index(of: "CSS") != nil{
             sender.isChecked = true
         }
@@ -185,6 +210,8 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
         
     }
     @IBAction func rubyButton(_ sender: CheckBox) {
+        keyboard1.currentTime = 0
+        keyboard1.play()
         if tags.index(of: "Ruby") != nil{
             sender.isChecked = true
         }
@@ -195,6 +222,8 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
         }
     }
     @IBAction func railsButton(_ sender: CheckBox) {
+        keyboard1.currentTime = 0
+        keyboard1.play()
         if tags.index(of: "Rails") != nil{
             sender.isChecked = true
         }
@@ -205,6 +234,8 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
         }
     }
     @IBAction func jsButton(_ sender: CheckBox) {
+        keyboard1.currentTime = 0
+        keyboard1.play()
         if tags.index(of: "JavaScript") != nil{
             sender.isChecked = true
         }
@@ -215,6 +246,8 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
         }
     }
     @IBAction func jqueryButton(_ sender: CheckBox) {
+        keyboard1.currentTime = 0
+        keyboard1.play()
         if tags.index(of: "jQuery") != nil{
             sender.isChecked = true
         }
@@ -225,6 +258,8 @@ class CreateFirstViewController: UIViewController, UITextFieldDelegate {
         }
     }
     @IBAction func othersButton(_ sender: CheckBox) {
+        keyboard1.currentTime = 0
+        keyboard1.play()
         if tags.index(of: "Others") != nil{
             sender.isChecked = true
         }

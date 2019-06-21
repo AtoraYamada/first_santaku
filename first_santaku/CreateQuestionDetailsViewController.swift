@@ -8,8 +8,10 @@
 
 import UIKit
 import Firebase
+import AVFoundation
 
 class CreateQuestionDetailsViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
+    var keyboard2 : AVAudioPlayer! = nil
     var db : Firestore!
     var flag: Int!
     var userId = ""
@@ -56,6 +58,14 @@ class CreateQuestionDetailsViewController: UIViewController, UITextFieldDelegate
                     self.nextButton.isHidden = true
                 }
         }
+        let keyboard2Path = Bundle.main.path(forResource: "keyboard2", ofType: "mp3")!
+        let k2:URL = URL(fileURLWithPath: keyboard2Path)
+        do {
+            keyboard2 = try AVAudioPlayer(contentsOf: k2, fileTypeHint:nil)
+        } catch {
+            print("AVAudioPlayerインスタンス作成でエラー")
+        }
+        keyboard2.prepareToPlay()
     }
     
     @objc func commitButtonTapped() {
@@ -78,6 +88,8 @@ class CreateQuestionDetailsViewController: UIViewController, UITextFieldDelegate
     }
     
     @IBAction func nextButton(_ sender: Any) {
+        keyboard2.currentTime = 0
+        keyboard2.play()
         detail = []
         let question = inputQuestion.text
         let correct = inputCorrect.text
@@ -121,6 +133,8 @@ class CreateQuestionDetailsViewController: UIViewController, UITextFieldDelegate
         
     }
     @IBAction func doneButton(_ sender: Any) {
+        keyboard2.currentTime = 0
+        keyboard2.play()
         detail = []
         let question = inputQuestion.text
         let correct = inputCorrect.text

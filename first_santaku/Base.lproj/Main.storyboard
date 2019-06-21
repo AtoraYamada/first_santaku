@@ -33,6 +33,7 @@
                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="40"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
+                                    <action selector="enterButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tSY-P1-wPv"/>
                                     <segue destination="KH4-nk-uk2" kind="presentation" id="cvf-sC-wLt"/>
                                 </connections>
                             </button>
@@ -82,6 +83,7 @@
                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="25"/>
                                 <state key="normal" title="SIGN UP"/>
                                 <connections>
+                                    <action selector="moveToSignUp:" destination="KH4-nk-uk2" eventType="touchUpInside" id="mpG-vW-nPQ"/>
                                     <segue destination="8QF-c0-LGo" kind="presentation" id="oox-6U-JKZ"/>
                                 </connections>
                             </button>
@@ -208,6 +210,7 @@
                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="25"/>
                                 <state key="normal" title="SIGN IN"/>
                                 <connections>
+                                    <action selector="moveToSignIn:" destination="8QF-c0-LGo" eventType="touchUpInside" id="yln-BN-p7y"/>
                                     <segue destination="KH4-nk-uk2" kind="presentation" id="8XM-I4-uft"/>
                                 </connections>
                             </button>
@@ -366,13 +369,15 @@
                                 <action selector="signOut:" destination="xcP-s2-LDF" id="RQQ-Re-l3m"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="EDIT" id="t6s-3N-TgA">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="GrM-zq-ah0">
                             <connections>
-                                <segue destination="5Gm-MQ-FRQ" kind="show" id="s72-S8-US7"/>
+                                <action selector="moveToEdit:" destination="xcP-s2-LDF" id="nSy-9l-FVk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="5Gm-MQ-FRQ" kind="show" identifier="edit" id="cZm-uy-88B"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hav-yE-kQH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -427,10 +432,13 @@
                     <navigationItem key="navigationItem" title="MY PAGE" id="gI2-yE-Tpb">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="H7g-ZO-zct">
                             <connections>
-                                <segue destination="u18-Wv-XVl" kind="show" identifier="create" id="wb7-2H-zMq"/>
+                                <action selector="addButton:" destination="5rr-H2-BuE" id="Fz9-jo-sFg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="u18-Wv-XVl" kind="show" identifier="create" id="hzD-aZ-Ofr"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UoI-py-wGU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1192,12 +1200,12 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="lUa-S5-pIJ">
                             <connections>
                                 <action selector="searchButton:" destination="p5i-Jk-rml" id="It9-hr-733"/>
-                                <segue destination="9bg-im-INr" kind="showDetail" identifier="search" id="E2M-KY-Axw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="allQTableView" destination="pSH-4M-XFJ" id="iSG-z8-LVs"/>
+                        <segue destination="9bg-im-INr" kind="showDetail" identifier="search" id="4UF-H9-bax"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rh8-Ce-RV4" userLabel="First Responder" sceneMemberID="firstResponder"/>
