@@ -176,19 +176,24 @@ class PlayViewController: UIViewController {
     }
     
     @objc func タイマー関数() {
-        残り時間 -= 1
-        残り時間ビュー.progress = Float(残り時間) / 10
-        if 残り時間 == 4 {
+        if self.viewIfLoaded?.window != nil {
+            残り時間 -= 1
+            残り時間ビュー.progress = Float(残り時間) / 10
+            if 残り時間 == 4 {
+                timer1.stop()
+                timer2.currentTime = 0
+                timer2.play()
+            }
+            if 残り時間 == 0 {
+                timer2.stop()
+                タイマー!.invalidate()
+                self.answers.append(5)
+                問題番号 += 1
+                出題()
+            }
+        } else {
             timer1.stop()
-            timer2.currentTime = 0
-            timer2.play()
-        }
-        if 残り時間 == 0 {
             timer2.stop()
-            タイマー!.invalidate()
-            self.answers.append(5)
-            問題番号 += 1
-            出題()
         }
     }
     @IBAction func 解答チェック(_ sender: UIButton) {
